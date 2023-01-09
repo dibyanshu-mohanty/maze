@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:maze/theme/app_colors.dart';
 import 'package:sizer/sizer.dart';
 
 class AppScreenBackground extends StatelessWidget {
@@ -25,6 +26,25 @@ class AppScreenBackground extends StatelessWidget {
             ),
           ),
         ),
+        Positioned(
+          bottom: 0,
+          child: Container(
+            height: 60.h,
+            width: 100.w,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [
+                    AppColors.colorBlack,
+                    AppColors.colorBlack.withOpacity(0.987),
+                    AppColors.colorBlack.withOpacity(0.136),
+                    AppColors.colorBlack.withOpacity(0.0),
+                  ],
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter
+              )
+            ),
+          ),
+        )
       ],
     );
   }

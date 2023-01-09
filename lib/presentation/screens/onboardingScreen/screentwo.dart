@@ -1,11 +1,7 @@
 import 'dart:ui';
-
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:maze/theme/app_font.dart';
-import 'package:sizer/sizer.dart';
-
-import '../../../theme/app_dimens.dart';
+import 'package:maze/presentation/utils/appscreenbackground.dart';
+import 'package:maze/theme/coreimport.dart';
 
 
 class OnboardScreenTwo extends StatelessWidget {
@@ -18,26 +14,12 @@ class OnboardScreenTwo extends StatelessWidget {
       width: 100.w,
       child: Stack(
         children: [
-          Container(
-            height: 100.h,
-            width: 100.w,
-            child: Image.asset("assets/images/Rectangle 22.png",fit: BoxFit.fill,),
-          ),
-          Container(
-            height: 100.h,
-            width: 100.w,
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 20, sigmaY:200),
-              child: Container(
-                color: Colors.black.withOpacity(0.1),
-              ),
-            ),
-          ),
+          AppScreenBackground(),
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
-                  height: 420,
+                  height: 50.h,
                   alignment: Alignment.center,
                   child: Image.asset("assets/images/onboardScreen/ic_onboardscreen_two.png",fit: BoxFit.cover)),
               Container(

@@ -1,12 +1,7 @@
 import 'dart:ui';
-
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:maze/presentation/utils/appscreenbackground.dart';
-import 'package:maze/theme/app_font.dart';
-import 'package:sizer/sizer.dart';
-
-import '../../../theme/app_dimens.dart';
+import 'package:maze/theme/coreimport.dart';
 
 
 class OnboardScreenOne extends StatelessWidget {
@@ -21,14 +16,14 @@ class OnboardScreenOne extends StatelessWidget {
         children: [
             AppScreenBackground(),
           Column(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
-                  height: 400,
+                  height: 50.h,
                   alignment: Alignment.center,
                   child: Image.asset("assets/images/onboardScreen/ic_onboardscreen_one.png",fit: BoxFit.cover)),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: Dimens.margin80,vertical: Dimens.margin70),
+                  margin: EdgeInsets.symmetric(horizontal: Dimens.margin80),
                   child: RichText(
                     textAlign: TextAlign.center,
                       text: TextSpan(
@@ -44,7 +39,7 @@ class OnboardScreenOne extends StatelessWidget {
                     ]
                   )),
                 ),
-              SizedBox(height: Dimens.margin50)
+              //SizedBox(height: Dimens.margin50)
             ],
           )
         ],
