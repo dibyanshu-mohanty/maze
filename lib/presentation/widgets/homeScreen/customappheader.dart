@@ -9,7 +9,7 @@ class CustomAppHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(4.w,4.h,0,1.h),
+      margin: EdgeInsets.fromLTRB(4.w,2.h,0,1.h),
       child: ListTile(
         leading: SizedBox(
           width: 28.w,

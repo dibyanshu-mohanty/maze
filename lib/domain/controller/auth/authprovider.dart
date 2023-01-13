@@ -17,14 +17,14 @@ class AuthProvider with ChangeNotifier{
 
     Future<void> authRequest(String phone, String type) async{
        Map<String,dynamic> authRequestDetails = await UserLogin().sendOtp(phone, type);
-       _signupUser = NewUser.fromJson(authRequestDetails);
+       _signupUser = NewUser(phone: phone, type: type, hash: authRequestDetails["hash"]);
        notifyListeners();
     }
 
     Future<void> loginRequest(String otp) async{
       try{
         Map<String,dynamic> loginRequestDetails = await UserLogin().loginNewUser(_signupUser!.phone, _signupUser!.type, _signupUser!.hash, otp);
-        _loginUser = SignedUser.fromJson(loginRequestDetails);
+        _loginUser = SignedUser(message: loginRequestDetails["message"], details: loginRequestDetails["details"], token: loginRequestDetails["token"], refreshToken: loginRequestDetails["refreshToken"]);
         HiveDB.addData("jwt", _loginUser!.token);
         HiveDB.addData("refreshJWT", _loginUser!.refreshToken);
         notifyListeners();

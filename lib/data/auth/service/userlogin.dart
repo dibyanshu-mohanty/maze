@@ -9,7 +9,7 @@ class UserLogin{
       "phone" : phone,
       "type" : type,
     };
-    final response = await http.post(Uri.parse("$mainServer/auth/login"),body: jsonEncode(sendOtpObject));
+    final response = await http.post(Uri.parse("$mainServer/auth/login"),body: jsonEncode(sendOtpObject),);
     return jsonDecode(response.body);
   }
 

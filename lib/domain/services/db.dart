@@ -8,11 +8,9 @@ class HiveDB {
   static ObjectDB? db;
 
   static Future<ObjectDB> initHive() async {
-    if(!kIsWeb) {
       Directory appDocDir = await path.getApplicationDocumentsDirectory();
       await appDocDir.create(recursive: true);
       Hive.init(appDocDir.path);
-    }
     await Hive.openBox('yaroDB');
     return db!;
   }

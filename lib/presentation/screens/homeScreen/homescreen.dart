@@ -1,8 +1,11 @@
 import 'package:maze/presentation/utils/constants.dart';
-import 'package:maze/presentation/utils/darkthemedsectiontitle.dart';
+import 'package:maze/presentation/utils/homeScreen/darkthemedsectiontitle.dart';
 import 'package:maze/presentation/widgets/homeScreen/customappheader.dart';
+import 'package:maze/presentation/widgets/homeScreen/newscard.dart';
 import 'package:maze/presentation/widgets/homeScreen/progressindicator.dart';
+import 'package:maze/presentation/widgets/homeScreen/yaroacademycard.dart';
 import 'package:maze/theme/coreimport.dart';
+import '../../widgets/homeScreen/upcomingfeaturescard.dart';
 
 
 
@@ -14,17 +17,17 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          CustomAppHeader(),
+          const CustomAppHeader(),
           Container(
             width: 100.w,
             height: 15.h,
-            margin: EdgeInsets.fromLTRB(4.w,Dimens.margin30,4.w,Dimens.margin10),
-            padding: EdgeInsets.symmetric(horizontal: Dimens.margin15),
+            margin: EdgeInsets.fromLTRB(4.w,Dimens.margin10,4.w,Dimens.margin5),
+            padding: const EdgeInsets.symmetric(horizontal: Dimens.margin15),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                DarkThemedSectionTitle(headerTitle: "Your total worth",isMainTitle: true,),
+                const DarkThemedSectionTitle(headerTitle: "Your total worth",isMainTitle: true,),
                 Text("\u{20B9} 5678.76",style: AppFont.mediumBoldColorWhite_25,),
                  Container(
                    height: 5.h,
@@ -43,8 +46,8 @@ class HomeScreen extends StatelessWidget {
           Container(
             width: 100.w,
             height: 10.h,
-            margin: EdgeInsets.only(left: 4.w),
-            padding: EdgeInsets.symmetric(horizontal: Dimens.margin10),
+            margin: EdgeInsets.symmetric(horizontal: 4.w),
+            padding: const EdgeInsets.symmetric(horizontal: Dimens.margin10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: List.generate(3, (index) => Expanded(
@@ -64,14 +67,23 @@ class HomeScreen extends StatelessWidget {
           ),
           Container(
             width: 100.w,
-            height: 100.h,
             margin: EdgeInsets.symmetric(horizontal: 4.w),
-            padding: const EdgeInsets.only(left: Dimens.margin17),
+            padding: const EdgeInsets.symmetric(horizontal: Dimens.margin10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                DarkThemedSectionTitle(headerTitle: "Your Progess", isMainTitle: false,),
+              children: const [
+                DarkThemedSectionTitle(headerTitle: "Your Progress", isMainTitle: false,),
                 ProgressIndicatorContainer(),
+                SizedBox(height: Dimens.margin10),
+                DarkThemedSectionTitle(headerTitle: "Start something new", isMainTitle: false,),
+                YaroAcademyCard(),
+                SizedBox(height: Dimens.margin10),
+                DarkThemedSectionTitle(headerTitle: "What's new today", isMainTitle: false,),
+                NewsCard(),
+                SizedBox(height: Dimens.margin10),
+                DarkThemedSectionTitle(headerTitle: "Upcoming Features", isMainTitle: false,),
+                UpcomingFeatureCard(),
+                SizedBox(height: Dimens.margin10),
               ],
             ),
           )
