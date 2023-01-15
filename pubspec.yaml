@@ -11,7 +11,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   card_swiper: ^2.0.4
   sizer: ^2.0.15
-  flutter_svg: ^1.1.6
   google_fonts:
   pin_code_fields: ^7.4.0
   badges: ^2.0.3
@@ -24,6 +23,8 @@ dependencies:
   objectdb: ^1.2.1+1
   auto_size_text: ^3.0.0
   device_preview: ^1.1.0
+  game_levels_scrolling_map: ^0.0.7
+  level_map: ^0.2.0
 
 
 dev_dependencies:
@@ -40,6 +41,8 @@ flutter:
     - assets/images/homeScreen/
     - assets/animations/
     - assets/icons/
+    - assets/images/learningScreen/mapPng/
+    - assets/images/learningScreen/mapSvg/
 
   fonts:
 #    - family: Schyler

@@ -5,6 +5,7 @@ import 'package:maze/theme/app_dimens.dart';
 import 'app_colors.dart';
 
 class AppFont{
+  static const light = TextStyle(fontFamily: 'Satoshi',fontWeight: FontWeight.w300,color: AppColors.colorWhite);
   static const regular = TextStyle( fontFamily: 'Satoshi',
       fontWeight: FontWeight.w400, color: AppColors.colorWhite);
   static const bold = TextStyle(  fontFamily: 'Satoshi',
@@ -14,6 +15,8 @@ class AppFont{
   static const mediumBold = TextStyle(  fontFamily: 'Satoshi',
       fontWeight: FontWeight.w500, color: AppColors.colorWhite);
 
+  /// Color White Light
+  static final lightColorWhite_12 = light.copyWith(fontSize: Dimens.textSize12);
 
   /// Color White Regular
   static final regularColorWhite_20 = regular.copyWith(fontSize: Dimens.textSize20);
@@ -30,6 +33,7 @@ class AppFont{
   static final mediumBoldColorWhite_18 = mediumBold.copyWith(fontSize: Dimens.textSize18);
   static final mediumBoldColorWhite_20 = mediumBold.copyWith(fontSize: Dimens.textSize20);
   static final mediumBoldColorWhite_25 = mediumBold.copyWith(fontSize: Dimens.textSize25);
+  static final mediumBoldColorWhite_27 = mediumBold.copyWith(fontSize: Dimens.textSize27);
   static final mediumBoldColorWhite_14 = mediumBold.copyWith(fontSize: Dimens.textSize14);
 
 
@@ -40,6 +44,14 @@ class AppFont{
   /// Color Black Regular
   static final regularColorBlack = regular.copyWith(color: AppColors.colorBlack);
   static final regularColorBlack_18 = regularColorBlack.copyWith(fontSize: Dimens.textSize18);
+
+  /// Color Black Bold
+  static final boldColorBlack = bold.copyWith(color: AppColors.colorBlack);
+  static final boldColorBlack_20 = boldColorBlack.copyWith(fontSize: Dimens.textSize20);
+
+  /// Color Golden Medium
+  static final mediumBoldColorGolden  = mediumBold.copyWith(color: AppColors.colorGolden);
+  static final mediumBoldColorGolden_27 = mediumBoldColorGolden.copyWith(fontSize: Dimens.textSize27);
 
   /// Color Green Bold
   static final boldColorGreen = bold.copyWith(color: AppColors.colorGreen);
@@ -70,4 +82,5 @@ class AppFont{
   /// Color Red Medium
   static final mediumBoldColorRed = mediumBold.copyWith(color: AppColors.colorRed);
   static final mediumBoldColorRed_18 = mediumBoldColorRed.copyWith(fontSize: Dimens.textSize18);
+
  }

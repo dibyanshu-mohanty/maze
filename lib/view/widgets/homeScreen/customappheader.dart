@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:maze/theme/app_images.dart';
 import 'package:maze/theme/coreimport.dart';
 
 
@@ -15,9 +16,9 @@ class CustomAppHeader extends StatelessWidget {
           width: 28.w,
           child: Row(
             children: [
-              Image.asset("assets/images/yarologo.png", height: 4.h,),
+              Image.asset(AppImages.ic_logomain, height: 4.h,),
               SizedBox(width: Dimens.margin20),
-              Text("Yaro",style: AppFont.mediumBoldColorWhite_20,),
+              Text("Maze",style: AppFont.mediumBoldColorWhite_20,),
             ],
           ),
         ),

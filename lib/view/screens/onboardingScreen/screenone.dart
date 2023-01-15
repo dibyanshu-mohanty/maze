@@ -1,7 +1,8 @@
 import 'dart:ui';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:maze/presentation/utils/appscreenbackground.dart';
+import 'package:maze/theme/app_images.dart';
 import 'package:maze/theme/coreimport.dart';
+
+import '../../utils/appscreenbackground.dart';
 
 
 class OnboardScreenOne extends StatelessWidget {
@@ -14,16 +15,16 @@ class OnboardScreenOne extends StatelessWidget {
       width: 100.w,
       child: Stack(
         children: [
-            AppScreenBackground(),
+            const AppScreenBackground(),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                   height: 50.h,
                   alignment: Alignment.center,
-                  child: Image.asset("assets/images/onboardScreen/ic_onboardscreen_one.png",fit: BoxFit.cover)),
+                  child: Image.asset(AppImages.ic_onboardone,fit: BoxFit.cover)),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: Dimens.margin80),
+                  margin: const EdgeInsets.symmetric(horizontal: Dimens.margin80),
                   child: RichText(
                     textAlign: TextAlign.center,
                       text: TextSpan(

@@ -1,5 +1,7 @@
 import 'package:maze/theme/coreimport.dart';
 
+import '../../utils/appscreenbackground.dart';
+
 
 class CategorySelectScreen extends StatelessWidget {
   const CategorySelectScreen({Key? key}) : super(key: key);
@@ -7,8 +9,10 @@ class CategorySelectScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: Container(
+      body: Stack(
+        children: [
+          const AppScreenBackground(),
+          Container(
             alignment: Alignment.center,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -58,7 +62,8 @@ class CategorySelectScreen extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
+        ],
       ),
     );
   }

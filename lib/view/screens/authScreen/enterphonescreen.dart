@@ -1,7 +1,8 @@
-import 'package:maze/presentation/utils/appscreenbackground.dart';
-import 'package:maze/presentation/widgets/authScreen/otpfields.dart';
 import 'package:sizer/sizer.dart';
 import 'package:maze/theme/coreimport.dart';
+
+import '../../utils/appscreenbackground.dart';
+import '../../widgets/authScreen/otpfields.dart';
 
 class EnterPhoneNumber extends StatefulWidget {
   const EnterPhoneNumber({Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class _EnterPhoneNumberState extends State<EnterPhoneNumber> {
         children: [
           const AppScreenBackground(),
           Container(
-            margin: const EdgeInsets.fromLTRB(40.0, 50.0, 40.0, 0.0),
+            margin: const EdgeInsets.fromLTRB(40.0, 70.0, 40.0, 0.0),
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

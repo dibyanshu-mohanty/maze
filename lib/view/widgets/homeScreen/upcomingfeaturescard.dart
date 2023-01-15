@@ -5,9 +5,10 @@ class UpcomingFeatureCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final deviceWidth = MediaQuery.of(context).size.width;
     return SizedBox(
       width: 100.w,
-      height: 13.h,
+      height: deviceWidth < 350 ? 20.h : 15.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 2,
@@ -21,7 +22,7 @@ class UpcomingFeatureCard extends StatelessWidget {
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(Dimens.margin10),
-                  child: Image.asset("assets/images/homeScreen/features.png",fit: BoxFit.cover,)));
+                  child: Image.asset("assets/images/homeScreen/ic_features.png",fit: BoxFit.cover,)));
         }
       )
     );

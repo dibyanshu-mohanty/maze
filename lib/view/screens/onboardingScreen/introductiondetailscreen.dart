@@ -1,19 +1,19 @@
 import 'package:card_swiper/card_swiper.dart';
-import 'package:maze/presentation/screens/onboardingScreen/screenone.dart';
-import 'package:maze/presentation/screens/onboardingScreen/screenthree.dart';
-import 'package:maze/presentation/screens/onboardingScreen/screentwo.dart';
 import 'package:maze/theme/coreimport.dart';
+import 'package:maze/view/screens/onboardingScreen/screenone.dart';
+import 'package:maze/view/screens/onboardingScreen/screenthree.dart';
+import 'package:maze/view/screens/onboardingScreen/screentwo.dart';
 
 
-class OnboardingScreen extends StatefulWidget {
-  OnboardingScreen({Key? key}) : super(key: key);
+class IntroductionScreen extends StatefulWidget {
+  const IntroductionScreen({Key? key}) : super(key: key);
 
   @override
-  State<OnboardingScreen> createState() => _OnboardingScreenState();
+  State<IntroductionScreen> createState() => _IntroductionScreenState();
 }
 
-class _OnboardingScreenState extends State<OnboardingScreen> {
-  List<Widget> onBoardScreens = [
+class _IntroductionScreenState extends State<IntroductionScreen> {
+  List<Widget> onBoardScreens = const [
     OnboardScreenOne(),
     OnboardScreenTwo(),
     OnboardScreenThree(),
@@ -23,14 +23,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _dotsController = PageController();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _dotsController.dispose();
   }

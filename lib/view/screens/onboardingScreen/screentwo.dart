@@ -1,10 +1,12 @@
 import 'dart:ui';
-import 'package:maze/presentation/utils/appscreenbackground.dart';
+import 'package:maze/theme/app_images.dart';
 import 'package:maze/theme/coreimport.dart';
 
+import '../../utils/appscreenbackground.dart';
 
-class OnboardScreenThree extends StatelessWidget {
-  const OnboardScreenThree({Key? key}) : super(key: key);
+
+class OnboardScreenTwo extends StatelessWidget {
+  const OnboardScreenTwo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,36 +15,32 @@ class OnboardScreenThree extends StatelessWidget {
       width: 100.w,
       child: Stack(
         children: [
-          AppScreenBackground(),
+          const AppScreenBackground(),
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
                   height: 50.h,
                   alignment: Alignment.center,
-                  child: Image.asset("assets/images/onboardScreen/ic_onboardscreen_three.png",fit: BoxFit.cover)),
+                  child: Image.asset(AppImages.ic_onboardtwo,fit: BoxFit.cover)),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: Dimens.margin70,vertical: Dimens.margin70),
+                margin: const EdgeInsets.symmetric(horizontal: Dimens.margin80,vertical: Dimens.margin70),
                 child: RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Benefit from Real-Time ",
+                            text: "Track your Portfolio, Receive Daily",
                             style: AppFont.regularColorWhite_20,
                           ),
                           TextSpan(
-                            text:" A1-Powered ",
+                            text:" Smart Money Alerts",
                             style: AppFont.regularColorGolden_20,
-                          ),
-                          TextSpan(
-                            text: "Investment Insights",
-                            style: AppFont.regularColorWhite_20,
-                          ),
+                          )
                         ]
                     )),
               ),
-              SizedBox(height: Dimens.margin50)
+              const SizedBox(height: Dimens.margin50)
             ],
           )
         ],

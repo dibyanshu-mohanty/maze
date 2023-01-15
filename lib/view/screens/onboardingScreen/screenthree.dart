@@ -1,11 +1,12 @@
 import 'dart:ui';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:maze/presentation/utils/appscreenbackground.dart';
+import 'package:maze/theme/app_images.dart';
 import 'package:maze/theme/coreimport.dart';
 
+import '../../utils/appscreenbackground.dart';
 
-class OnboardScreenTwo extends StatelessWidget {
-  const OnboardScreenTwo({Key? key}) : super(key: key);
+
+class OnboardScreenThree extends StatelessWidget {
+  const OnboardScreenThree({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,28 +15,32 @@ class OnboardScreenTwo extends StatelessWidget {
       width: 100.w,
       child: Stack(
         children: [
-          AppScreenBackground(),
+          const AppScreenBackground(),
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
                   height: 50.h,
                   alignment: Alignment.center,
-                  child: Image.asset("assets/images/onboardScreen/ic_onboardscreen_two.png",fit: BoxFit.cover)),
+                    child: Image.asset(AppImages.ic_onboardthree,fit: BoxFit.cover)),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: Dimens.margin80,vertical: Dimens.margin70),
+                margin: EdgeInsets.symmetric(horizontal: Dimens.margin70,vertical: Dimens.margin70),
                 child: RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Track your Portfolio, Receive Daily",
+                            text: "Benefit from Real-Time ",
                             style: AppFont.regularColorWhite_20,
                           ),
                           TextSpan(
-                            text:" Smart Money Alerts",
+                            text:" A1-Powered ",
                             style: AppFont.regularColorGolden_20,
-                          )
+                          ),
+                          TextSpan(
+                            text: "Investment Insights",
+                            style: AppFont.regularColorWhite_20,
+                          ),
                         ]
                     )),
               ),

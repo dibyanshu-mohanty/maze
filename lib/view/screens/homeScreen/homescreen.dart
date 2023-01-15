@@ -1,11 +1,10 @@
-import 'package:maze/presentation/utils/constants.dart';
-import 'package:maze/presentation/utils/homeScreen/darkthemedsectiontitle.dart';
-import 'package:maze/presentation/widgets/homeScreen/customappheader.dart';
-import 'package:maze/presentation/widgets/homeScreen/newscard.dart';
-import 'package:maze/presentation/widgets/homeScreen/progressindicator.dart';
-import 'package:maze/presentation/widgets/homeScreen/yaroacademycard.dart';
 import 'package:maze/theme/coreimport.dart';
+import '../../utils/homeScreen/darkthemedsectiontitle.dart';
+import '../../utils/staticuielements.dart';
+import '../../widgets/homeScreen/customappheader.dart';
+import '../../widgets/homeScreen/progressindicator.dart';
 import '../../widgets/homeScreen/upcomingfeaturescard.dart';
+import '../../widgets/homeScreen/mazeacademycard.dart';
 
 
 
@@ -20,7 +19,7 @@ class HomeScreen extends StatelessWidget {
           const CustomAppHeader(),
           Container(
             width: 100.w,
-            height: 15.h,
+            height: 17.h,
             margin: EdgeInsets.fromLTRB(4.w,Dimens.margin10,4.w,Dimens.margin5),
             padding: const EdgeInsets.symmetric(horizontal: Dimens.margin15),
             child: Column(
@@ -77,9 +76,6 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(height: Dimens.margin10),
                 DarkThemedSectionTitle(headerTitle: "Start something new", isMainTitle: false,),
                 YaroAcademyCard(),
-                SizedBox(height: Dimens.margin10),
-                DarkThemedSectionTitle(headerTitle: "What's new today", isMainTitle: false,),
-                NewsCard(),
                 SizedBox(height: Dimens.margin10),
                 DarkThemedSectionTitle(headerTitle: "Upcoming Features", isMainTitle: false,),
                 UpcomingFeatureCard(),

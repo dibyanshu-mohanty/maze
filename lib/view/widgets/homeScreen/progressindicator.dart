@@ -9,7 +9,7 @@ class ProgressIndicatorContainer extends StatelessWidget {
     final deviceWidth = MediaQuery.of(context).size.width;
     return Container(
       width: 100.w,
-      height: 13.h,
+      height: deviceWidth < 350 ? 15.h : 13.h,
       margin: const EdgeInsets.symmetric(vertical: Dimens.margin10),
       padding: const EdgeInsets.symmetric(
           vertical: Dimens.margin15, horizontal: Dimens.margin15),
@@ -64,7 +64,7 @@ class ProgressIndicatorContainer extends StatelessWidget {
                 //padding: const EdgeInsets.symmetric(vertical: Dimens.margin3,horizontal: Dimens.margin10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),
-                  color: AppColors.colorBlue,
+                  color: AppColors.colorLightGreen,
                 ),
                 alignment: Alignment.center,
                 child: Text(
