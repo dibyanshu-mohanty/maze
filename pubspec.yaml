@@ -39,10 +39,8 @@ flutter:
     - assets/images/
     - assets/images/onboardScreen/
     - assets/images/homeScreen/
-    - assets/animations/
     - assets/icons/
-    - assets/images/learningScreen/mapPng/
-    - assets/images/learningScreen/mapSvg/
+    - assets/images/learningScreen/
 
   fonts:
 #    - family: Schyler
