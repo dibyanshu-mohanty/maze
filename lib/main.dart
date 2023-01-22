@@ -8,6 +8,7 @@ import 'package:maze/view/screens/learningScreen/learninglevelscreen.dart';
 import 'package:maze/view/screens/learningScreen/readingtaskscreen.dart';
 import 'package:maze/view/screens/learningScreen/tasklevelscreen.dart';
 import 'package:maze/view/screens/learningScreen/videoscreen.dart';
+import 'package:maze/view/screens/mainframe.dart';
 import 'package:maze/view/screens/onboardingScreen/onboardingscreen.dart';
 import 'package:provider/provider.dart';
 
@@ -39,7 +40,9 @@ class YaroApp extends StatelessWidget {
            scaffoldBackgroundColor: AppColors.colorBlack,
             //canvasColor: AppColors.colorWhite,
           ),
-          home: const OnboardingScreen(),
+          home: const MainFrame(),
+          //  '/'
+          // '/taskScreen'
         ),
       ),
     );

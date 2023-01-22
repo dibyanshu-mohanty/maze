@@ -67,9 +67,9 @@ class AppFont{
   static final regularColorGrey1_13 = regularColorGrey1.copyWith(fontSize: Dimens.textSize13);
 
   /// Color Grey Medium
-  static final mediumBoldColorGrey1 = mediumBold.copyWith(color: AppColors.colorGrey1);
-  static final mediumBoldColorGrey1_15 = mediumBoldColorGrey1.copyWith(fontSize: Dimens.textSize15);
-  static final mediumBoldColorGrey1_18 = mediumBoldColorGrey1.copyWith(fontSize: Dimens.textSize18);
+  static final mediumBoldColorGrey10 = mediumBold.copyWith(color: AppColors.colorGrey1);
+  static final mediumBoldColorGrey10_15 = mediumBoldColorGrey10.copyWith(fontSize: Dimens.textSize15);
+  static final mediumBoldColorGrey10_18 = mediumBoldColorGrey10.copyWith(fontSize: Dimens.textSize18);
 
   /// Color Grey4 Regular
   static final regularColorGrey4 = regular.copyWith(color: AppColors.colorGrey4);
