@@ -41,6 +41,7 @@ flutter:
     - assets/images/homeScreen/
     - assets/icons/
     - assets/images/learningScreen/
+    - assets/images/rewardScreen/
 
   fonts:
 #    - family: Schyler
