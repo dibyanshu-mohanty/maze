@@ -23,8 +23,13 @@ dependencies:
   objectdb: ^1.2.1+1
   auto_size_text: ^3.0.0
   device_preview: ^1.1.0
-  game_levels_scrolling_map: ^0.0.7
-  level_map: ^0.2.0
+  percent_indicator: ^4.2.2
+  chewie: ^1.3.6
+  flutter_markdown: ^0.6.13
+  better_player: ^0.0.83
+  persistent_bottom_nav_bar: ^5.0.2
+  iconify_flutter: ^0.0.5
+  colorful_iconify_flutter:
 
 
 dev_dependencies:
@@ -37,11 +42,16 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/video.mp4
     - assets/images/onboardScreen/
     - assets/images/homeScreen/
     - assets/icons/
     - assets/images/learningScreen/
     - assets/images/rewardScreen/
+    - assets/images/learningScreen/modules/
+    - assets/animations/
+    - assets/icons/homeScreen/
+    - assets/icons/learningScreen/
 
   fonts:
 #    - family: Schyler

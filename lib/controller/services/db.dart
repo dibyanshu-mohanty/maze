@@ -21,7 +21,6 @@ class HiveDB {
       dynamic dbFilePath = [appDocDir.path, 'yaro.db'].join('/');
       db = ObjectDB(FileSystemStorage(dbFilePath));
     }else{
-      ///For Web -> db = ObjectDB(web.IndexedDBStorage('zapitDB'));
     }
     return db!;
   }
@@ -59,7 +58,6 @@ class DB {
       dynamic dbFilePath = [appDocDir.path, 'yaro.db'].join('/');
       db = ObjectDB(FileSystemStorage(dbFilePath));
     }else{
-      ///For Web ->  db = ObjectDB(web.IndexedDBStorage('zapitDB'));
     }
     return db!;
   }

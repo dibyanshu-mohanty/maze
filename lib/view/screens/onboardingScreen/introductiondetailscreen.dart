@@ -36,27 +36,25 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body: SafeArea(
-        child: Swiper(
-          itemBuilder: (context, index) {
-            return onBoardScreens[index];
-          },
-          itemWidth: 100.w,
-          itemHeight: 100.h,
-          itemCount: 3,
-          layout: SwiperLayout.DEFAULT,
-          pagination: const SwiperPagination(
-            builder: SwiperPagination.dots,
-            alignment: Alignment.bottomCenter,
-            margin: EdgeInsets.only(bottom: Dimens.margin15),
-          ),
-          curve: Curves.easeInBack,
-          loop: false,
-          //indicatorLayout: PageIndicatorLayout.DROP,
-          // control:SwiperControl(
-          //   color: AppColors.colorWhite
-          // ),
+      body: Swiper(
+        itemBuilder: (context, index) {
+          return onBoardScreens[index];
+        },
+        itemWidth: 100.w,
+        itemHeight: 100.h,
+        itemCount: 3,
+        layout: SwiperLayout.DEFAULT,
+        pagination: const SwiperPagination(
+          builder: SwiperPagination.dots,
+          alignment: Alignment.bottomCenter,
+          margin: EdgeInsets.only(bottom: Dimens.margin15),
         ),
+        curve: Curves.easeInBack,
+        loop: false,
+        //indicatorLayout: PageIndicatorLayout.DROP,
+        // control:SwiperControl(
+        //   color: AppColors.colorWhite
+        // ),
       ),
     );
   }
