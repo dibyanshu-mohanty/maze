@@ -1,6 +1,8 @@
-import 'package:game_levels_scrolling_map/game_levels_scrolling_map.dart';
-import 'package:game_levels_scrolling_map/model/point_model.dart';
+import 'package:badges/badges.dart';
+import 'package:maze/theme/app_images.dart';
 import 'package:maze/theme/coreimport.dart';
+import 'package:maze/view/utils/appscreenbackground.dart';
+import 'package:maze/view/widgets/learningScreen/moduleholder.dart';
 
 class LearningLevelScreen extends StatefulWidget {
   const LearningLevelScreen({Key? key}) : super(key: key);
@@ -10,93 +12,101 @@ class LearningLevelScreen extends StatefulWidget {
 }
 
 class _LearningLevelScreenState extends State<LearningLevelScreen> {
+  bool isLocked = true;
+
   @override
   Widget build(BuildContext context) {
-    bool isSmall = MediaQuery.of(context).size.width < 350;
+    bool isSmall = MediaQuery.of(context).size.width < 320;
     return Scaffold(
-      body: Container(
-          margin: EdgeInsets.symmetric(horizontal: 1.w, vertical: 3.h),
-          child: ListView(
-            children: [
-              Stack(
-                children: [
-                  Container(
-                      margin:
-                          EdgeInsets.symmetric(vertical: 2.h, horizontal: 4.w),
-                      child: Image.asset(
-                          "assets/images/learningScreen/mapVertical.png")),
-                  Positioned(
-                      bottom: 0,
-                      left: 35.w,
-                      child: const CircleAvatar(
-                          backgroundColor: Colors.white, radius: 32.0)),
-                  Positioned(
-                      bottom: 18.h,
-                      right: 10.w,
-                      child: const CircleAvatar(
-                          backgroundColor: Colors.white, radius: 32.0)),
-                  Positioned(
-                      bottom: 21.h,
-                      left: 10.w,
-                      child: const CircleAvatar(
-                          backgroundColor: Colors.white, radius: 32.0)),
-                  Positioned(
-                      bottom: 39.h,
-                      left: 50.w,
-                      child: const CircleAvatar(
-                          backgroundColor: Colors.white, radius: 32.0)),
-                  Positioned(
-                      bottom: 60.h,
-                      left: 35.w,
-                      child: const CircleAvatar(
-                          backgroundColor: Colors.white, radius: 32.0)),
-                  Positioned(
-                      bottom: 86.h,
-                      right: 18.w,
-                      child: CircleAvatar(
-                          backgroundColor: Colors.white, radius: 32.0)),
-                ],
-              ),
-            ],
-          )), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-
-  @override
-  void initState() {
-    fillTestData();
-  }
-
-  List<PointModel> points = [];
-
-  void fillTestData() {
-    for (int i = 0; i < 100; i++) {
-      points.add(PointModel(100, testWidget(i)));
-    }
-  }
-
-  Widget testWidget(int order) {
-    return InkWell(
-      child: Text("$order",
-          style: const TextStyle(color: Colors.black, fontSize: 15)),
-      onTap: () {
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              content: Text("Point $order"),
-              actions: <Widget>[
-                ElevatedButton(
-                  child: const Text("OK"),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
+      body: Stack(
+        children: [
+          const AppScreenBackground(),
+          Container(
+              margin: EdgeInsets.symmetric(vertical: 10.h),
+              alignment: Alignment.center,
+              child:
+                  Image.asset("assets/images/learningScreen/mapVertical.png")),
+          Positioned(
+            bottom: isSmall ? 5.h : 4.h,
+            left: isSmall ? 35.w : 38.w,
+            child: const ModuleThumbnail(
+                imagePath: AppImages.ic_learningModule2,
+                isLocked: false,
+                percentComplete: 1,
+                moduleName: "Module 1"),
+          ),
+          Positioned(
+            bottom: isSmall ? 19.h : 20.h,
+            right: isSmall ? 15.w : 12.w,
+            child: const ModuleThumbnail(
+                imagePath: AppImages.ic_learningModule3,
+                isLocked: true,
+                percentComplete: 1,
+                moduleName: "Module 2"),
+          ),
+          Positioned(
+            bottom: 30.h,
+            left: isSmall ? 7.w : 4.w,
+            child: const ModuleThumbnail(
+                imagePath: AppImages.ic_learningModule4,
+                isLocked: true,
+                percentComplete: 1,
+                moduleName: "Module 3"),
+          ),
+          Positioned(
+            bottom: 45.h,
+            right: isSmall
+                ? isLocked
+                    ? 14.w
+                    : 10.w
+                : isLocked
+                    ? 10.w
+                    : 6.w,
+            child: const ModuleThumbnail(
+                imagePath: AppImages.ic_learningModule5,
+                isLocked: true,
+                percentComplete: 1,
+                moduleName: "Module 4"),
+          ),
+          Positioned(
+            bottom: isSmall ? 55.h : 57.h,
+            left: 35.w,
+            child: const ModuleThumbnail(
+                imagePath: AppImages.ic_learningModule6,
+                isLocked: true,
+                percentComplete: 1,
+                moduleName: "Module 5"),
+          ),
+          Positioned(
+            bottom: isSmall
+                ? isLocked
+                    ? 77.h
+                    : 75.h
+                : isLocked
+                    ? 78.h
+                    : 76.h,
+            right: 50.w,
+            child: const ModuleThumbnail(
+                imagePath: AppImages.ic_learningModule7,
+                isLocked: true,
+                percentComplete: 1,
+                moduleName: "Module 6"),
+          ),
+          Container(
+            height: 40.h,
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    AppColors.colorBlack,
+                    AppColors.colorBlack.withOpacity(0.0),
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
                 ),
-              ],
-            );
-          },
-        );
-      },
+                color: AppColors.colorWhite),
+          ),
+        ],
+      ),
     );
   }
 }
