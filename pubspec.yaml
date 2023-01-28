@@ -47,6 +47,7 @@ flutter:
     - assets/images/homeScreen/
     - assets/icons/
     - assets/images/learningScreen/
+    - assets/images/rewardScreen/
     - assets/images/learningScreen/modules/
     - assets/animations/
     - assets/icons/homeScreen/

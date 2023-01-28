@@ -27,4 +27,5 @@ class AppColors{
   static const colorRed1 = Color(0xFF371616);
   static const colorTransparent = Colors.transparent;
   static const colorWhite = Color(0xFFFFFFFF);
+  
 }

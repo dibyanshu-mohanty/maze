@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:maze/controller/providers/learning/quizprovider.dart';
 import 'package:maze/controller/providers/learning/readingprovider.dart';
 import 'package:maze/theme/coreimport.dart';
-import 'package:maze/view/screens/homeScreen/homescreen.dart';
+import 'package:maze/view/screens/rewards/reward_page.dart';
 import 'package:maze/view/screens/learningScreen/learninglevelscreen.dart';
 
 import 'package:maze/view/screens/profile/feature_profile.dart';
@@ -38,6 +38,7 @@ class YaroApp extends StatelessWidget {
           scaffoldBackgroundColor: AppColors.colorBlack,
           //canvasColor: AppColors.colorWhite,
         ),
+        home: const RewardPage(),
         home: const FeatureProfile(),
     return MultiProvider(
       providers: [
