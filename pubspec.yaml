@@ -53,6 +53,7 @@ flutter:
     - assets/animations/
     - assets/icons/homeScreen/
     - assets/icons/learningScreen/
+    - assets/images/virtualSimulator/
 
   fonts:
 #    - family: Schyler
