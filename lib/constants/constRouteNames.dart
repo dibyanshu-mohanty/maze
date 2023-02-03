@@ -1,0 +1,13 @@
+const String onbardingScreen = "/";
+const String introductionScreen = '/introductionScreen';
+const String categorySelect = '/categorySelect';
+const String enterPhonenumber = '/enterPhoneNumber';
+const String otp = '/otp';
+const String createProfile = '/createProfile';
+const String homePage = '/homePage';
+const String learningLevelScreen = '/learningLevelScreen';
+const String learningContentScreen = '/learningContentScreen';
+const String readingTask = '/readingTaskScreen';
+const String taskLevel = '/taskLevelScreen';
+const String videoPlayer = '/videoPlayer';
+const String mainFrame = '/mainFrame';

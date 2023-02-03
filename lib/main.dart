@@ -1,11 +1,24 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
-
 import 'package:maze/controller/providers/learning/quizprovider.dart';
 import 'package:maze/controller/providers/learning/readingprovider.dart';
-
 import 'package:maze/theme/coreimport.dart';
 import 'package:maze/view/screens/rewards/refer.dart';
+import 'package:maze/constants/constRouteNames.dart';
+import 'package:maze/controller/providers/learning/quizprovider.dart';
+import 'package:maze/controller/providers/learning/readingprovider.dart';
+import 'package:maze/routes.dart';
+import 'package:maze/theme/coreimport.dart';
+import 'package:provider/provider.dart';
+import 'controller/providers/auth/authprovider.dart';
+import 'package:maze/view/screens/rewards/reward_page.dart';
+import 'package:maze/view/screens/learningScreen/learninglevelscreen.dart';
+import 'package:maze/view/screens/profile/feature_profile.dart';
+import 'package:maze/view/screens/learningScreen/readingtaskscreen.dart';
+import 'package:maze/view/screens/learningScreen/tasklevelscreen.dart';
+import 'package:maze/view/screens/learningScreen/videoscreen.dart';
+import 'package:maze/view/screens/mainframe.dart';
+import 'package:maze/view/screens/onboardingScreen/onboardingscreen.dart';
 import 'package:provider/provider.dart';
 import 'controller/providers/auth/authprovider.dart';
 
@@ -26,6 +39,7 @@ class YaroApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => ReadingProvider()),
         ChangeNotifierProvider(create: (context) => QuizProvider()),
+        ChangeNotifierProvider(create: (context) => CategorySelectProvider()),
         ChangeNotifierProvider(create: (context) => AuthProvider()),
       ],
       child: Sizer(
@@ -36,10 +50,8 @@ class YaroApp extends StatelessWidget {
             scaffoldBackgroundColor: AppColors.colorBlack,
             //canvasColor: AppColors.colorWhite,
           ),
-          // onGenerateRoute: MyRoutes.genrateRoute,
-          // initialRoute: onbardingScreen,
-          home: ReferPage(),
-          // home: const MainFrame(),
+          onGenerateRoute: MyRoutes.genrateRoute,
+          initialRoute: onbardingScreen,
         ),
       ),
     );

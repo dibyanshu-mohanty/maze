@@ -41,3 +41,15 @@ class AuthProvider with ChangeNotifier {
     }
   }
 }
+
+class CategorySelectProvider with ChangeNotifier {
+  String _type = "";
+  String get type {
+    return _type;
+  }
+
+  void selectType(String type) {
+    _type = type;
+    notifyListeners();
+  }
+}
