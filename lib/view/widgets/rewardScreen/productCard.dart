@@ -1,7 +1,7 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/material.dart';
-import 'package:maze/theme/app_images.dart';
+// import 'package:flutter/src/widgets/container.dart';
+// import 'package:flutter/src/widgets/framework.dart';
+// import 'package:flutter/material.dart';
+// import 'package:maze/theme/app_images.dart';
 import 'package:maze/theme/coreimport.dart';
 
 class ProductCard extends StatelessWidget {
@@ -42,7 +42,7 @@ class ProductCard extends StatelessWidget {
                   subtitleText,
                   style: AppFont.lightColorWhite_10,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 9,
                 ),
                 Text(
@@ -51,23 +51,47 @@ class ProductCard extends StatelessWidget {
                 ),
               ],
             ),
+            trailing: Column(
+              children: [
+                Container(
+                  width: 10.w,
+                  padding: EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    color: Color(0xffFF7171),
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20),
+                      bottomLeft: Radius.circular(10),
+                    ),
+                  ),
+                  child: Text(
+                    "New",
+                    style: AppFont.mediumBoldColorWhite_10,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
-        Positioned(
-            top: 0,
-            left: 325,
-            child: Container(
-              padding: EdgeInsets.all(4),
-              decoration: BoxDecoration(
-                  color: Color(0xffFF7171),
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      bottomRight: Radius.circular(10))),
-              child: Text(
-                "New",
-                style: AppFont.mediumBoldColorWhite_10,
-              ),
-            )),
+        // Positioned(
+        //     top: 0,
+        //     left: 82.w,
+        //     child: Container(
+        //       width: 10.w,
+        //       padding: EdgeInsets.all(4),
+        //       decoration: BoxDecoration(
+        //         color: Color(0xffFF7171),
+        //         borderRadius: BorderRadius.only(
+        //           topRight: Radius.circular(20),
+        //           bottomLeft: Radius.circular(10),
+        //         ),
+        //       ),
+        //       child: Text(
+        //         "New",
+        //         style: AppFont.mediumBoldColorWhite_10,
+        //         textAlign: TextAlign.center,
+        //       ),
+        //     )),
       ],
     );
   }

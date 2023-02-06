@@ -12,92 +12,92 @@ class RewardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Color(0xff292c33),
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.home_outlined,
-                  color: Colors.white,
-                ),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.business),
-                label: 'Business',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.school),
-                label: 'School',
-              ),
-            ]),
-        body: SafeArea(
-            child: ListView(
+      appBar: AppBar(
+        toolbarHeight: 10.h,
+        leading: Container(
+          margin: EdgeInsets.only(top: 5.h, left: 5.w),
+          child: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+            size: 24,
+          ),
+        ),
+        title: Container(
+          margin: EdgeInsets.only(top: 5.h),
+          child: Text(
+            "Reward",
+            style: AppFont.regularColorWhite_15,
+            textAlign: TextAlign.center,
+          ),
+        ),
+        backgroundColor: Colors.black,
+        centerTitle: true,
+      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //     backgroundColor: Color(0xff292c33),
+      //     items: const <BottomNavigationBarItem>[
+      //       BottomNavigationBarItem(
+      //         icon: Icon(
+      //           Icons.home_outlined,
+      //           color: Colors.white,
+      //         ),
+      //         label: '',
+      //       ),
+      //       BottomNavigationBarItem(
+      //         icon: Icon(Icons.business),
+      //         label: 'Business',
+      //       ),
+      //       BottomNavigationBarItem(
+      //         icon: Icon(Icons.school),
+      //         label: 'School',
+      //       ),
+      //     ]),
+      body: SafeArea(
+        child: ListView(
           children: [
-            Container(
-              margin: EdgeInsets.only(left: 9, top: 44),
-              child: Row(
-                // ignore: prefer_const_literals_to_create_immutables
-                children: [
-                  const Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
-                    size: 20,
-                  ),
-                  SizedBox(
-                    width: 118.0,
-                  ),
-                  Text(
-                    "Reward",
-                    textAlign: TextAlign.center,
-                    style: AppFont.mediumBoldColorWhite_13,
-                  ),
-                ],
+            //Component 1
+            ListTile(
+              leading: const CircleAvatar(
+                  backgroundImage: AssetImage(AppImages.avatar),
+                  backgroundColor: Colors.white,
+                  radius: 21.0),
+              title: Text("Ayush Bachan", style: AppFont.boldColorWhite_15),
+              trailing: Container(
+                width: 25.w,
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                        backgroundImage: AssetImage(AppImages.avatar),
+                        backgroundColor: Colors.white,
+                        radius: 10.0),
+                    SizedBox(
+                      width: 3.w,
+                    ),
+                    Text(
+                      "567",
+                      style: AppFont.regularColorWhite_15,
+                    ),
+                  ],
+                ),
               ),
             ),
+            //Component 2
             Container(
               margin: EdgeInsets.fromLTRB(16, 19, 19, 0),
-              width: 328,
-              height: 70,
+              width: 80.w,
+              height: 15.h,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Color(0xff292C33)),
-              child: Row(
-                children: [
-                  Container(
-                      margin: EdgeInsets.fromLTRB(8, 14, 0, 14),
-                      child: CircleAvatar(
-                          backgroundImage: AssetImage(AppImages.avatar),
-                          backgroundColor: Colors.white,
-                          radius: 21.0)),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        margin: EdgeInsets.fromLTRB(23, 25, 0, 25),
-                        child: Text("Ayush Bachan",
-                            style: AppFont.boldColorWhite_15),
-                      ),
-                    ],
-                  )
-                ],
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: Color(0xffFF5F6D)),
+                color: Color.fromRGBO(255, 95, 109, 0.3),
               ),
-            ),
-            Container(
-              margin: EdgeInsets.fromLTRB(16, 19, 19, 0),
-              width: 328,
-              height: 134,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: Color(0xffFF5F6D)),
-                  color: Color.fromRGBO(255, 95, 109, 0.3)),
               child: Row(
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        margin: EdgeInsets.fromLTRB(24, 20, 0, 0),
+                        margin: EdgeInsets.fromLTRB(6.w, 2.h, 0, 0),
                         child: RichText(
                           text: TextSpan(
                             children: [
@@ -114,28 +114,31 @@ class RewardPage extends StatelessWidget {
                         ),
                       ),
                       Container(
-                          margin: EdgeInsets.fromLTRB(24, 0, 0, 0),
+                          margin: EdgeInsets.symmetric(horizontal: 6.w),
                           child: Text(
                             "Refer A Friend And Earn",
                             style: AppFont.regularColorWhite_12,
                           )),
                       Container(
-                          margin: EdgeInsets.fromLTRB(24, 0, 0, 0),
+                          margin: EdgeInsets.symmetric(horizontal: 6.w),
                           child: Text("Coin Upto 100.",
                               style: AppFont.regularColorWhite_12)),
                       Container(
-                        margin: EdgeInsets.fromLTRB(24, 13, 0, 0),
-                        height: 32,
-                        width: 129,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 6.w, vertical: 1.h),
+                        height: 4.h,
+                        width: 33.w,
                         child: TextButton(
                           style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(
-                                  Color.fromRGBO(255, 95, 109, 1)),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
+                            backgroundColor: MaterialStateProperty.all(
+                                Color.fromRGBO(255, 95, 109, 1)),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15.0),
-                              ))),
+                              ),
+                            ),
+                          ),
                           onPressed: () => {},
                           child: Text(
                             "Send Refer",
@@ -146,46 +149,57 @@ class RewardPage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  Spacer(),
                   Container(
-                    margin: EdgeInsets.fromLTRB(47, 16, 20, 0),
+                    margin:
+                        EdgeInsets.symmetric(horizontal: 5.4.w, vertical: 1.h),
                     child: Image.asset(
                       AppImages.present,
                     ),
-                    height: 101,
-                    width: 98,
+                    height: 12.h,
+                    width: 28.w,
                   )
                   //Image Container()
                 ],
               ),
             ),
+            //Component 3
             Container(
-                margin: EdgeInsets.fromLTRB(17, 21, 0, 0),
-                child: Text(
-                  "Bonus Reward",
-                  style: AppFont.mediumBoldColorGrey6_15,
-                )),
-            Row(
-              children: [
-                BonusCard(
-                  borderColor: 0xffFFB5F6,
-                  backgroundColor: 0xffFFB5F8,
-                  image: AppImages.gift_one,
-                  buttonColor: 0xFFFFB5F6,
-                ),
-                BonusCard(
-                  borderColor: 0xff4DF1C1,
-                  backgroundColor: 0xff56EB92,
-                  image: AppImages.gift_two,
-                  buttonColor: 0xFF4DF1C1,
-                ),
-                BonusCard(
-                  borderColor: 0xffFFc371,
-                  backgroundColor: 0xffEF8C1D,
-                  image: AppImages.gift_three,
-                  buttonColor: 0xFFFfc371,
-                )
-              ],
+              margin: EdgeInsets.fromLTRB(17, 21, 0, 0),
+              child: Text(
+                "Bonus Reward",
+                style: AppFont.mediumBoldColorGrey6_15,
+              ),
             ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 5.w),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    //Company
+                    for (int i = 0; i < 5; i++) ...[
+                      //............................Component2..........................//
+                      BonusCard(
+                        borderColor: 0xffFFB5F6,
+                        backgroundColor: 0xffFFB2F8,
+                        image: AppImages.gift_one,
+                        buttonColor: 0xFFFFB2F8,
+                      ),
+                      SizedBox(
+                        width: 3.w,
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+            ),
+
+            // SizedBox(
+            //   height: 1.h,
+            // ),
+
             Container(
               margin: EdgeInsets.fromLTRB(16, 41, 16, 0),
               child: ProductCard(
@@ -214,6 +228,8 @@ class RewardPage extends StatelessWidget {
               ),
             ),
           ],
-        )));
+        ),
+      ),
+    );
   }
 }

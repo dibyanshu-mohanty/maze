@@ -17,9 +17,9 @@ class BonusCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(17, 13, 0, 0),
-      width: 101,
-      height: 149,
+      margin: EdgeInsets.symmetric(vertical: 1.h),
+      width: 28.w,
+      height: 18.h,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: Color(borderColor)),
@@ -27,25 +27,29 @@ class BonusCard extends StatelessWidget {
       child: Column(
         children: [
           Container(
-              //margin: EdgeInsets.fromLTRB(17, 10, 0, 0),
-              height: 66,
-              width: 66,
-              child: Image(image: AssetImage(image))),
+            margin: EdgeInsets.symmetric(vertical: .5.h),
+            height: 8.h,
+            width: 19.w,
+            child: Image(
+              image: AssetImage(image),
+            ),
+          ),
           Text("Bonus", style: AppFont.mediumBoldColorWhite_11),
           Text("Achieved", style: AppFont.mediumBoldColorWhite_11),
           Spacer(),
           Container(
-            margin: EdgeInsets.only(top: 9),
-            height: 35,
-            width: 101,
+            // margin: EdgeInsets.symmetric(vertical: 0.4.h),
+            height: 5.h,
+            width: 28.w,
             child: TextButton(
               style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(Color(buttonColor)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
+                backgroundColor: MaterialStateProperty.all(Color(buttonColor)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
-                  ))),
+                  ),
+                ),
+              ),
               onPressed: () => {},
               child: Text(
                 "Claim Reward",

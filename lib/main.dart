@@ -3,24 +3,16 @@ import 'package:flutter/foundation.dart';
 import 'package:maze/controller/providers/learning/quizprovider.dart';
 import 'package:maze/controller/providers/learning/readingprovider.dart';
 import 'package:maze/theme/coreimport.dart';
-import 'package:maze/view/screens/rewards/refer.dart';
-import 'package:maze/constants/constRouteNames.dart';
-import 'package:maze/controller/providers/learning/quizprovider.dart';
-import 'package:maze/controller/providers/learning/readingprovider.dart';
-import 'package:maze/routes.dart';
-import 'package:maze/theme/coreimport.dart';
+// import 'package:maze/view/screens/homeScreen/homescreen.dart';
+// import 'package:maze/view/screens/learningScreen/learninglevelscreen.dart';
+// import 'package:maze/view/screens/learningScreen/readingtaskscreen.dart';
+// import 'package:maze/view/screens/learningScreen/tasklevelscreen.dart';
+// import 'package:maze/view/screens/learningScreen/videoscreen.dart';
+// import 'package:maze/view/screens/mainframe.dart';
+// import 'package:maze/view/screens/onboardingScreen/onboardingscreen.dart';
 import 'package:provider/provider.dart';
-import 'controller/providers/auth/authprovider.dart';
-import 'package:maze/view/screens/rewards/reward_page.dart';
-import 'package:maze/view/screens/learningScreen/learninglevelscreen.dart';
-import 'package:maze/view/screens/profile/feature_profile.dart';
-import 'package:maze/view/screens/learningScreen/readingtaskscreen.dart';
-import 'package:maze/view/screens/learningScreen/tasklevelscreen.dart';
-import 'package:maze/view/screens/learningScreen/videoscreen.dart';
-import 'package:maze/view/screens/mainframe.dart';
-import 'package:maze/view/screens/onboardingScreen/onboardingscreen.dart';
-import 'package:provider/provider.dart';
-import 'controller/providers/auth/authprovider.dart';
+
+import 'view/screens/rewards/reward_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,14 +25,13 @@ void main() async {
 
 class YaroApp extends StatelessWidget {
   const YaroApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => ReadingProvider()),
         ChangeNotifierProvider(create: (context) => QuizProvider()),
-        ChangeNotifierProvider(create: (context) => CategorySelectProvider()),
-        ChangeNotifierProvider(create: (context) => AuthProvider()),
       ],
       child: Sizer(
         builder: (context, orientation, deviceType) => MaterialApp(
@@ -50,8 +41,9 @@ class YaroApp extends StatelessWidget {
             scaffoldBackgroundColor: AppColors.colorBlack,
             //canvasColor: AppColors.colorWhite,
           ),
-          onGenerateRoute: MyRoutes.genrateRoute,
-          initialRoute: onbardingScreen,
+          home: const RewardPage(),
+          //  '/'
+          // '/taskScreen'
         ),
       ),
     );
