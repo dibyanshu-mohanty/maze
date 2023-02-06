@@ -21,6 +21,8 @@ class AppImages {
   static const group = "${imageBaseURL}rewardScreen/Group.png";
   static const cursor = "${imageBaseURL}rewardScreen/fi-rr-cursor-finger.png";
   static const frame = "${imageBaseURL}rewardScreen/Frame.png";
+  static const banner = "${imageBaseURL}rewardScreen/banner.png";
+  static const gift = "${imageBaseURL}rewardScreen/gift.png";
   static const ic_learningModule1 =
       "${imageBaseURL}learningScreen/modules/ic_Module1.png";
   static const ic_learningModule2 =

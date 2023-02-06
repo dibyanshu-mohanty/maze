@@ -6,6 +6,8 @@ import 'package:maze/controller/providers/learning/readingprovider.dart';
 
 import 'package:maze/theme/coreimport.dart';
 import 'package:maze/view/screens/rewards/refer.dart';
+import 'package:maze/view/screens/rewards/reward_detail.dart';
+import 'package:maze/view/screens/rewards/reward_page.dart';
 import 'package:provider/provider.dart';
 import 'controller/providers/auth/authprovider.dart';
 
@@ -38,7 +40,7 @@ class YaroApp extends StatelessWidget {
           ),
           // onGenerateRoute: MyRoutes.genrateRoute,
           // initialRoute: onbardingScreen,
-          home: ReferPage(),
+          home: RewardDetail(),
           // home: const MainFrame(),
         ),
       ),

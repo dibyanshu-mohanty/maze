@@ -17,10 +17,7 @@ class ReferPage extends StatelessWidget {
         child: Stack(
           children: [
             const AppScreenBackground(),
-
-            //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-            Container(
+                        Container(
               margin: EdgeInsets.only(left: 16, top: 48),
               child: Row(
                 // ignore: prefer_const_literals_to_create_immutables

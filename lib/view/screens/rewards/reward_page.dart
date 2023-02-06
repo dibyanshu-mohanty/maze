@@ -12,32 +12,13 @@ class RewardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Color(0xff292c33),
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.home_outlined,
-                  color: Colors.white,
-                ),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.business),
-                label: 'Business',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.school),
-                label: 'School',
-              ),
-            ]),
-        body: SafeArea(
+            body: SafeArea(
             child: ListView(
           children: [
             Container(
               margin: EdgeInsets.only(left: 9, top: 44),
               child: Row(
-                // ignore: prefer_const_literals_to_create_immutables
+               
                 children: [
                   const Icon(
                     Icons.arrow_back,
