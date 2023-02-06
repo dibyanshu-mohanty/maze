@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../../../theme/app_font.dart';
-import '../../../../theme/app_images.dart';
+import '../../../theme/app_font.dart';
+import '../../../theme/app_images.dart';
 
 class ScrollVSComponent2 extends StatelessWidget {
   final companyName;
@@ -20,15 +20,10 @@ class ScrollVSComponent2 extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(color: Colors.blue),
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(10),
-          bottomLeft: Radius.circular(10),
-          topRight: Radius.circular(10),
-          bottomRight: Radius.circular(10),
-        ),
+        borderRadius: BorderRadius.circular(10),
       ),
       width: 23.w,
-      height: 11.h,
+      height: 12.5.h,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -38,24 +33,19 @@ class ScrollVSComponent2 extends StatelessWidget {
             height: 2.h,
             // ignore: prefer_const_constructors
             decoration: BoxDecoration(
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(5),
-                bottomLeft: Radius.circular(5),
-                topRight: Radius.circular(5),
-                bottomRight: Radius.circular(5),
+              borderRadius: BorderRadius.circular(
+                5.0,
               ),
             ),
-            margin: EdgeInsets.only(left: 1.w, top: 1.h),
+            margin: EdgeInsets.symmetric(horizontal: 2.w, vertical: 1.h),
             child: Image.asset(
               AppImages.rectangle1,
               fit: BoxFit.cover,
             ),
           ),
-          const SizedBox(
-            height: 2,
-          ),
+
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 3),
+            margin: EdgeInsets.symmetric(horizontal: 0.3.w),
             child: Text(
               companyName,
               style: GoogleFonts.poppins(
@@ -63,6 +53,7 @@ class ScrollVSComponent2 extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                   color: Color(0xffffffff)),
               textAlign: TextAlign.center,
+              maxLines: 1,
             ),
           ),
 
@@ -71,7 +62,7 @@ class ScrollVSComponent2 extends StatelessWidget {
               Container(
                 width: 3.w,
                 height: 1.h,
-                margin: EdgeInsets.only(left: 1.w, top: 1.h),
+                margin: EdgeInsets.symmetric(horizontal: 1.w, vertical: 0.5.h),
                 child: Image.asset(
                   AppImages.bars,
                   fit: BoxFit.cover,
@@ -80,7 +71,7 @@ class ScrollVSComponent2 extends StatelessWidget {
               Container(
                 // width: 3.w,
                 // height: 1.h,
-                margin: EdgeInsets.only(left: 1.w, top: 1.h),
+                margin: EdgeInsets.symmetric(horizontal: 1.w, vertical: 0.5.h),
                 child: Text(
                   amount,
                   style: GoogleFonts.poppins(
@@ -98,7 +89,7 @@ class ScrollVSComponent2 extends StatelessWidget {
               Container(
                 width: 3.w,
                 height: 1.h,
-                margin: EdgeInsets.only(left: 1.w, top: 0.5.h),
+                margin: EdgeInsets.symmetric(horizontal: 1.w),
                 child: Image.asset(
                   AppImages.GreenUp,
                   fit: BoxFit.cover,
@@ -107,7 +98,7 @@ class ScrollVSComponent2 extends StatelessWidget {
               Container(
                 // width: 3.w,
                 // height: 1.h,
-                margin: EdgeInsets.only(left: 1.w, top: 0.5.h),
+                margin: EdgeInsets.symmetric(horizontal: 1.w),
                 child: Text(
                   percentageLossGain,
                   style: GoogleFonts.poppins(

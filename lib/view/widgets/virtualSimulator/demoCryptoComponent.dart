@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../theme/app_font.dart';
+import '../../../theme/app_font.dart';
 
 class DemoCryptoComponent1 extends StatelessWidget {
   final title;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../../../theme/app_font.dart';
-import '../../../../theme/app_images.dart';
+import '../../../theme/app_font.dart';
+import '../../../theme/app_images.dart';
 import 'demoCryptoComponent.dart';
 
 class VSSComponent1 extends StatelessWidget {
@@ -15,12 +15,7 @@ class VSSComponent1 extends StatelessWidget {
       width: 80.w,
       height: 14.3.h,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20),
-          bottomLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
-          bottomRight: Radius.circular(20),
-        ),
+        borderRadius: BorderRadius.circular(20),
         border: Border.all(color: Colors.blue),
       ),
       child: Column(
@@ -46,7 +41,7 @@ class VSSComponent1 extends StatelessWidget {
           // ),
           Spacer(),
           Container(
-            margin: EdgeInsets.only(bottom: 2.h),
+            margin: EdgeInsets.only(bottom: 1.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [

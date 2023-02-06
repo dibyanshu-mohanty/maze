@@ -19,7 +19,8 @@ class SplashScreenThree extends StatelessWidget {
           Container(
               height: 50.h,
               alignment: Alignment.center,
-              child: Image.asset(AppImages.Coins1, fit: BoxFit.cover)),
+              child:
+                  Image.asset(AppImages.ic_vsScreenModule3, fit: BoxFit.cover)),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: Dimens.margin16),
             child: RichText(

@@ -27,9 +27,12 @@ class AppImages {
   static const ic_learningModule7 =
       "${imageBaseURL}learningScreen/modules/ic_Module7.png";
 
-  static const ai1 = "${imageBaseURL}virtualSimulator/ai1.png";
-  static const study = "${imageBaseURL}virtualSimulator/study.png";
-  static const Coins1 = "${imageBaseURL}virtualSimulator/Coins1.png";
+  static const ic_vsScreenModule1 =
+      "${imageBaseURL}virtualSimulator/ic_vsScreenModule1.png";
+  static const ic_vsScreenModule2 =
+      "${imageBaseURL}virtualSimulator/ic_vsScreenModule2.png";
+  static const ic_vsScreenModule3 =
+      "${imageBaseURL}virtualSimulator/ic_vsScreenModule3.png";
   static const Coins2 = "${imageBaseURL}virtualSimulator/coins2.png";
   static const rectangle1 = "${imageBaseURL}virtualSimulator/Rectangle 75.png";
   static const rectangle2 = "${imageBaseURL}virtualSimulator/Rectangle 76.png";

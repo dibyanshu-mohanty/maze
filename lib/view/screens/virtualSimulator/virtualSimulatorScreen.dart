@@ -5,9 +5,9 @@ import 'package:sizer/sizer.dart';
 
 import '../../../theme/app_font.dart';
 
-import 'Widgets/virtualSimulatorComponent2.dart';
-import 'Widgets/virtualSimulatorComponent3.dart';
-import 'Widgets/virtualSimulatorScreenComponent1.dart';
+import '../../widgets/virtualSimulator/virtualSimulatorComponent2.dart';
+import '../../widgets/virtualSimulator/virtualSimulatorComponent3.dart';
+import '../../widgets/virtualSimulator/virtualSimulatorScreenComponent1.dart';
 
 class VirtualSimulatorScreen extends StatelessWidget {
   const VirtualSimulatorScreen({super.key});
@@ -19,7 +19,7 @@ class VirtualSimulatorScreen extends StatelessWidget {
         appBar: AppBar(
           toolbarHeight: 10.h,
           leading: Container(
-            margin: EdgeInsets.only(top: 5.h, left: 10),
+            margin: EdgeInsets.only(top: 5.h, left: 5.w),
             child: const Icon(
               Icons.arrow_back,
               color: Colors.white,
@@ -51,25 +51,21 @@ class VirtualSimulatorScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //Row1
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 5.w),
-                  child: Row(
-                    children: [
-                      Text(
-                        "This Week Trending",
-                        style: AppFont.regularColorGrey1_15,
-                      ),
-                      Spacer(),
-                      Text(
-                        "View All",
-                        style: AppFont.lightColorgrey_10,
-                      ),
-                    ],
+                //check
+                ListTile(
+                  leading: Text(
+                    "This Week Trending",
+                    style: AppFont.regularColorGrey1_15,
+                  ),
+                  trailing: Text(
+                    "View All",
+                    style: AppFont.lightColorgrey_10,
                   ),
                 ),
-                SizedBox(
-                  height: 2.h,
-                ),
+
+                // SizedBox(
+                //   height: 2.h,
+                // ),
 
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -93,47 +89,116 @@ class VirtualSimulatorScreen extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 2.h,
+              height: 1.h,
             ),
             //Component 3
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 5.w),
-              child: Row(
-                children: [
-                  Text(
-                    "Category",
-                    style: AppFont.regularColorGrey1_15,
-                  ),
-                  Spacer(),
-                  Text(
-                    "Show More",
-                    style: AppFont.lightColorgrey_10,
-                  ),
-                ],
+            ListTile(
+              leading: Text(
+                "Category",
+                style: AppFont.regularColorGrey1_15,
+              ),
+              trailing: Text(
+                "Show More",
+                style: AppFont.lightColorgrey_10,
               ),
             ),
-            SizedBox(
-              height: 1.h,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                //Component 3
+            Wrap(
+              spacing: 5.w,
+              runSpacing: 1.h,
+              alignment: WrapAlignment.center,
+              children: const [
+                VSComponent3(),
+                VSComponent3(),
                 VSComponent3(),
                 VSComponent3()
               ],
             ),
+
             SizedBox(
               height: 1.h,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                //Component 3
-                VSComponent3(),
-                VSComponent3()
-              ],
-            )
+            //
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 2.w),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.blueAccent)),
+              child: ListTile(
+                leading: Image.asset(
+                  AppImages.Coins2,
+                  fit: BoxFit.contain,
+                  width: 10.w,
+                  height: 10.h,
+                ),
+                title: Text(
+                  "Applo Pharmacy",
+                  style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12,
+                      color: Color(0xffffffff)),
+                ),
+                subtitle: Text(
+                  "Applo Group",
+                  style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 10,
+                      color: Color(0xffffffff)),
+                ),
+                trailing: Container(
+                  width: 18.w,
+                  height: 10.h,
+                  margin: EdgeInsets.symmetric(vertical: 0.6.h),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                        children: [
+                          Image.asset(
+                            AppImages.bars,
+                            fit: BoxFit.cover,
+                            width: 10,
+                            height: 10,
+                          ),
+                          SizedBox(
+                            width: 2.w,
+                          ),
+                          Text(
+                            "2,346",
+                            style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12,
+                              color: Color(0xffffffff),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            AppImages.GreenUp,
+                            fit: BoxFit.contain,
+                            width: 12,
+                            height: 12,
+                          ),
+                          SizedBox(
+                            width: 2.w,
+                          ),
+                          Text(
+                            "23.66%",
+                            style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 11,
+                                color: Color(0xff62eb56)),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+
+            //.....................Blooming Startups.................................//
           ],
         ),
       ),

@@ -23,7 +23,8 @@ class SplashScreenTwo extends StatelessWidget {
               Container(
                 height: 50.h,
                 alignment: Alignment.center,
-                child: Image.asset(AppImages.study, fit: BoxFit.cover),
+                child: Image.asset(AppImages.ic_vsScreenModule2,
+                    fit: BoxFit.cover),
               ),
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: Dimens.margin16),

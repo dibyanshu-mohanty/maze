@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../../../theme/app_images.dart';
+import '../../../theme/app_images.dart';
 
 class VSComponent3 extends StatelessWidget {
   const VSComponent3({super.key});

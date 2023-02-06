@@ -19,7 +19,8 @@ class SplashScreenOne extends StatelessWidget {
           Container(
               height: 50.h,
               alignment: Alignment.center,
-              child: Image.asset(AppImages.ai1, fit: BoxFit.cover)),
+              child:
+                  Image.asset(AppImages.ic_vsScreenModule1, fit: BoxFit.cover)),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: Dimens.margin16),
             child: RichText(
