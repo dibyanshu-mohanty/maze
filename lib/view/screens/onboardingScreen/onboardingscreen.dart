@@ -2,7 +2,10 @@ import 'package:maze/constants/constRouteNames.dart';
 import 'package:maze/theme/app_images.dart';
 import 'package:maze/theme/app_sizers.dart';
 import 'package:maze/theme/coreimport.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../model/auth/service/userlogin.dart';
+import '../../../routes.dart';
 import 'introductiondetailscreen.dart';
 import 'screenone.dart';
 
@@ -82,7 +85,7 @@ class OnboardingScreen extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      Navigator.pushNamed(context, introductionScreen);
+                      Navigator.pushNamed(context, introductionDetailsScreen);
                     },
                   ),
                 )

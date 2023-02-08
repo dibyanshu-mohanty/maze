@@ -1,7 +1,3 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/material.dart';
-import 'package:maze/theme/app_images.dart';
 import 'package:maze/theme/coreimport.dart';
 
 class ProductCard extends StatelessWidget {

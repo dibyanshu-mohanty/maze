@@ -1,58 +1,88 @@
-// import 'dart:js';
-import 'package:flutter/material.dart';
-// import 'package:maze/theme/coreimport.dart';
-
-import 'constants/constRouteNames.dart';
-import 'view/screens/authScreen/categoryselectscreen.dart';
-import 'view/screens/authScreen/createprofilescreen.dart';
-import 'view/screens/authScreen/enterphonescreen.dart';
-import 'view/screens/homeScreen/homescreen.dart';
-import 'view/screens/learningScreen/learningContent/learningcontentscreen.dart';
-import 'view/screens/learningScreen/learninglevelscreen.dart';
-import 'view/screens/learningScreen/readingtaskscreen.dart';
-import 'view/screens/learningScreen/tasklevelscreen.dart';
-import 'view/screens/learningScreen/videoscreen.dart';
-import 'view/screens/mainframe.dart';
-import 'view/screens/onboardingScreen/introductiondetailscreen.dart';
-import 'view/screens/onboardingScreen/onboardingscreen.dart';
-import 'view/widgets/authScreen/otpfields.dart';
-
-class MyRoutes {
-  static Route<dynamic> genrateRoute(RouteSettings settings) {
-    switch (settings.name) {
-      case onbardingScreen:
-        return MaterialPageRoute(builder: (context) => OnboardingScreen());
-      case introductionScreen:
-        return MaterialPageRoute(builder: (context) => IntroductionScreen());
-      case categorySelect:
-        return MaterialPageRoute(builder: (context) => CategorySelectScreen());
-      case enterPhonenumber:
-        return MaterialPageRoute(builder: (context) => EnterPhoneNumber());
-      case otp:
-        return MaterialPageRoute(builder: (context) => OTPField());
-      case createProfile:
-        return MaterialPageRoute(builder: (context) => CreateProfileScreen());
-      case homePage:
-        return MaterialPageRoute(builder: (context) => HomeScreen());
-      case learningLevelScreen:
-        return MaterialPageRoute(builder: (context) => LearningLevelScreen());
-      case learningContentScreen:
-        return MaterialPageRoute(builder: (context) => LearningContentScreen());
-      case readingTask:
-        return MaterialPageRoute(builder: (context) => ReadingTaskScreen());
-      case taskLevel:
-        return MaterialPageRoute(builder: (context) => TaskLevelScreen());
-      case videoPlayer:
-        return MaterialPageRoute(builder: (context) => VideoPlayerScreen());
-      case mainFrame:
-        return MaterialPageRoute(builder: (context) => MainFrame());
-      default:
-    }
-
-    return MaterialPageRoute(
-      builder: (context) => const Scaffold(
-        body: Text("Random Route"),
-      ),
-    );
-  }
-}
+// // import 'dart:js';
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter/material.dart';
+// import 'package:maze/view/screens/errorScreen/errorscreen.dart';
+// import 'package:maze/view/screens/goldScreen/digitalgoldscreen.dart';
+// import 'package:maze/view/screens/profile/profilescreen.dart';
+// import 'view/screens/authScreen/categoryselectscreen.dart';
+// import 'view/screens/authScreen/createprofilescreen.dart';
+// import 'view/screens/authScreen/enterphonescreen.dart';
+// import 'view/screens/homeScreen/homescreen.dart';
+// import 'view/screens/learningScreen/learningContent/learningcontentscreen.dart';
+// import 'view/screens/learningScreen/learninglevelscreen.dart';
+// import 'view/screens/learningScreen/readingtaskscreen.dart';
+// import 'view/screens/learningScreen/tasklevelscreen.dart';
+// import 'view/screens/learningScreen/videoscreen.dart';
+// import 'view/screens/mainframe.dart';
+// import 'view/screens/onboardingScreen/introductiondetailscreen.dart';
+// import 'view/screens/onboardingScreen/onboardingscreen.dart';
+// import 'view/screens/splashScreen/splashscreen.dart';
+// import 'view/widgets/authScreen/otpfields.dart';
+//
+// class MyRoutes {
+//
+//   static const String splashScreen = "/";
+//   static const String onboardingScreen = "/onboardingScreen";
+//   static const String introductionDetailsScreen = '/introductionScreen';
+//   static const String categorySelect = '/categorySelect';
+//   static const String enterPhonenumber = '/enterPhoneNumber';
+//   static const String otp = '/otp';
+//   static const String createProfile = '/createProfile';
+//   static const String homePage = '/homePage';
+//   static const String learningLevelScreen = '/learningLevelScreen';
+//   static const String learningContentScreen = '/learningContentScreen';
+//   static const String readingTask = '/readingTaskScreen';
+//   static const String taskLevel = '/taskLevelScreen';
+//   static const String videoPlayer = '/videoPlayer';
+//   static const String mainFrame = '/mainFrame';
+//   static const String rewardScreen = '/rewardScreen';
+//   static const String referScreen = '/referScreen';
+//   static const String errorScreen = '/errorScreen';
+//   static const String digitalGoldScreen = "/digitalGoldScreen";
+//   static const String profileScreen = "/profileScreen";
+//
+//   static Route<dynamic> generateRoute(RouteSettings settings) {
+//       return CupertinoPageRoute<dynamic>(
+//           settings: settings,
+//           builder: (BuildContext context) {
+//         switch (settings.name) {
+//           case splashScreen:
+//             return const SplashScreen();
+//           case errorScreen:
+//             return const ErrorScreen();
+//           case onboardingScreen:
+//             return const OnboardingScreen();
+//           case introductionDetailsScreen:
+//             return IntroductionDetailsScreen();
+//           case categorySelect:
+//             return const CategorySelectScreen();
+//           case enterPhonenumber:
+//             return const EnterPhoneNumber();
+//           case otp:
+//             return OTPField(otpController: TextEditingController(),);
+//           case createProfile:
+//             return CreateProfileScreen();
+//           case homePage:
+//             return const HomeScreen();
+//           case learningLevelScreen:
+//             return const LearningLevelScreen();
+//           case learningContentScreen:
+//             return const LearningContentScreen();
+//           case readingTask:
+//             return const ReadingTaskScreen();
+//           case taskLevel:
+//             return const TaskLevelScreen();
+//           case videoPlayer:
+//             return const VideoPlayerScreen();
+//           case mainFrame:
+//             return const MainFrame();
+//           case digitalGoldScreen:
+//             return const DigitalGoldScreen();
+//           case profileScreen:
+//             return const ProfileScreen();
+//           default:
+//             return SplashScreen();
+//         }
+//       });
+//   }
+// }

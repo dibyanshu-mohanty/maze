@@ -1,5 +1,6 @@
-const String onbardingScreen = "/";
-const String introductionScreen = '/introductionScreen';
+const String splashScreen = "/";
+const String onboardingScreen = "/onboardingScreen";
+const String introductionDetailsScreen = '/introductionScreen';
 const String categorySelect = '/categorySelect';
 const String enterPhonenumber = '/enterPhoneNumber';
 const String otp = '/otp';
@@ -11,3 +12,9 @@ const String readingTask = '/readingTaskScreen';
 const String taskLevel = '/taskLevelScreen';
 const String videoPlayer = '/videoPlayer';
 const String mainFrame = '/mainFrame';
+const String rewardScreen = '/rewardScreen';
+const String referScreen = '/referScreen';
+const String errorScreen = '/errorScreen';
+const String digitalGoldScreen = "/digitalGoldScreen";
+const String profileScreen = "/profileScreen";
+

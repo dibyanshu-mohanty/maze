@@ -1,5 +1,6 @@
 class NewUser{
   final String phone, type, hash;
+  final int otp;
 
-  NewUser({required this.phone, required this.type, required this.hash});
+  NewUser({this.phone = "", this.type = "", this.hash = "", this.otp = 0});
 }

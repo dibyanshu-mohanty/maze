@@ -72,6 +72,7 @@ class AppFont {
   ///Color White Bold
   static final boldColorWhite_15 = bold.copyWith(fontSize: Dimens.textSize15);
   static final boldColorWhite_20 = bold.copyWith(fontSize: Dimens.textSize20);
+  static final boldColorWhite_35 = bold.copyWith(fontSize: Dimens.textSize35);
 
   ///Color White SemiBold
   static final semiBoldColorWhite_15 =
@@ -88,6 +89,8 @@ class AppFont {
       regular.copyWith(color: AppColors.colorBlack);
   static final regularColorBlack_18 =
       regularColorBlack.copyWith(fontSize: Dimens.textSize18);
+  static final regularColorBlack_12 =
+  regularColorBlack.copyWith(fontSize: Dimens.textSize12);
 
   /// Color Black Bold
   static final boldColorBlack = bold.copyWith(color: AppColors.colorBlack);
@@ -95,10 +98,9 @@ class AppFont {
       boldColorBlack.copyWith(fontSize: Dimens.textSize20);
 
   /// Color Black Medium
-  static final mediumBoldColorBlack =
-      mediumBold.copyWith(color: AppColors.colorBlack);
-  static final mediumBoldColorBlack_16 =
-      mediumBoldColorBlack.copyWith(fontSize: Dimens.textSize16);
+  static final mediumBoldColorBlack  = mediumBold.copyWith(color: AppColors.colorBlack);
+  static final mediumBoldColorBlack_16 = mediumBoldColorBlack.copyWith(fontSize: Dimens.textSize16);
+  static final mediumBoldColorBlack_20 = mediumBoldColorBlack.copyWith(fontSize: Dimens.textSize20);
 
   /// Color Golden Medium
 
@@ -106,8 +108,7 @@ class AppFont {
       mediumBold.copyWith(color: AppColors.colorGolden);
   static final mediumBoldColorGolden_27 =
       mediumBoldColorGolden.copyWith(fontSize: Dimens.textSize27);
-  static final mediumBoldColorGolden_14 =
-      mediumBoldColorGolden.copyWith(fontSize: Dimens.textSize14);
+  static final mediumBoldColorGolden_14 = mediumBoldColorGolden.copyWith(fontSize: Dimens.textSize14);
 
   /// Color Golden bold
   static final boldColorGolden = bold.copyWith(color: AppColors.colorGolden);
@@ -115,6 +116,7 @@ class AppFont {
       boldColorGolden.copyWith(fontSize: Dimens.textSize15);
   static final boldColorGolden_20 =
       boldColorGolden.copyWith(fontSize: Dimens.textSize20);
+
 
   /// Color Green Bold
   static final boldColorGreen = bold.copyWith(color: AppColors.colorGreen);
@@ -179,18 +181,23 @@ class AppFont {
 
   ///Color Blue MediumBold
   static final mediumBoldColorBlue =
-      mediumBold.copyWith(color: Color(0xFF449BEA));
+      mediumBold.copyWith(color: AppColors.colorLightBlue2);
   static final mediumBoldColorBlue_18 =
       mediumBoldColorBlue.copyWith(fontSize: Dimens.textSize18);
 
   ///Color Blue Regular
-  static final regularColorBlue = regular.copyWith(color: Color(0xFF449BEA));
+  static final regularColorBlue = regular.copyWith(color: AppColors.colorLightBlue2);
   static final regularColorBlue_12 =
       regularColorBlue.copyWith(fontSize: Dimens.textSize12);
+
+  /// Color Blue 2 Regular
+  static final regularColorLightBlue2 = regular.copyWith(color: AppColors.colorLightBlue2);
+  static final regularColorLightBlue2_12 = regularColorLightBlue2.copyWith(fontSize: Dimens.textSize12);
 
   /// Color Red Medium
   static final mediumBoldColorRed =
       mediumBold.copyWith(color: AppColors.colorRed);
   static final mediumBoldColorRed_18 =
       mediumBoldColorRed.copyWith(fontSize: Dimens.textSize18);
+
 }

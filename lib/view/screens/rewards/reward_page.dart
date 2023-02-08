@@ -147,12 +147,12 @@ class RewardPage extends StatelessWidget {
                     ],
                   ),
                   Container(
-                    margin: EdgeInsets.fromLTRB(47, 16, 20, 0),
+                    margin: const EdgeInsets.fromLTRB(47, 16, 20, 0),
+                    height: 101,
+                    width: 98,
                     child: Image.asset(
                       AppImages.present,
                     ),
-                    height: 101,
-                    width: 98,
                   )
                   //Image Container()
                 ],
@@ -165,7 +165,7 @@ class RewardPage extends StatelessWidget {
                   style: AppFont.mediumBoldColorGrey6_15,
                 )),
             Row(
-              children: [
+              children: const [
                 BonusCard(
                   borderColor: 0xffFFB5F6,
                   backgroundColor: 0xffFFB5F8,

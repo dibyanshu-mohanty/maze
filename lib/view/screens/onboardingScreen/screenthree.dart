@@ -3,6 +3,7 @@ import 'package:maze/constants/constRouteNames.dart';
 import 'package:maze/theme/app_images.dart';
 import 'package:maze/theme/coreimport.dart';
 
+import '../../../routes.dart';
 import '../../utils/appscreenbackground.dart';
 import '../authScreen/categoryselectscreen.dart';
 
@@ -11,34 +12,17 @@ class OnboardScreenThree extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 100.h,
       width: 100.w,
       child: Stack(
         children: [
-          // const AppScreenBackground(),
-          // .............................Changes done by Shubham (For Review)......................................//
+          const AppScreenBackground(),
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              ListTile(
-                trailing: GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, categorySelect);
-                  },
-                  child: Text(
-                    "Next",
-                    style: AppFont.regularColorWhite_20,
-                    textAlign: TextAlign.right,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 5.h,
-              ),
-              //.................................................................................................//
               Container(
-                  height: 40.h,
+                  height: 50.h,
                   alignment: Alignment.center,
                   child: Image.asset(AppImages.ic_onboardthree,
                       fit: BoxFit.cover)),
@@ -62,7 +46,15 @@ class OnboardScreenThree extends StatelessWidget {
                       ),
                     ])),
               ),
-              SizedBox(height: Dimens.margin50)
+              const SizedBox(height: Dimens.margin20),
+              GestureDetector(
+                onTap: () { Navigator.pushNamed(context, categorySelect); },
+                child: Container(
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: Dimens.margin50, vertical: Dimens.margin20),
+                    alignment: Alignment.bottomRight,
+                    child: Text("Done",style: AppFont.mediumBoldColorWhite_18,)),
+              ),
             ],
           )
         ],
