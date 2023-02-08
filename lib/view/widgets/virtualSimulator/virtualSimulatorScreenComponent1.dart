@@ -12,8 +12,8 @@ class VSSComponent1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 5.w),
-      width: 80.w,
-      height: 14.3.h,
+      width: 85.w,
+      height: 15.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: Colors.blue),

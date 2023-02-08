@@ -48,6 +48,8 @@ class AppFont {
   /// Color White Medium Bold
   static final mediumBoldColorWhite_12 =
       mediumBold.copyWith(fontSize: Dimens.textSize12);
+      static final mediumBoldColorWhite_13 =
+      mediumBold.copyWith(fontSize: Dimens.textSize13);
   static final mediumBoldColorWhite_15 =
       mediumBold.copyWith(fontSize: Dimens.textSize15);
   static final mediumBoldColorWhite_18 =

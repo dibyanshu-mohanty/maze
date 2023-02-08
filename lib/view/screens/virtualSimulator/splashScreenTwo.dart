@@ -14,36 +14,30 @@ class SplashScreenTwo extends StatelessWidget {
     return Container(
       height: 100.h,
       width: 100.w,
-      child: Stack(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          SplashScreenBackground(),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                height: 50.h,
-                alignment: Alignment.center,
-                child: Image.asset(AppImages.ic_vsScreenModule2,
-                    fit: BoxFit.cover),
-              ),
-              Container(
-                margin: const EdgeInsets.symmetric(horizontal: Dimens.margin16),
-                child: RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(children: [
-                      TextSpan(
-                        text: "Increase Learning capacity\n",
-                        style: AppFont.regularColorWhite_20,
-                      ),
-                      TextSpan(
-                        text: "by playing games",
-                        style: AppFont.regularColorGolden_20,
-                      )
-                    ])),
-              ),
-              //SizedBox(height: Dimens.margin50)
-            ],
+          Container(
+            height: 50.h,
+            alignment: Alignment.center,
+            child: Image.asset(AppImages.ic_vsScreenModule2, fit: BoxFit.cover),
           ),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: Dimens.margin16),
+            child: RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(children: [
+                  TextSpan(
+                    text: "Increase Learning capacity\n",
+                    style: AppFont.regularColorWhite_20,
+                  ),
+                  TextSpan(
+                    text: "by playing games",
+                    style: AppFont.regularColorGolden_20,
+                  )
+                ])),
+          ),
+          //SizedBox(height: Dimens.margin50)
         ],
       ),
     );

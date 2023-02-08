@@ -4,6 +4,7 @@ import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
 import 'package:maze/view/screens/virtualSimulator/splashScreenOne.dart';
 import 'package:maze/view/screens/virtualSimulator/splashScreenThree.dart';
 import 'package:maze/view/screens/virtualSimulator/splashScreenTwo.dart';
+import 'package:maze/view/screens/virtualSimulator/vsAppScreenBackground.dart';
 
 // import '../../utils/appscreenbackground.dart';
 import 'splashScreenBackground.dart';
@@ -33,23 +34,21 @@ class ScrollSplashScreens extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: OnBoardingSlider(
-        totalPage: 3,
-        pageBodies: onBoardScreens,
-        speed: 1.8,
-        // ignore: prefer_const_literals_to_create_immutables
-        background: [
-          const SplashScreenBackground(),
-          const SplashScreenBackground(),
-          const SplashScreenBackground(),
-        ],
-        headerBackgroundColor: AppColors.colorTransparent,
-        hasFloatingButton: false,
-        hasSkip: true,
-        skipTextButton: Text('Skip'),
-        // trailing: Text('Next'),
-      ),
+    return OnBoardingSlider(
+      totalPage: 3,
+      pageBodies: onBoardScreens,
+      speed: 1.8,
+      // ignore: prefer_const_literals_to_create_immutables
+      background: [
+        VsAppScreenBackground(),
+        VsAppScreenBackground(),
+        VsAppScreenBackground(),
+      ],
+      headerBackgroundColor: AppColors.colorTransparent,
+      hasFloatingButton: false,
+      hasSkip: true,
+      skipTextButton: Text('Skip'),
+      // trailing: Text('Next'),
     );
   }
 }

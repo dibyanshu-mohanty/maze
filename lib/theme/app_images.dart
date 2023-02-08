@@ -33,6 +33,7 @@ class AppImages {
       "${imageBaseURL}virtualSimulator/ic_vsScreenModule2.png";
   static const ic_vsScreenModule3 =
       "${imageBaseURL}virtualSimulator/ic_vsScreenModule3.png";
+  static const ic_Justdial = "${imageBaseURL}virtualSimulator/ic_Justdial.png";
   static const Coins2 = "${imageBaseURL}virtualSimulator/coins2.png";
   static const rectangle1 = "${imageBaseURL}virtualSimulator/Rectangle 75.png";
   static const rectangle2 = "${imageBaseURL}virtualSimulator/Rectangle 76.png";
