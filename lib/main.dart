@@ -40,7 +40,7 @@ class YaroApp extends StatelessWidget {
           ),
           // onGenerateRoute: MyRoutes.genrateRoute,
           // initialRoute: onbardingScreen,
-          home: RewardDetail(),
+          home: RewardPage(),
           // home: const MainFrame(),
         ),
       ),
