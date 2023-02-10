@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../theme/app_colors.dart';
 import '../../../theme/app_images.dart';
 
 class VsStartupComponent extends StatelessWidget {
@@ -11,11 +12,15 @@ class VsStartupComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.blue),
+        gradient: LinearGradient(colors: [
+          AppColors.colorLightBlue3.withOpacity(0.2),
+          AppColors.colorWhite.withOpacity(0.0)
+        ], begin: Alignment.centerLeft, end: Alignment.centerRight),
+        border: Border.all(color: AppColors.colorPink.withOpacity(0.3)),
         borderRadius: BorderRadius.circular(10),
       ),
-      width: 31.w,
-      height: 15.5.h,
+      width: 28.w,
+      height: 14.h,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -23,12 +28,12 @@ class VsStartupComponent extends StatelessWidget {
           Row(
             children: [
               Container(
-                width: 5.w,
-                height: 2.5.h,
+                width: 7.w,
+                height: 3.h,
                 // ignore: prefer_const_constructors
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
-                    5.0,
+                    10.0,
                   ),
                 ),
                 margin: EdgeInsets.symmetric(horizontal: 2.w, vertical: 1.h),
@@ -52,7 +57,7 @@ class VsStartupComponent extends StatelessWidget {
                 // height: 1.h,
                 // margin: EdgeInsets.symmetric(horizontal: 1.w),
                 child: Text(
-                  "+78.6%",
+                  "78.6%",
                   style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w400,
                       fontSize: 12,

@@ -15,6 +15,9 @@ import 'view/screens/learningScreen/videoscreen.dart';
 import 'view/screens/mainframe.dart';
 import 'view/screens/onboardingScreen/introductiondetailscreen.dart';
 import 'view/screens/onboardingScreen/onboardingscreen.dart';
+import 'view/screens/virtualSimulator/virtualSimulatorScreen.dart';
+import 'view/screens/virtualSimulator/vsMarketScreen.dart';
+import 'view/screens/virtualSimulator/vshistoryScreen.dart';
 import 'view/widgets/authScreen/otpfields.dart';
 
 class MyRoutes {
@@ -46,6 +49,13 @@ class MyRoutes {
         return MaterialPageRoute(builder: (context) => VideoPlayerScreen());
       case mainFrame:
         return MaterialPageRoute(builder: (context) => MainFrame());
+      case historyScreen:
+        return MaterialPageRoute(builder: (context) => HistoryScreen());
+      case virtualSimulatorScreen:
+        return MaterialPageRoute(
+            builder: (context) => VirtualSimulatorScreen());
+      case vsMarketScreen:
+        return MaterialPageRoute(builder: (context) => VsMarketScreen());
       default:
     }
 

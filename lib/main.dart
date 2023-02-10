@@ -9,10 +9,11 @@ import 'package:maze/theme/coreimport.dart';
 import 'package:provider/provider.dart';
 
 import 'controller/providers/auth/authprovider.dart';
-import 'view/screens/virtualSimulator/scrollSplashScreens.dart';
-import 'view/screens/virtualSimulator/splashScreenOne.dart';
-import 'view/screens/virtualSimulator/splashScreenThree.dart';
-import 'view/screens/virtualSimulator/splashScreenTwo.dart';
+import 'view/screens/virtualSimulator/vshistoryScreen.dart';
+import 'view/screens/virtualSimulator/vsScrollSplashScreens.dart';
+import 'view/screens/virtualSimulator/vsSplashScreenOne.dart';
+import 'view/screens/virtualSimulator/vsSplashScreenThree.dart';
+import 'view/screens/virtualSimulator/vsSplashScreenTwo.dart';
 import 'view/screens/virtualSimulator/virtualSimulatorScreen.dart';
 
 void main() async {
@@ -46,7 +47,7 @@ class YaroApp extends StatelessWidget {
           ),
           onGenerateRoute: MyRoutes.genrateRoute,
           // initialRoute: onbardingScreen,
-          home: VirtualSimulatorScreen(),
+          home: VsSplashScreens(),
 
           // home: const MainFrame(),
         ),

@@ -5,6 +5,36 @@ import 'package:maze/theme/app_dimens.dart';
 import 'app_colors.dart';
 
 class AppFont {
+  //Google Poppins
+  static var lightGoogleWhite = GoogleFonts.poppins(
+    fontWeight: FontWeight.w300,
+    fontSize: 9,
+    color: AppColors.colorWhite,
+  );
+  static var regularGoogleGreen = GoogleFonts.poppins(
+    fontWeight: FontWeight.w400,
+    fontSize: 12,
+    color: Color(0xff20c598),
+  );
+  static var regularGoogleWhite = GoogleFonts.poppins(
+    fontWeight: FontWeight.w400,
+    fontSize: 12,
+    color: AppColors.colorWhite,
+  );
+  static var mediumGoogleWhite = GoogleFonts.poppins(
+    fontWeight: FontWeight.w500,
+    fontSize: 12,
+    color: AppColors.colorWhite,
+  );
+  static final regularGoogleWhite_9 =
+      regularGoogleWhite.copyWith(fontSize: Dimens.textSize9);
+  static final regularGoogleWhite_10 =
+      regularGoogleWhite.copyWith(fontSize: Dimens.textSize10);
+
+  //Google Roboto
+  static final mediumBoldGoogleRoboto = GoogleFonts.roboto(
+      fontSize: 13, fontWeight: FontWeight.w500, color: AppColors.colorWhite);
+  //Satoshi
   static const light = TextStyle(
       fontFamily: 'Satoshi',
       fontWeight: FontWeight.w300,
@@ -48,7 +78,7 @@ class AppFont {
   /// Color White Medium Bold
   static final mediumBoldColorWhite_12 =
       mediumBold.copyWith(fontSize: Dimens.textSize12);
-      static final mediumBoldColorWhite_13 =
+  static final mediumBoldColorWhite_13 =
       mediumBold.copyWith(fontSize: Dimens.textSize13);
   static final mediumBoldColorWhite_15 =
       mediumBold.copyWith(fontSize: Dimens.textSize15);
@@ -62,6 +92,10 @@ class AppFont {
       mediumBold.copyWith(fontSize: Dimens.textSize27);
   static final mediumBoldColorWhite_14 =
       mediumBold.copyWith(fontSize: Dimens.textSize14);
+  static final mediumBoldColorGreen_15 = mediumBold.copyWith(
+    fontSize: Dimens.textSize15,
+    color: Color(0xff62EB56),
+  );
 
   /// Color Golden Regular
   static final regularColorGolden =

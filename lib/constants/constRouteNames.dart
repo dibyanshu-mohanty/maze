@@ -11,3 +11,6 @@ const String readingTask = '/readingTaskScreen';
 const String taskLevel = '/taskLevelScreen';
 const String videoPlayer = '/videoPlayer';
 const String mainFrame = '/mainFrame';
+const String historyScreen = '/historyScreen';
+const String virtualSimulatorScreen = '/virtualSimulatorScreen';
+const String vsMarketScreen = '/vsMarketScreen';

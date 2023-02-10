@@ -22,11 +22,15 @@ class VsAppScreenBackground extends StatelessWidget {
               Align(
                 alignment: Alignment.topLeft,
                 child: Container(
-                  width: 20.w,
-                  height: 20.h,
+                  width: 40.w,
+                  height: 30.h,
                   decoration: BoxDecoration(
                     gradient: RadialGradient(
-                      colors: [AppColors.colorPurple, AppColors.colorDarkBlue],
+                      radius: 1,
+                      colors: [
+                        AppColors.colorPurple.withOpacity(0.8),
+                        AppColors.colorDarkBlue.withOpacity(0.1)
+                      ],
                     ),
                   ),
                 ),
@@ -49,11 +53,15 @@ class VsAppScreenBackground extends StatelessWidget {
               Align(
                 alignment: Alignment.bottomRight,
                 child: Container(
-                  width: 20.w,
-                  height: 20.h,
+                  width: 40.w,
+                  height: 30.h,
                   decoration: BoxDecoration(
                     gradient: RadialGradient(
-                      colors: [AppColors.colorPurple, AppColors.colorDarkBlue],
+                      radius: 1,
+                      colors: [
+                        AppColors.colorPurple.withOpacity(0.6),
+                        AppColors.colorDarkBlue.withOpacity(0.1)
+                      ],
                     ),
                   ),
                 ),

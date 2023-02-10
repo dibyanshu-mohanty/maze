@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:maze/theme/app_font.dart';
 
-import 'package:maze/view/screens/virtualSimulator/vsScreen.dart';
+import 'package:maze/view/screens/virtualSimulator/vsMarketScreen.dart';
 import 'package:sizer/sizer.dart';
+
+import '../../../theme/app_colors.dart';
+import 'vsPortfolioScreen.dart';
+import 'vshistoryScreen.dart';
 
 // import '../../../theme/app_font.dart';
 
@@ -14,13 +18,15 @@ class VirtualSimulatorScreen extends StatelessWidget {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
+        extendBody: true,
+        extendBodyBehindAppBar: true,
         appBar: AppBar(
           toolbarHeight: 10.h,
           leading: Container(
             margin: EdgeInsets.only(top: 5.h, left: 5.w),
             child: const Icon(
               Icons.arrow_back,
-              color: Colors.white,
+              color: AppColors.colorWhite,
               size: 24,
             ),
           ),
@@ -32,10 +38,10 @@ class VirtualSimulatorScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
-          backgroundColor: Colors.black,
+          backgroundColor: AppColors.colorBlack,
           centerTitle: true,
           bottom: TabBar(
-            indicatorColor: Colors.white,
+            indicatorColor: AppColors.colorWhite,
             tabs: [
               Tab(
                 child: Text(
@@ -58,17 +64,11 @@ class VirtualSimulatorScreen extends StatelessWidget {
             ],
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: [
-            VSScreen(),
-            Icon(
-              Icons.directions_transit,
-              color: Colors.white,
-            ),
-            Icon(
-              Icons.directions_bike,
-              color: Colors.white,
-            ),
+            PortfolioScreen(),
+            VsMarketScreen(),
+            HistoryScreen(),
           ],
         ),
       ),

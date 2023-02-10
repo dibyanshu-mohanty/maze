@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:maze/theme/app_colors.dart';
+import 'package:maze/theme/app_font.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../theme/app_images.dart';
@@ -15,13 +17,12 @@ class VSComponent3 extends StatelessWidget {
       width: 45.w,
       height: 7.h,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(10),
-          bottomLeft: Radius.circular(10),
-          topRight: Radius.circular(10),
-          bottomRight: Radius.circular(10),
-        ),
-        border: Border.all(color: Colors.blue),
+        gradient: LinearGradient(colors: [
+          AppColors.colorLightBlue3.withOpacity(0.2),
+          AppColors.colorWhite.withOpacity(0.0)
+        ], begin: Alignment.centerLeft, end: Alignment.centerRight),
+        borderRadius: BorderRadius.circular(10.0),
+        border: Border.all(color: AppColors.colorPink.withOpacity(0.5)),
       ),
       child: Row(
         children: [
@@ -41,10 +42,7 @@ class VSComponent3 extends StatelessWidget {
           ),
           Text(
             "Automobile",
-            style: GoogleFonts.poppins(
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-                color: Color(0xffffffff)),
+            style: AppFont.mediumGoogleWhite,
             textAlign: TextAlign.center,
           )
         ],

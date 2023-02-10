@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:maze/theme/app_colors.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../theme/app_font.dart';
@@ -19,7 +20,11 @@ class ScrollVSComponent2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.blue),
+        gradient: LinearGradient(colors: [
+          AppColors.colorLightBlue3.withOpacity(0.1),
+          AppColors.colorWhite.withOpacity(0.0)
+        ], begin: Alignment.centerLeft, end: Alignment.centerRight),
+        border: Border.all(color: AppColors.colorPink.withOpacity(0.6)),
         borderRadius: BorderRadius.circular(10),
       ),
       width: 23.w,
@@ -48,10 +53,7 @@ class ScrollVSComponent2 extends StatelessWidget {
             margin: EdgeInsets.symmetric(horizontal: 0.3.w),
             child: Text(
               companyName,
-              style: GoogleFonts.poppins(
-                  fontSize: 10,
-                  fontWeight: FontWeight.w400,
-                  color: Color(0xffffffff)),
+              style: AppFont.regularGoogleWhite_10,
               textAlign: TextAlign.center,
               maxLines: 1,
             ),
@@ -69,15 +71,10 @@ class ScrollVSComponent2 extends StatelessWidget {
                 ),
               ),
               Container(
-                // width: 3.w,
-                // height: 1.h,
                 margin: EdgeInsets.symmetric(horizontal: 1.w, vertical: 0.5.h),
                 child: Text(
                   amount,
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 10,
-                      color: Color(0xffffffff)),
+                  style: AppFont.mediumGoogleWhite,
                   textAlign: TextAlign.center,
                 ),
               ),
