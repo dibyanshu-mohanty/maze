@@ -7,45 +7,51 @@ class BonusCard extends StatelessWidget {
   final buttonColor;
   final borderColor;
   final backgroundColor;
+  final buttonBorderColor;
   const BonusCard(
       {super.key,
       this.image = AppImages.gift_one,
       this.buttonColor = 0xFFFFB5F6,
       this.backgroundColor = 0x91FFB5F8,
-      this.borderColor = 0xffFFB5F6});
-
+      this.borderColor = 0xffFFB5F6,
+      this.buttonBorderColor = 0xffffb5f6});
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(17, 13, 0, 0),
-      width: 101,
-      height: 149,
+      width: 28.w,
+      height: 18.625.h,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: Color(borderColor)),
+          border: Border.all(color: Color(borderColor), width: 2),
           color: Color(backgroundColor)),
       child: Column(
         children: [
           Container(
-              //margin: EdgeInsets.fromLTRB(17, 10, 0, 0),
-              height: 66,
-              width: 66,
-              child: Image(image: AssetImage(image))),
+            margin: EdgeInsets.symmetric(vertical: .5.h),
+            height: 8.h,
+            width: 19.w,
+            child: Image(
+              image: AssetImage(image),
+            ),
+          ),
           Text("Bonus", style: AppFont.mediumBoldColorWhite_11),
           Text("Achieved", style: AppFont.mediumBoldColorWhite_11),
           Spacer(),
           Container(
-            margin: EdgeInsets.only(top: 9),
-            height: 35,
-            width: 101,
+            decoration: BoxDecoration(
+              border: Border.all(color: Color(buttonBorderColor)),
+            ),
+            height: 4.h,
+            width: 28.w,
             child: TextButton(
               style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(Color(buttonColor)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
+                backgroundColor: MaterialStateProperty.all(Color(buttonColor)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
-                  ))),
+                  ),
+                ),
+              ),
               onPressed: () => {},
               child: Text(
                 "Claim Reward",

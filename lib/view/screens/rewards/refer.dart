@@ -17,8 +17,8 @@ class ReferPage extends StatelessWidget {
         child: Stack(
           children: [
             const AppScreenBackground(),
-            Container(
-              margin: const EdgeInsets.only(left: 16, top: 48),
+                        Container(
+              margin: EdgeInsets.only(left: 16, top: 48),
               child: Row(
                 children: [
                   const Icon(

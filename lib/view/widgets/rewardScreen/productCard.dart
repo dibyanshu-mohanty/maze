@@ -5,20 +5,18 @@ class ProductCard extends StatelessWidget {
   final titleText;
   final subtitleText;
   final description;
-
   const ProductCard(
       {super.key,
       this.image,
       this.titleText,
       this.subtitleText,
       this.description});
-
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          // margin: EdgeInsets.fromLTRB(16, 41, 16, 0),
+          margin: EdgeInsets.symmetric(horizontal: 4.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             border: Border.all(color: Color(0xff292c33)),
@@ -26,7 +24,8 @@ class ProductCard extends StatelessWidget {
           ),
           child: ListTile(
             //tileColor: Color(0xff292C33),
-            leading: Image.asset(image),
+            leading: Transform.translate(
+                offset: Offset(-8, 0), child: Image.asset(image)),
             title: Text(
               titleText,
               style: AppFont.mediumBoldColorWhite_12,
@@ -47,23 +46,47 @@ class ProductCard extends StatelessWidget {
                 ),
               ],
             ),
+            trailing: Column(
+              children: [
+                Container(
+                  width: 10.w,
+                  padding: EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    color: Color(0xffFF7171),
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20),
+                      bottomLeft: Radius.circular(10),
+                    ),
+                  ),
+                  child: Text(
+                    "New",
+                    style: AppFont.mediumBoldColorWhite_10,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
-        Positioned(
-            top: 0,
-            left: 325,
-            child: Container(
-              padding: EdgeInsets.all(4),
-              decoration: BoxDecoration(
-                  color: Color(0xffFF7171),
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      bottomRight: Radius.circular(10))),
-              child: Text(
-                "New",
-                style: AppFont.mediumBoldColorWhite_10,
-              ),
-            )),
+        // Positioned(
+        //     top: 0,
+        //     left: 82.w,
+        //     child: Container(
+        //       width: 10.w,
+        //       padding: EdgeInsets.all(4),
+        //       decoration: BoxDecoration(
+        //         color: Color(0xffFF7171),
+        //         borderRadius: BorderRadius.only(
+        //           topRight: Radius.circular(20),
+        //           bottomLeft: Radius.circular(10),
+        //         ),
+        //       ),
+        //       child: Text(
+        //         "New",
+        //         style: AppFont.mediumBoldColorWhite_10,
+        //         textAlign: TextAlign.center,
+        //       ),
+        //     )),
       ],
     );
   }
