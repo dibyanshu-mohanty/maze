@@ -14,13 +14,31 @@ class Component7 extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 3.w),
       child: ListTile(
-        leading: Text(
-          firstVal,
-          style: AppFont.regularGoogleWhite_10,
+        leading: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Today's Low",
+              style: AppFont.regularGoogleWhite_10,
+            ),
+            Text(
+              firstVal,
+              style: AppFont.lightGoogleWhite_10,
+            ),
+          ],
         ),
-        trailing: Text(
-          secondVal,
-          style: AppFont.regularGoogleWhite_10,
+        trailing: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Text(
+              "Today's High",
+              style: AppFont.regularGoogleWhite_10,
+            ),
+            Text(
+              secondVal,
+              style: AppFont.lightGoogleWhite_10,
+            ),
+          ],
         ),
       ),
     );

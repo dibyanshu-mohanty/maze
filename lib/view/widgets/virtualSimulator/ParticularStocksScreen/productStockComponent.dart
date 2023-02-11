@@ -12,12 +12,12 @@ class ProductStockComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: Container(
-        margin: EdgeInsets.only(left: 13),
+        margin: EdgeInsets.symmetric(horizontal: 2.w),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(53),
             border: Border.all(color: AppColors.colorGreen, width: 4)),
-        width: 15.w,
-        height: 7.h,
+        width: 13.w,
+        height: 10.h,
         child: Image.asset(
           AppImages.ic_MazeLogo,
           fit: BoxFit.fill,
@@ -30,7 +30,7 @@ class ProductStockComponent extends StatelessWidget {
       subtitle: Row(
         children: [
           Container(
-            width: 5.w,
+            width: 2.5.w,
             height: 1.h,
             margin: EdgeInsets.symmetric(horizontal: 1.w),
             child: Image.asset(
@@ -65,16 +65,18 @@ class ProductStockComponent extends StatelessWidget {
         width: 16.w,
         child: Row(
           children: [
-            const Icon(
+            Icon(
               Icons.favorite_border_outlined,
               color: AppColors.colorGolden,
+              size: 5.w,
             ),
             SizedBox(
               width: 2.w,
             ),
-            const Icon(
+            Icon(
               Icons.share,
               color: AppColors.colorGolden,
+              size: 5.w,
             ),
           ],
         ),

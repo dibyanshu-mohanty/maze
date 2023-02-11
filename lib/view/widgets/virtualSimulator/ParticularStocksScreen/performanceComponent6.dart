@@ -9,12 +9,13 @@ class Component6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 3.w, vertical: 0.5.h),
-      child: Text(
-        "Performance",
-        textAlign: TextAlign.center,
-        style: AppFont.regularColorWhite_15,
-      ),
-    );
+        margin: EdgeInsets.only(left: 3.w, top: 1.h),
+        child: ListTile(
+          leading: Text(
+            "Performance",
+            textAlign: TextAlign.center,
+            style: AppFont.mediumGoogleWhite_15,
+          ),
+        ));
   }
 }

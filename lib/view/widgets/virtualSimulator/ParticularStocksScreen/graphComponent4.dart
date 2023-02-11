@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:maze/theme/app_font.dart';
 import 'package:maze/view/widgets/virtualSimulator/ParticularStocksScreen/linechart.dart';
+import 'package:sizer/sizer.dart';
 
 // import 'lineChart.dart';
 
@@ -9,93 +11,54 @@ class GraphComponent4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          width: 300,
-          height: 200,
-          child: LineChartWidget(),
-        ),
-        SizedBox(
-          width: 30,
-        ),
-        Column(
-          children: [
-            SizedBox(
-              height: 18,
-            ),
-            Text(
-              "1200",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
-                fontWeight: FontWeight.w300,
-                fontSize: 12,
-                color: Color(0xffffffff),
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 3.w),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+            width: 60.w,
+            height: 20.h,
+            child: LineChartWidget(),
+          ),
+          Spacer(),
+          Column(
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(
+                "1200",
+                textAlign: TextAlign.center,
+                style: AppFont.lightGoogleWhite_12,
               ),
-            ),
-            SizedBox(
-              height: 17,
-            ),
-            Text(
-              "1000",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
-                fontWeight: FontWeight.w300,
-                fontSize: 12,
-                color: Color(0xffffffff),
+              Text(
+                "1000",
+                textAlign: TextAlign.center,
+                style: AppFont.lightGoogleWhite_12,
               ),
-            ),
-            SizedBox(
-              height: 17,
-            ),
-            Text(
-              "800",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
-                fontWeight: FontWeight.w300,
-                fontSize: 12,
-                color: Color(0xffffffff),
+              Text(
+                "800",
+                textAlign: TextAlign.center,
+                style: AppFont.lightGoogleWhite_12,
               ),
-            ),
-            SizedBox(
-              height: 17,
-            ),
-            Text(
-              "400",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
-                fontWeight: FontWeight.w300,
-                fontSize: 12,
-                color: Color(0xffffffff),
+              Text(
+                "400",
+                textAlign: TextAlign.center,
+                style: AppFont.lightGoogleWhite_12,
               ),
-            ),
-            SizedBox(
-              height: 17,
-            ),
-            Text(
-              "200",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
-                fontWeight: FontWeight.w300,
-                fontSize: 12,
-                color: Color(0xffffffff),
+              Text(
+                "200",
+                textAlign: TextAlign.center,
+                style: AppFont.lightGoogleWhite_12,
               ),
-            ),
-            SizedBox(
-              height: 17,
-            ),
-            Text(
-              "100",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
-                fontWeight: FontWeight.w300,
-                fontSize: 12,
-                color: Color(0xffffffff),
+              Text(
+                "100",
+                textAlign: TextAlign.center,
+                style: AppFont.lightGoogleWhite_12,
               ),
-            ),
-          ],
-        ),
-      ],
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

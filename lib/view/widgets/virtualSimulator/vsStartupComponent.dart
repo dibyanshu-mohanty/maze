@@ -20,7 +20,7 @@ class VsStartupComponent extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       width: 28.w,
-      height: 14.h,
+      height: 16.h,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

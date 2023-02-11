@@ -15,7 +15,7 @@ class VSSComponent1 extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.h),
       width: 82.w,
-      height: 16.5.h,
+      height: 16.8.h,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [

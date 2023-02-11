@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:maze/theme/app_colors.dart';
+import 'package:maze/theme/app_font.dart';
 import 'package:sizer/sizer.dart';
 
 class GraphUpperRowComponent3 extends StatelessWidget {
@@ -7,82 +9,57 @@ class GraphUpperRowComponent3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SizedBox(
-          width: 2.w,
-        ),
-        Text(
-          "NSE",
-          style: GoogleFonts.poppins(
-              fontWeight: FontWeight.w300,
-              fontSize: 12,
-              color: Color(0xffFFC371)),
-        ),
-        SizedBox(
-          width: 21,
-        ),
-        Container(
-          width: 58,
-          height: 25,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
-            color: Color(0xffFFC371),
+    return Container(
+      // margin: EdgeInsets.symmetric(horizontal: 3.w),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Text(
+            "NSE",
+            style: AppFont.mediumGoogleWhite,
           ),
-          // ignore: sort_child_properties_last
-          child: Center(
+          Container(
+            width: 10.w,
+            height: 2.7.h,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [
+                  AppColors.colorLightBlue3.withOpacity(0.2),
+                  AppColors.colorWhite.withOpacity(0.1)
+                ],
+              ),
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(
+                color: AppColors.colorPink.withOpacity(0.3),
+              ),
+            ),
+            // ignore: sort_child_properties_last
             child: Text(
               "1D",
               textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
-                fontWeight: FontWeight.w300,
-                fontSize: 12,
-                color: Color(0xff000000),
-              ),
+              style: AppFont.mediumGoogleWhite,
             ),
           ),
-        ),
-        SizedBox(
-          width: 22,
-        ),
-        Text(
-          "1W",
-          style: GoogleFonts.poppins(
-              fontWeight: FontWeight.w300,
-              fontSize: 12,
-              color: Color(0xffffffff)),
-        ),
-        SizedBox(
-          width: 45,
-        ),
-        Text(
-          "1M",
-          style: GoogleFonts.poppins(
-              fontWeight: FontWeight.w300,
-              fontSize: 12,
-              color: Color(0xffffffff)),
-        ),
-        SizedBox(
-          width: 45,
-        ),
-        Text(
-          "1Y",
-          style: GoogleFonts.poppins(
-              fontWeight: FontWeight.w300,
-              fontSize: 12,
-              color: Color(0xffffffff)),
-        ),
-        SizedBox(
-          width: 45,
-        ),
-        Text(
-          "3Y",
-          style: GoogleFonts.poppins(
-              fontWeight: FontWeight.w300,
-              fontSize: 12,
-              color: Color(0xffffffff)),
-        ),
-      ],
+          Text(
+            "1W",
+            style: AppFont.mediumGoogleWhite,
+          ),
+          Text(
+            "1M",
+            style: AppFont.mediumGoogleWhite,
+          ),
+          Text(
+            "1Y",
+            style: AppFont.mediumGoogleWhite,
+          ),
+          Text(
+            "3Y",
+            style: AppFont.mediumGoogleWhite,
+          ),
+        ],
+      ),
     );
   }
 }

@@ -9,15 +9,21 @@ class Component10 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 3.w),
-      child: Row(
-        children: [
-          Spacer(),
-          Text(
-            "10 week High",
-            style: AppFont.lightColorWhite_12,
-          ),
-        ],
+      margin: EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.h),
+      child: ListTile(
+        trailing: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Text(
+              "10 week High",
+              style: AppFont.regularGoogleWhite_10,
+            ),
+            Text(
+              "1560.87",
+              style: AppFont.lightGoogleWhite_10,
+            ),
+          ],
+        ),
       ),
     );
   }

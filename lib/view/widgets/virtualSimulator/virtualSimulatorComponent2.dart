@@ -28,7 +28,7 @@ class ScrollVSComponent2 extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       width: 23.w,
-      height: 12.5.h,
+      height: 13.h,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

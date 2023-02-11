@@ -9,6 +9,7 @@ import 'package:maze/theme/coreimport.dart';
 import 'package:provider/provider.dart';
 
 import 'controller/providers/auth/authprovider.dart';
+import 'view/screens/virtualSimulator/vsParticularStock.dart';
 import 'view/screens/virtualSimulator/vshistoryScreen.dart';
 import 'view/screens/virtualSimulator/vsScrollSplashScreens.dart';
 import 'view/screens/virtualSimulator/vsSplashScreenOne.dart';
@@ -47,7 +48,7 @@ class YaroApp extends StatelessWidget {
           ),
           onGenerateRoute: MyRoutes.genrateRoute,
           // initialRoute: onbardingScreen,
-          home: VsSplashScreens(),
+          home: VsParticularStock(),
 
           // home: const MainFrame(),
         ),

@@ -10,21 +10,23 @@ class StockDetailComponent13 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 85.w,
-      margin: EdgeInsets.symmetric(horizontal: 3.w),
+      margin: EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.h),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           //column 1
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 "Open",
                 textAlign: TextAlign.center,
-                style: AppFont.regularColorWhite_14,
+                style: AppFont.regularGoogleWhite_14,
               ),
               Text(
                 "480.00",
                 textAlign: TextAlign.center,
-                style: AppFont.lightColorWhite_12,
+                style: AppFont.lightGoogleWhite_14,
               ),
             ],
           ),
@@ -33,16 +35,17 @@ class StockDetailComponent13 extends StatelessWidget {
           ),
           //column 2
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 "prev.close",
                 textAlign: TextAlign.center,
-                style: AppFont.regularColorWhite_14,
+                style: AppFont.regularGoogleWhite_14,
               ),
               Text(
                 "1660.00",
                 textAlign: TextAlign.center,
-                style: AppFont.lightColorWhite_12,
+                style: AppFont.lightGoogleWhite_14,
               ),
             ],
           ),
@@ -51,16 +54,17 @@ class StockDetailComponent13 extends StatelessWidget {
           ),
           //column 3
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 "volume",
                 textAlign: TextAlign.center,
-                style: AppFont.regularColorWhite_14,
+                style: AppFont.regularGoogleWhite_14,
               ),
               Text(
                 "18,56,700",
                 textAlign: TextAlign.center,
-                style: AppFont.lightColorWhite_12,
+                style: AppFont.lightGoogleWhite_14,
               ),
             ],
           )

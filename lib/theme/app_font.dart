@@ -26,10 +26,6 @@ class AppFont {
     fontSize: 12,
     color: AppColors.colorWhite,
   );
-  static final regularGoogleWhite_9 =
-      regularGoogleWhite.copyWith(fontSize: Dimens.textSize9);
-  static final regularGoogleWhite_10 =
-      regularGoogleWhite.copyWith(fontSize: Dimens.textSize10);
 
   //Google Roboto
   static final mediumBoldGoogleRoboto = GoogleFonts.roboto(
@@ -55,6 +51,28 @@ class AppFont {
       fontFamily: 'Satoshi',
       fontWeight: FontWeight.w500,
       color: AppColors.colorWhite);
+
+  // light google white
+  static final lightGoogleWhite_12 =
+      lightGoogleWhite.copyWith(fontSize: Dimens.textSize12);
+  static final lightGoogleWhite_10 =
+      lightGoogleWhite.copyWith(fontSize: Dimens.textSize10);
+  static final lightGoogleWhite_14 =
+      lightGoogleWhite.copyWith(fontSize: Dimens.textSize14);
+
+  //medium google
+  static final mediumGoogleWhite_15 =
+      mediumGoogleWhite.copyWith(fontSize: Dimens.textSize15);
+  static final mediumGoogleWhite_16 =
+      mediumGoogleWhite.copyWith(fontSize: Dimens.textSize16);
+
+  //regular google white
+  static final regularGoogleWhite_9 =
+      regularGoogleWhite.copyWith(fontSize: Dimens.textSize9);
+  static final regularGoogleWhite_10 =
+      regularGoogleWhite.copyWith(fontSize: Dimens.textSize10);
+  static final regularGoogleWhite_14 =
+      regularGoogleWhite.copyWith(fontSize: Dimens.textSize14);
 
   /// Color White Light
   static final lightColorWhite_12 = light.copyWith(fontSize: Dimens.textSize12);
