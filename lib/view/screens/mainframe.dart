@@ -5,7 +5,11 @@ import 'package:iconify_flutter/icons/gg.dart';
 import 'package:iconify_flutter/icons/bx.dart';
 import 'package:iconify_flutter/icons/icon_park_outline.dart';
 import 'package:maze/theme/coreimport.dart';
+import 'package:maze/view/screens/goldScreen/digitalgoldscreen.dart';
 import 'package:maze/view/screens/learningScreen/learninglevelscreen.dart';
+import 'package:maze/view/screens/profile/profilescreen.dart';
+import 'package:maze/view/screens/rewards/refer.dart';
+import 'package:maze/view/screens/rewards/reward_page.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:iconify_flutter/icons/fluent_emoji_high_contrast.dart';
 import 'homeScreen/homescreen.dart';
@@ -18,8 +22,8 @@ class MainFrame extends StatelessWidget {
       HomeScreen(),
       LearningLevelScreen(),
       HomeScreen(),
-      HomeScreen(),
-      LearningLevelScreen(),
+      ProfileScreen(),
+      DigitalGoldScreen(),
     ];
   }
 

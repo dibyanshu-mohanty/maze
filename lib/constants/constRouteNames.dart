@@ -1,0 +1,20 @@
+const String splashScreen = "/";
+const String onboardingScreen = "/onboardingScreen";
+const String introductionDetailsScreen = '/introductionScreen';
+const String categorySelect = '/categorySelect';
+const String enterPhonenumber = '/enterPhoneNumber';
+const String otp = '/otp';
+const String createProfile = '/createProfile';
+const String homePage = '/homePage';
+const String learningLevelScreen = '/learningLevelScreen';
+const String learningContentScreen = '/learningContentScreen';
+const String readingTask = '/readingTaskScreen';
+const String taskLevel = '/taskLevelScreen';
+const String videoPlayer = '/videoPlayer';
+const String mainFrame = '/mainFrame';
+const String rewardScreen = '/rewardScreen';
+const String referScreen = '/referScreen';
+const String errorScreen = '/errorScreen';
+const String digitalGoldScreen = "/digitalGoldScreen";
+const String profileScreen = "/profileScreen";
+

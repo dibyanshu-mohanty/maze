@@ -4,6 +4,7 @@ import 'package:objectdb/objectdb.dart';
 import 'package:path_provider/path_provider.dart' as path;
 import 'package:hive/hive.dart';
 import 'package:objectdb/src/objectdb_storage_filesystem.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 class HiveDB {
   static ObjectDB? db;
 

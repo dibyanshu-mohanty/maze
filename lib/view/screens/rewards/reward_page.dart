@@ -153,6 +153,7 @@ class RewardPage extends StatelessWidget {
                   ),
                   Spacer(),
                   Container(
+
                     margin:
                         EdgeInsets.symmetric(horizontal: 5.4.w, vertical: 1.h),
                     child: Image.asset(
@@ -160,6 +161,12 @@ class RewardPage extends StatelessWidget {
                     ),
                     height: 12.h,
                     width: 28.w,
+                    margin: const EdgeInsets.fromLTRB(47, 16, 20, 0),
+                    height: 101,
+                    width: 98,
+                    child: Image.asset(
+                      AppImages.present,
+                    ),
                   )
                   //Image Container()
                 ],
@@ -167,11 +174,32 @@ class RewardPage extends StatelessWidget {
             ),
             //Component 3
             Container(
-              margin: EdgeInsets.symmetric(vertical: 1.9.h, horizontal: 4.4.w),
-              child: Text(
-                "Bonus Reward",
-                style: AppFont.mediumBoldColorGrey6_15,
-              ),
+                margin: EdgeInsets.fromLTRB(17, 21, 0, 0),
+                child: Text(
+                  "Bonus Reward",
+                  style: AppFont.mediumBoldColorGrey6_15,
+                )),
+            Row(
+              children: const [
+                BonusCard(
+                  borderColor: 0xffFFB5F6,
+                  backgroundColor: 0xffFFB5F8,
+                  image: AppImages.gift_one,
+                  buttonColor: 0xFFFFB5F6,
+                ),
+                BonusCard(
+                  borderColor: 0xff4DF1C1,
+                  backgroundColor: 0xff56EB92,
+                  image: AppImages.gift_two,
+                  buttonColor: 0xFF4DF1C1,
+                ),
+                BonusCard(
+                  borderColor: 0xffFFc371,
+                  backgroundColor: 0xffEF8C1D,
+                  image: AppImages.gift_three,
+                  buttonColor: 0xFFFfc371,
+                )
+              ],
             ),
 
             ///

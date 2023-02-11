@@ -3,16 +3,16 @@ import 'package:maze/theme/coreimport.dart';
 import 'package:maze/view/screens/onboardingScreen/screenone.dart';
 import 'package:maze/view/screens/onboardingScreen/screenthree.dart';
 import 'package:maze/view/screens/onboardingScreen/screentwo.dart';
+import '../../utils/appscreenbackground.dart';
 
-
-class IntroductionScreen extends StatefulWidget {
-  const IntroductionScreen({Key? key}) : super(key: key);
+class IntroductionDetailsScreen extends StatefulWidget {
+  IntroductionDetailsScreen({Key? key}) : super(key: key);
 
   @override
-  State<IntroductionScreen> createState() => _IntroductionScreenState();
+  State<IntroductionDetailsScreen> createState() => _IntroductionDetailsScreenState();
 }
 
-class _IntroductionScreenState extends State<IntroductionScreen> {
+class _IntroductionDetailsScreenState extends State<IntroductionDetailsScreen> {
   List<Widget> onBoardScreens = const [
     OnboardScreenOne(),
     OnboardScreenTwo(),
@@ -20,6 +20,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
   ];
 
   late PageController _dotsController;
+  final SwiperController _pageController = SwiperController();
 
   @override
   void initState() {
@@ -31,30 +32,30 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
   void dispose() {
     super.dispose();
     _dotsController.dispose();
+    _pageController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Swiper(
-        itemBuilder: (context, index) {
+        itemCount: 3,
+        controller: _pageController,
+        itemBuilder: (BuildContext context,int index){
           return onBoardScreens[index];
         },
         itemWidth: 100.w,
         itemHeight: 100.h,
-        itemCount: 3,
         layout: SwiperLayout.DEFAULT,
+        indicatorLayout: PageIndicatorLayout.SLIDE,
         pagination: const SwiperPagination(
-          builder: SwiperPagination.dots,
-          alignment: Alignment.bottomCenter,
-          margin: EdgeInsets.only(bottom: Dimens.margin15),
+          builder: DotSwiperPaginationBuilder(
+              color: Colors.white, activeColor: AppColors.colorBlack1,size: 10.0,activeSize: 15.0
+          ),
         ),
         curve: Curves.easeInBack,
         loop: false,
-        //indicatorLayout: PageIndicatorLayout.DROP,
-        // control:SwiperControl(
-        //   color: AppColors.colorWhite
-        // ),
+        allowImplicitScrolling: true,
       ),
     );
   }

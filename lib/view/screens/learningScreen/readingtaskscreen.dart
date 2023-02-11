@@ -7,7 +7,7 @@ import 'package:maze/view/utils/baseappbar.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import '../../utils/appscreenbackground.dart';
-import '../../utils/staticuielements.dart';
+import '../../utils/staticUiThemes/staticuielements.dart';
 import 'learningContent/learningcontentscreen.dart';
 
 class ReadingTaskScreen extends StatefulWidget {

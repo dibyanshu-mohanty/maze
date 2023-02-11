@@ -1,15 +1,22 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../theme/app_colors.dart';
 import '../../../theme/app_font.dart';
+import 'package:http/http.dart' as http;
 
+import '../../screens/authScreen/createprofilescreen.dart';
+import '../../screens/homeScreen/homescreen.dart';
+import '../../screens/mainframe.dart';
 
 class OTPField extends StatelessWidget {
-  OTPField({Key? key}) : super(key: key);
+  final otpController;
+  OTPField({Key? key,required this.otpController}) : super(key: key);
 
-  final TextEditingController _otpController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return PinCodeTextField(
@@ -38,10 +45,15 @@ class OTPField extends StatelessWidget {
       animationDuration: const Duration(milliseconds: 300),
       textStyle: AppFont.regularColorWhite_18,
       enableActiveFill: true,
-      controller: _otpController,
+      controller: otpController,
       keyboardType: TextInputType.number,
-      onCompleted: (v) {
+      onCompleted: (v) async {
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(builder: (context) => MainFrame()),
+        // );
       },
+      // },
       onChanged: (value) {},
       beforeTextPaste: (text) {
         return true;

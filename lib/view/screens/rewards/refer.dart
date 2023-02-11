@@ -20,14 +20,13 @@ class ReferPage extends StatelessWidget {
                         Container(
               margin: EdgeInsets.only(left: 16, top: 48),
               child: Row(
-                // ignore: prefer_const_literals_to_create_immutables
                 children: [
                   const Icon(
                     Icons.arrow_back,
                     color: Colors.white,
                     size: 20,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 118.0,
                   ),
                   Text(
@@ -40,7 +39,7 @@ class ReferPage extends StatelessWidget {
             ),
 
             Container(
-              margin: EdgeInsets.fromLTRB(28, 130, 0, 0),
+              margin: const EdgeInsets.fromLTRB(28, 130, 0, 0),
               child: RichText(
                   text: TextSpan(children: [
                 TextSpan(text: 'Earn Upto ', style: AppFont.boldColorWhite_20),
@@ -50,19 +49,19 @@ class ReferPage extends StatelessWidget {
             Container(
                 height: 42,
                 width: 166,
-                margin: EdgeInsets.fromLTRB(28, 162, 0, 0),
+                margin: const EdgeInsets.fromLTRB(28, 162, 0, 0),
                 child: Text(
                   "Refer a friend and earn coin upto 100.",
                   style: AppFont.regularColorWhite_16,
                 )),
             Container(
-              margin: EdgeInsets.fromLTRB(25, 230, 0, 0),
+              margin: const EdgeInsets.fromLTRB(25, 230, 0, 0),
               height: 42,
               width: 195,
               child: TextButton(
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(
-                        Color.fromRGBO(255, 95, 109, 1)),
+                        const Color.fromRGBO(255, 95, 109, 1)),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(200.0),
@@ -74,15 +73,15 @@ class ReferPage extends StatelessWidget {
                       "Code:",
                       style: AppFont.mediumBoldColorWhite_14,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 25,
                     ),
                     Container(
-                      margin: EdgeInsets.only(bottom: 5),
+                      margin: const EdgeInsets.only(bottom: 5),
                       width: 85,
                       height: 18,
                       child: TextField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: InputBorder.none,
                         ),
                         keyboardType: TextInputType.number,
@@ -94,9 +93,9 @@ class ReferPage extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(224, 232, 73.47, 0),
+              margin: const EdgeInsets.fromLTRB(224, 232, 73.47, 0),
               child: RotationTransition(
-                turns: AlwaysStoppedAnimation(15 / 360),
+                turns: const AlwaysStoppedAnimation(15 / 360),
                 child: Image.asset(
                   height: 60,
                   width: 60.98,
@@ -106,9 +105,9 @@ class ReferPage extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(260, 285, 0, 0),
+              margin: const EdgeInsets.fromLTRB(260, 285, 0, 0),
               child: RotationTransition(
-                turns: AlwaysStoppedAnimation(8 / 360),
+                turns: const AlwaysStoppedAnimation(8 / 360),
                 child: Image.asset(
                   height: 25,
                   width: 25,
@@ -120,26 +119,26 @@ class ReferPage extends StatelessWidget {
             Container(
               height: 26,
               width: 50,
-              margin: EdgeInsets.fromLTRB(289, 286, 0, 0),
+              margin: const EdgeInsets.fromLTRB(289, 286, 0, 0),
               child:
                   Text("Click here to copy", style: AppFont.lightColorWhite_10),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(28, 343, 0, 0),
+              margin: const EdgeInsets.fromLTRB(28, 343, 0, 0),
               height: 42,
               width: 235,
               child: RichText(
                   text: TextSpan(children: [
                 TextSpan(
-                    text: 'Get reward every time your friend login with your  ',
+                    text: 'Get reward every time your friend login with your ',
                     style: AppFont.regularColorWhite_14),
                 TextSpan(text: 'code', style: AppFont.regularColorGolden)
               ])),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(15, 393, 0, 0),
+              margin: const EdgeInsets.fromLTRB(15, 393, 0, 0),
               child: RotationTransition(
-                turns: AlwaysStoppedAnimation(2 / 360),
+                turns: const AlwaysStoppedAnimation(2 / 360),
                 child: Image.asset(
                   height: 800,
                   width: 350,
