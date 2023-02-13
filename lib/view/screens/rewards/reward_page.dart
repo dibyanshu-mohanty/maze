@@ -153,7 +153,6 @@ class RewardPage extends StatelessWidget {
                   ),
                   Spacer(),
                   Container(
-
                     margin:
                         EdgeInsets.symmetric(horizontal: 5.4.w, vertical: 1.h),
                     child: Image.asset(
@@ -161,12 +160,6 @@ class RewardPage extends StatelessWidget {
                     ),
                     height: 12.h,
                     width: 28.w,
-                    margin: const EdgeInsets.fromLTRB(47, 16, 20, 0),
-                    height: 101,
-                    width: 98,
-                    child: Image.asset(
-                      AppImages.present,
-                    ),
                   )
                   //Image Container()
                 ],
@@ -179,30 +172,6 @@ class RewardPage extends StatelessWidget {
                   "Bonus Reward",
                   style: AppFont.mediumBoldColorGrey6_15,
                 )),
-            Row(
-              children: const [
-                BonusCard(
-                  borderColor: 0xffFFB5F6,
-                  backgroundColor: 0xffFFB5F8,
-                  image: AppImages.gift_one,
-                  buttonColor: 0xFFFFB5F6,
-                ),
-                BonusCard(
-                  borderColor: 0xff4DF1C1,
-                  backgroundColor: 0xff56EB92,
-                  image: AppImages.gift_two,
-                  buttonColor: 0xFF4DF1C1,
-                ),
-                BonusCard(
-                  borderColor: 0xffFFc371,
-                  backgroundColor: 0xffEF8C1D,
-                  image: AppImages.gift_three,
-                  buttonColor: 0xFFFfc371,
-                )
-              ],
-            ),
-
-            ///
             Container(
               margin: EdgeInsets.symmetric(horizontal: 4.4.w),
               width: 80.w,
@@ -214,7 +183,6 @@ class RewardPage extends StatelessWidget {
                     children: [
                       //Company
                       for (int i = 0; i < 5; i++) ...[
-                        //............................Component2..........................//
                         BonusCard(
                           borderColor: 0xffffb2f6,
                           backgroundColor: 0xffFFB2F8,
@@ -231,8 +199,6 @@ class RewardPage extends StatelessWidget {
                 ),
               ),
             ),
-
-            ///
             SizedBox(
               height: 1.5.h,
             ),

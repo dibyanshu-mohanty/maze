@@ -53,7 +53,7 @@ class ScrollVSComponent2 extends StatelessWidget {
             margin: EdgeInsets.symmetric(horizontal: 0.3.w),
             child: Text(
               companyName,
-              style: AppFont.regularGoogleWhite_10,
+              style: AppFont.regularColorWhite_10,
               textAlign: TextAlign.center,
               maxLines: 1,
             ),
@@ -74,7 +74,7 @@ class ScrollVSComponent2 extends StatelessWidget {
                 margin: EdgeInsets.symmetric(horizontal: 1.w, vertical: 0.5.h),
                 child: Text(
                   amount,
-                  style: AppFont.mediumGoogleWhite,
+                  style: AppFont.mediumBoldColorWhite_13,
                   textAlign: TextAlign.center,
                 ),
               ),

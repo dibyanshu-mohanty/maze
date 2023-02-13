@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:maze/constants/constRouteNames.dart';
 import 'package:maze/model/uiModels/profiletilemodel.dart';
 import 'package:maze/theme/coreimport.dart';
 
@@ -45,10 +46,10 @@ final List<Tab> tabs = <Tab>[
 ];
 
 final List<ProfileTileModel> profileScreenData = [
-  ProfileTileModel(profileTitle: "Add Parent", iconName: Icons.person_add_alt_outlined),
-  ProfileTileModel(profileTitle: "Transaction History", iconName: Icons.history),
-  ProfileTileModel(profileTitle: "Help & Support", iconName: Icons.language_outlined),
-  ProfileTileModel(profileTitle: "Terms and Conditions", iconName: CupertinoIcons.doc_text),
-  ProfileTileModel(profileTitle: "FAQ's", iconName: Icons.lightbulb_outline_rounded),
-  ProfileTileModel(profileTitle: "Join Us", iconName: CupertinoIcons.paperplane),
+  ProfileTileModel(profileTitle: "Add Parent", iconName: Icons.person_add_alt_outlined,route: addParentScreen),
+  ProfileTileModel(profileTitle: "Transaction History", iconName: Icons.history,route: addParentScreen),
+  ProfileTileModel(profileTitle: "Help & Support", iconName: Icons.language_outlined,route: addParentScreen),
+  ProfileTileModel(profileTitle: "Terms and Conditions", iconName: CupertinoIcons.doc_text,route: addParentScreen),
+  ProfileTileModel(profileTitle: "FAQ's", iconName: Icons.lightbulb_outline_rounded,route: addParentScreen),
+  ProfileTileModel(profileTitle: "Join Us", iconName: CupertinoIcons.paperplane,route: addParentScreen),
 ];

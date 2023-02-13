@@ -16,11 +16,11 @@ class Component10 extends StatelessWidget {
           children: [
             Text(
               "10 week High",
-              style: AppFont.regularGoogleWhite_10,
+              style: AppFont.regularColorWhite_10,
             ),
             Text(
               "1560.87",
-              style: AppFont.lightGoogleWhite_10,
+              style: AppFont.lightColorWhite_10,
             ),
           ],
         ),

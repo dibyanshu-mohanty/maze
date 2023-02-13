@@ -1,95 +1,113 @@
 import 'package:flutter/cupertino.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
+import 'package:iconify_flutter/icons/dashicons.dart';
 import 'package:iconify_flutter/icons/teenyicons.dart';
 import 'package:iconify_flutter/icons/gg.dart';
 import 'package:iconify_flutter/icons/bx.dart';
-import 'package:iconify_flutter/icons/icon_park_outline.dart';
 import 'package:maze/theme/coreimport.dart';
 import 'package:maze/view/screens/goldScreen/digitalgoldscreen.dart';
 import 'package:maze/view/screens/learningScreen/learninglevelscreen.dart';
 import 'package:maze/view/screens/profile/profilescreen.dart';
-import 'package:maze/view/screens/rewards/refer.dart';
-import 'package:maze/view/screens/rewards/reward_page.dart';
-import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:iconify_flutter/icons/fluent_emoji_high_contrast.dart';
+import 'package:maze/view/screens/rewards/reward_page.dart';
+import '../../routes.dart';
 import 'homeScreen/homescreen.dart';
 
-class MainFrame extends StatelessWidget {
-  const MainFrame({Key? key}) : super(key: key);
+class MainFrame extends StatefulWidget {
+  MainFrame({Key? key}) : super(key: key);
 
-  List<Widget> _mainScreens() {
-    return const [
-      HomeScreen(),
-      LearningLevelScreen(),
-      HomeScreen(),
-      ProfileScreen(),
-      DigitalGoldScreen(),
-    ];
-  }
+  @override
+  State<MainFrame> createState() => _MainFrameState();
+}
 
+class _MainFrameState extends State<MainFrame> {
+  final List<Widget> _mainScreens = const [
+    HomeScreen(),
+    LearningLevelScreen(),
+    HomeScreen(),
+    RewardPage(),
+    DigitalGoldScreen(),
+  ];
 
-  List<PersistentBottomNavBarItem> _navBarsItems() {
+  int selectedIndex = 0;
+
+  List<Widget> _navBarItems() {
     return [
-      PersistentBottomNavBarItem(
-        icon: const Iconify(Teenyicons.home_outline,color: AppColors.colorGolden,),
-        activeColorPrimary: AppColors.colorGolden,
-        inactiveColorPrimary: AppColors.colorWhite,
-        inactiveIcon: const Iconify(Teenyicons.home_outline,color: AppColors.colorWhite,),
+      Expanded(
+        child: GestureDetector(
+          onTap: () {
+            setState(() {
+              selectedIndex = 0;
+            });
+          },
+          child: Iconify(
+            Teenyicons.home_outline,size: Dimens.margin25,
+            color: selectedIndex == 0 ? AppColors.colorGolden : AppColors.colorWhite,
+          ),
+        ),
       ),
-      PersistentBottomNavBarItem(
-        icon: const Iconify(FluentEmojiHighContrast.graduation_cap,color: AppColors.colorGolden),
-        inactiveIcon: const Iconify(FluentEmojiHighContrast.graduation_cap,color: AppColors.colorWhite),
-        activeColorPrimary: AppColors.colorGolden,
-        inactiveColorPrimary: AppColors.colorWhite,
+      Expanded(
+        child: GestureDetector(
+          onTap: () {
+            setState(() {
+              selectedIndex = 1;
+            });
+          },
+          child: Iconify(FluentEmojiHighContrast.graduation_cap,size: Dimens.margin25,
+              color: selectedIndex == 1 ? AppColors.colorGolden : AppColors.colorWhite),
+        ),
       ),
-      PersistentBottomNavBarItem(
-        icon: const Iconify(Gg.arrows_exchange_alt,color: AppColors.colorBlack),
-        activeColorPrimary: AppColors.colorGolden,
-        inactiveColorPrimary: AppColors.colorWhite,
+      Expanded(
+        child: GestureDetector(
+          onTap: () {
+            setState(() {
+              selectedIndex = 2;
+            });
+          },
+          child: Container(
+            width: 10.w,
+              height: 10.w,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: AppColors.colorGolden,
+              ),
+              alignment: Alignment.center,
+              child: const Iconify(Gg.arrows_exchange_alt,size: Dimens.margin25, color: AppColors.colorBlack)),
+        ),
       ),
-      PersistentBottomNavBarItem(
-        icon: const Iconify(Bx.store_alt,color: AppColors.colorGolden),
-        inactiveIcon: const Iconify(Bx.store_alt,color: AppColors.colorWhite),
-        activeColorPrimary: AppColors.colorGolden,
-        inactiveColorPrimary: AppColors.colorWhite,
+      Expanded(
+        child: GestureDetector(
+          onTap: () {
+            setState(() {
+              selectedIndex = 3;
+            });
+          },
+          child: Iconify(Bx.store_alt,size: Dimens.margin25, color: selectedIndex == 3 ? AppColors.colorGolden : AppColors.colorWhite),
+        ),
       ),
-      PersistentBottomNavBarItem(
-        icon: const Iconify(IconParkOutline.game_handle,color: AppColors.colorGolden),
-        inactiveIcon: const Iconify(IconParkOutline.game_handle,color: AppColors.colorWhite),
-        activeColorPrimary: AppColors.colorGolden,
-        inactiveColorPrimary: AppColors.colorWhite,
+      Expanded(
+        child: GestureDetector(
+          onTap: () {
+            setState(() {
+              selectedIndex = 4;
+            });
+          },
+          child: Iconify(Dashicons.games,size: Dimens.margin25, color: selectedIndex == 4 ? AppColors.colorGolden : AppColors.colorWhite),
+        ),
       ),
     ];
   }
 
   @override
   Widget build(BuildContext context) {
-    return PersistentTabView(
-      context,
-      screens: _mainScreens(),
-      items: _navBarsItems(),
-      confineInSafeArea: true,
-      backgroundColor: AppColors.colorGrey2,
-      handleAndroidBackButtonPress: true,
-      resizeToAvoidBottomInset: true,
-      stateManagement: true,
-      hideNavigationBarWhenKeyboardShows: true,
-      decoration: NavBarDecoration(
-        borderRadius: BorderRadius.circular(10.0),
-        colorBehindNavBar: Colors.white,
-      ),
-      popAllScreensOnTapOfSelectedTab: true,
-      popActionScreens: PopActionScreensType.all,
-      itemAnimationProperties: const ItemAnimationProperties(
-        duration: Duration(milliseconds: 200),
-        curve: Curves.ease,
-      ),
-      screenTransitionAnimation: const ScreenTransitionAnimation(
-        animateTabTransition: true,
-        curve: Curves.ease,
-        duration: Duration(milliseconds: 200),
-      ),
-      navBarStyle: NavBarStyle.style15,
-    );
+    return Scaffold(
+        body: _mainScreens[selectedIndex],
+        bottomNavigationBar: Container(
+          color: AppColors.colorGrey2,
+          padding: const EdgeInsets.symmetric(vertical: Dimens.margin15),
+          child: Row(
+            children: _navBarItems(),
+          ),
+        ));
   }
 }

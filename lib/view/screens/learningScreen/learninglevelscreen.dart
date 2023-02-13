@@ -18,16 +18,17 @@ class _LearningLevelScreenState extends State<LearningLevelScreen> {
   Widget build(BuildContext context) {
     bool isSmall = MediaQuery.of(context).size.width < 320;
     return Scaffold(
+      extendBody: true,
       body: Stack(
         children: [
           const AppScreenBackground(),
           Container(
-              margin: EdgeInsets.symmetric(vertical: 10.h),
+              margin: EdgeInsets.symmetric(vertical: 6.h),
               alignment: Alignment.center,
               child:
                   Image.asset("assets/images/learningScreen/mapVertical.png")),
           Positioned(
-            bottom: isSmall ? 5.h : 4.h,
+            bottom: isSmall ? 0.h : 0.h,
             left: isSmall ? 35.w : 38.w,
             child: const ModuleThumbnail(
                 imagePath: AppImages.ic_learningModule2,
@@ -36,8 +37,8 @@ class _LearningLevelScreenState extends State<LearningLevelScreen> {
                 moduleName: "Module 1"),
           ),
           Positioned(
-            bottom: isSmall ? 19.h : 20.h,
-            right: isSmall ? 15.w : 12.w,
+            bottom: isSmall ? 17.h : 18.h,
+            right: isSmall ? 25.w : 20.w,
             child: const ModuleThumbnail(
                 imagePath: AppImages.ic_learningModule3,
                 isLocked: true,
@@ -46,7 +47,7 @@ class _LearningLevelScreenState extends State<LearningLevelScreen> {
           ),
           Positioned(
             bottom: 30.h,
-            left: isSmall ? 7.w : 4.w,
+            left: isSmall ? 11.w : 8.w,
             child: const ModuleThumbnail(
                 imagePath: AppImages.ic_learningModule4,
                 isLocked: true,
@@ -69,7 +70,7 @@ class _LearningLevelScreenState extends State<LearningLevelScreen> {
                 moduleName: "Module 4"),
           ),
           Positioned(
-            bottom: isSmall ? 55.h : 57.h,
+            bottom: isSmall ? 51.h : 53.h,
             left: 35.w,
             child: const ModuleThumbnail(
                 imagePath: AppImages.ic_learningModule6,
@@ -80,11 +81,11 @@ class _LearningLevelScreenState extends State<LearningLevelScreen> {
           Positioned(
             bottom: isSmall
                 ? isLocked
-                    ? 77.h
-                    : 75.h
+                    ? 70.h
+                    : 72.h
                 : isLocked
-                    ? 78.h
-                    : 76.h,
+                    ? 74.h
+                    : 75.h,
             right: 50.w,
             child: const ModuleThumbnail(
                 imagePath: AppImages.ic_learningModule7,

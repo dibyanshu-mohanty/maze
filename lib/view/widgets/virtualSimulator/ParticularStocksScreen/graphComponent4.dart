@@ -28,32 +28,32 @@ class GraphComponent4 extends StatelessWidget {
               Text(
                 "1200",
                 textAlign: TextAlign.center,
-                style: AppFont.lightGoogleWhite_12,
+                style: AppFont.lightColorWhite_12,
               ),
               Text(
                 "1000",
                 textAlign: TextAlign.center,
-                style: AppFont.lightGoogleWhite_12,
+                style: AppFont.lightColorWhite_12,
               ),
               Text(
                 "800",
                 textAlign: TextAlign.center,
-                style: AppFont.lightGoogleWhite_12,
+                style: AppFont.lightColorWhite_12,
               ),
               Text(
                 "400",
                 textAlign: TextAlign.center,
-                style: AppFont.lightGoogleWhite_12,
+                style: AppFont.lightColorWhite_12,
               ),
               Text(
                 "200",
                 textAlign: TextAlign.center,
-                style: AppFont.lightGoogleWhite_12,
+                style: AppFont.lightColorWhite_12,
               ),
               Text(
                 "100",
                 textAlign: TextAlign.center,
-                style: AppFont.lightGoogleWhite_12,
+                style: AppFont.lightColorWhite_12,
               ),
             ],
           ),

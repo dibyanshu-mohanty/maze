@@ -16,24 +16,24 @@ class GraphBottomRowComponent5 extends StatelessWidget {
         children: [
           Text(
             "10 Am",
-            style: AppFont.mediumGoogleWhite,
+            style: AppFont.mediumBoldColorWhite_13,
           ),
           Text(
             "12 Pm",
             textAlign: TextAlign.center,
-            style: AppFont.mediumGoogleWhite,
+            style: AppFont.mediumBoldColorWhite_13,
           ),
           Text(
             "02 Pm",
-            style: AppFont.mediumGoogleWhite,
+            style: AppFont.mediumBoldColorWhite_13,
           ),
           Text(
             "04 Pm",
-            style: AppFont.mediumGoogleWhite,
+            style: AppFont.mediumBoldColorWhite_13,
           ),
           Text(
             "06 Pm",
-            style: AppFont.mediumGoogleWhite,
+            style: AppFont.mediumBoldColorWhite_13,
           ),
         ],
       ),

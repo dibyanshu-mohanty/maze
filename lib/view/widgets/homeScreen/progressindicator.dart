@@ -10,7 +10,7 @@ class ProgressIndicatorContainer extends StatelessWidget {
     return Container(
       width: 100.w,
       height: deviceWidth < 350 ? 15.h : 13.h,
-      margin: const EdgeInsets.symmetric(vertical: Dimens.margin10),
+      margin: const EdgeInsets.symmetric(vertical: Dimens.margin10,horizontal: Dimens.margin15),
       padding: const EdgeInsets.symmetric(
           vertical: Dimens.margin15, horizontal: Dimens.margin15),
       decoration: BoxDecoration(

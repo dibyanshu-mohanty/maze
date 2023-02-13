@@ -1,8 +1,10 @@
-// import 'dart:js';
-import 'package:flutter/material.dart';
-// import 'package:maze/theme/coreimport.dart';
-
 import 'constants/constRouteNames.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:maze/view/screens/errorScreen/errorscreen.dart';
+import 'package:maze/view/screens/goldScreen/buygoldscreen.dart';
+import 'package:maze/view/screens/goldScreen/digitalgoldscreen.dart';
+import 'package:maze/view/screens/profile/addparentscreen.dart';
+import 'package:maze/view/screens/profile/profilescreen.dart';
 import 'view/screens/authScreen/categoryselectscreen.dart';
 import 'view/screens/authScreen/createprofilescreen.dart';
 import 'view/screens/authScreen/enterphonescreen.dart';
@@ -19,54 +21,56 @@ import 'view/screens/virtualSimulator/virtualSimulatorScreen.dart';
 import 'view/screens/virtualSimulator/vsMarketScreen.dart';
 import 'view/screens/virtualSimulator/vshistoryScreen.dart';
 import 'view/widgets/authScreen/otpfields.dart';
+import 'package:maze/view/screens/splashScreen/splashscreen.dart';
 
 class MyRoutes {
-  static Route<dynamic> genrateRoute(RouteSettings settings) {
-    switch (settings.name) {
-      case onbardingScreen:
-        return MaterialPageRoute(builder: (context) => OnboardingScreen());
-      case introductionScreen:
-        return MaterialPageRoute(builder: (context) => IntroductionScreen());
-      case categorySelect:
-        return MaterialPageRoute(builder: (context) => CategorySelectScreen());
-      case enterPhonenumber:
-        return MaterialPageRoute(builder: (context) => EnterPhoneNumber());
-      case otp:
-        return MaterialPageRoute(builder: (context) => OTPField());
-      case createProfile:
-        return MaterialPageRoute(builder: (context) => CreateProfileScreen());
-      case homePage:
-        return MaterialPageRoute(builder: (context) => HomeScreen());
-      case learningLevelScreen:
-        return MaterialPageRoute(builder: (context) => LearningLevelScreen());
-      case learningContentScreen:
-        return MaterialPageRoute(builder: (context) => LearningContentScreen());
-      case readingTask:
-        return MaterialPageRoute(builder: (context) => ReadingTaskScreen());
-      case taskLevel:
-        return MaterialPageRoute(builder: (context) => TaskLevelScreen());
-      case videoPlayer:
-        return MaterialPageRoute(builder: (context) => VideoPlayerScreen());
-      case mainFrame:
-        return MaterialPageRoute(builder: (context) => MainFrame());
-      case historyScreen:
-        return MaterialPageRoute(builder: (context) => HistoryScreen());
-      case virtualSimulatorScreen:
-        return MaterialPageRoute(
-            builder: (context) => VirtualSimulatorScreen());
-      case vsMarketScreen:
-        return MaterialPageRoute(builder: (context) => VsMarketScreen());
-      case digitalGoldScreen:
-         return const DigitalGoldScreen();
-      case profileScreen:
-         return const ProfileScreen();
-      default:
-    }
 
-    return MaterialPageRoute(
-      builder: (context) => const Scaffold(
-        body: Text("Random Route"),
-      ),
-    );
+  static Route<dynamic> generateRoute(RouteSettings settings) {
+      return CupertinoPageRoute<dynamic>(
+          settings: settings,
+          builder: (BuildContext context) {
+        switch (settings.name) {
+          case splashScreen:
+            return const SplashScreen();
+          case errorScreen:
+            return const ErrorScreen();
+          case onboardingScreen:
+            return const OnboardingScreen();
+          case introductionDetailsScreen:
+            return IntroductionDetailsScreen();
+          case categorySelect:
+            return const CategorySelectScreen();
+          case enterPhonenumber:
+            return const EnterPhoneNumber();
+          case otp:
+            return OTPField(otpController: TextEditingController(),);
+          case createProfile:
+            return CreateProfileScreen();
+          case homePage:
+            return const HomeScreen();
+          case learningLevelScreen:
+            return const LearningLevelScreen();
+          case learningContentScreen:
+            return const LearningContentScreen();
+          case readingTask:
+            return const ReadingTaskScreen();
+          case taskLevel:
+            return const TaskLevelScreen();
+          case videoPlayer:
+            return const VideoPlayerScreen();
+          case mainFrame:
+            return MainFrame();
+          case digitalGoldScreen:
+            return const DigitalGoldScreen();
+          case buyDigitalGoldScreen:
+            return const BuyGoldScreen();
+          case profileScreen:
+            return const ProfileScreen();
+          case addParentScreen:
+            return const AddParentScreen();
+          default:
+            return SplashScreen();
+        }
+      });
   }
 }

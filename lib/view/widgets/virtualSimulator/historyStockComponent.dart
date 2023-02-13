@@ -61,7 +61,7 @@ class HistoryStock extends StatelessWidget {
                     children: [
                       Text(
                         "p%",
-                        style: AppFont.regularGoogleWhite_9,
+                        style: AppFont.regularColorWhite_9,
                       ),
                       SizedBox(
                         width: 1.w,
@@ -74,7 +74,7 @@ class HistoryStock extends StatelessWidget {
                       ),
                       Text(
                         "5.98%",
-                        style: AppFont.regularGoogleGreen,
+                        style: AppFont.regularColorGre,
                       ),
                     ],
                   ),
@@ -87,7 +87,7 @@ class HistoryStock extends StatelessWidget {
                     children: [
                       Text(
                         "cp",
-                        style: AppFont.lightGoogleWhite,
+                        style: AppFont.lightColorWhite_12,
                       ),
                       // Image.asset(
                       //   AppImages.GreenUp,
@@ -100,7 +100,7 @@ class HistoryStock extends StatelessWidget {
                       ),
                       Text(
                         "₹ 37.45",
-                        style: AppFont.mediumBoldGoogleRoboto,
+                        style: AppFont.mediumBoldColorWhite_13,
                       ),
                     ],
                   ),

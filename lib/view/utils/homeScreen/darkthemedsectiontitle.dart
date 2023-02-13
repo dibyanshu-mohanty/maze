@@ -7,6 +7,8 @@ class DarkThemedSectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(headerTitle,style: isMainTitle ? AppFont.mediumBoldColorGrey10_18 : AppFont.mediumBoldColorGrey10_15,);
+    return Container(
+        margin: const EdgeInsets.symmetric(horizontal: Dimens.margin15),
+        child: Text(headerTitle,style: isMainTitle ? AppFont.mediumBoldColorGrey10_18 : AppFont.mediumBoldColorGrey10_15,));
   }
 }

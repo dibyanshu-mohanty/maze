@@ -21,12 +21,12 @@ class StockDetailComponent13 extends StatelessWidget {
               Text(
                 "Open",
                 textAlign: TextAlign.center,
-                style: AppFont.regularGoogleWhite_14,
+                style: AppFont.regularColorWhite_14,
               ),
               Text(
                 "480.00",
                 textAlign: TextAlign.center,
-                style: AppFont.lightGoogleWhite_14,
+                style: AppFont.lightColorWhite_14,
               ),
             ],
           ),
@@ -40,12 +40,12 @@ class StockDetailComponent13 extends StatelessWidget {
               Text(
                 "prev.close",
                 textAlign: TextAlign.center,
-                style: AppFont.regularGoogleWhite_14,
+                style: AppFont.regularColorWhite_14,
               ),
               Text(
                 "1660.00",
                 textAlign: TextAlign.center,
-                style: AppFont.lightGoogleWhite_14,
+                style: AppFont.lightColorWhite_14,
               ),
             ],
           ),
@@ -59,12 +59,12 @@ class StockDetailComponent13 extends StatelessWidget {
               Text(
                 "volume",
                 textAlign: TextAlign.center,
-                style: AppFont.regularGoogleWhite_14,
+                style: AppFont.regularColorWhite_14,
               ),
               Text(
                 "18,56,700",
                 textAlign: TextAlign.center,
-                style: AppFont.lightGoogleWhite_14,
+                style: AppFont.lightColorWhite_14,
               ),
             ],
           )

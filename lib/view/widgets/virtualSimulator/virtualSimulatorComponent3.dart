@@ -42,7 +42,7 @@ class VSComponent3 extends StatelessWidget {
           ),
           Text(
             "Automobile",
-            style: AppFont.mediumGoogleWhite,
+            style: AppFont.mediumBoldColorWhite_13,
             textAlign: TextAlign.center,
           )
         ],

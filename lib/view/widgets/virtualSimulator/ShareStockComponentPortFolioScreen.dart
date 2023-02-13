@@ -31,10 +31,10 @@ class ShareStockComponentPortfolioScreen extends StatelessWidget {
           width: 9.w,
           height: 4.h,
         ),
-        title: Text("Applo Pharmacy", style: AppFont.regularGoogleWhite),
+        title: Text("Applo Pharmacy", style: AppFont.regularColorWhite_13),
         subtitle: Text(
           "Applo Group",
-          style: AppFont.regularGoogleWhite_10,
+          style: AppFont.regularColorWhite_10,
         ),
         trailing: Transform.translate(
           offset: Offset(4.w, 0),
@@ -58,7 +58,7 @@ class ShareStockComponentPortfolioScreen extends StatelessWidget {
                     ),
                     Text(
                       "2,346",
-                      style: AppFont.mediumGoogleWhite,
+                      style: AppFont.mediumBoldColorWhite_13,
                     ),
                   ],
                 ),
@@ -75,7 +75,7 @@ class ShareStockComponentPortfolioScreen extends StatelessWidget {
                     ),
                     Text(
                       "23.66%",
-                      style: AppFont.regularGoogleGreen,
+                      style: AppFont.regularColorWhite_13,
                     )
                   ],
                 ),

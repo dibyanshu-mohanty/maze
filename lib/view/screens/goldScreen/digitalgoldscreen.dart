@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:maze/constants/constRouteNames.dart';
 import 'package:maze/theme/coreimport.dart';
 
 class DigitalGoldScreen extends StatelessWidget {
@@ -23,6 +24,15 @@ class DigitalGoldScreen extends StatelessWidget {
           Positioned(
               top: 2,
               child: Image.asset(AppImages.ic_digitalcoins,height: 30.h,width: 100.w,)),
+            Positioned(
+                top: 5.h,
+                left: 3.w,
+                child: GestureDetector(
+              onTap: (){
+                Navigator.pop(context);
+              },
+              child: const Icon(Icons.navigate_before,color: AppColors.colorWhite,size: Dimens.margin40,),
+            )),
           ListView(
             children: [
               SizedBox(
@@ -56,13 +66,18 @@ class DigitalGoldScreen extends StatelessWidget {
                     AppSizers.height20,
                     Text("Buy price: \u{20B9} 5.15/mg",style: AppFont.mediumBoldColorWhite_15,),
                     AppSizers.height20,
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: Dimens.margin35,vertical: Dimens.margin10),
-                      decoration: BoxDecoration(
-                        color: AppColors.colorGolden,
-                        borderRadius: BorderRadius.circular(10.0)
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.pushNamed(context, buyDigitalGoldScreen);
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: Dimens.margin35,vertical: Dimens.margin10),
+                        decoration: BoxDecoration(
+                          color: AppColors.colorGolden,
+                          borderRadius: BorderRadius.circular(10.0)
+                        ),
+                        child: Text("Invest More",style: AppFont.mediumBoldColorBlack_16,textAlign: TextAlign.center,),
                       ),
-                      child: Text("Invest More",style: AppFont.mediumBoldColorBlack_16,textAlign: TextAlign.center,),
                     ),
                   ],
                 ),

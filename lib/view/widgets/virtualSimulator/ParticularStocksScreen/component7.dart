@@ -19,11 +19,11 @@ class Component7 extends StatelessWidget {
           children: [
             Text(
               "Today's Low",
-              style: AppFont.regularGoogleWhite_10,
+              style: AppFont.regularColorWhite_10,
             ),
             Text(
               firstVal,
-              style: AppFont.lightGoogleWhite_10,
+              style: AppFont.lightColorWhite_10,
             ),
           ],
         ),
@@ -32,11 +32,11 @@ class Component7 extends StatelessWidget {
           children: [
             Text(
               "Today's High",
-              style: AppFont.regularGoogleWhite_10,
+              style: AppFont.regularColorWhite_10,
             ),
             Text(
               secondVal,
-              style: AppFont.lightGoogleWhite_10,
+              style: AppFont.lightColorWhite_10,
             ),
           ],
         ),
