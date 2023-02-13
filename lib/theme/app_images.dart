@@ -1,3 +1,4 @@
+
 class AppImages {
   static const String imageBaseURL = 'assets/images/';
   static const String imageBaseURLv2 = 'assets/icons/';
@@ -21,6 +22,8 @@ class AppImages {
   static const group = "${imageBaseURL}rewardScreen/Group.png";
   static const cursor = "${imageBaseURL}rewardScreen/fi-rr-cursor-finger.png";
   static const frame = "${imageBaseURL}rewardScreen/Frame.png";
+  static const banner = "${imageBaseURL}rewardScreen/banner.png";
+  static const gift = "${imageBaseURL}rewardScreen/gift.png";
   static const ic_learningModule1 =
       "${imageBaseURL}learningScreen/modules/ic_Module1.png";
   static const ic_learningModule2 =
@@ -35,6 +38,9 @@ class AppImages {
       "${imageBaseURL}learningScreen/modules/ic_Module6.png";
   static const ic_learningModule7 =
       "${imageBaseURL}learningScreen/modules/ic_Module7.png";
+  static const ic_digitalcoins = "${imageBaseURL}goldScreen/ic_digitalcoins.png";
+  static const ic_goldpot = "${imageBaseURL}goldScreen/ic_goldpot.png";
+  static const ic_coinStack = "${imageBaseURL}goldScreen/ic_coinstacks.png";
 
   /// For Icons, V2 URL
   static const ic_completedCheckIcon =

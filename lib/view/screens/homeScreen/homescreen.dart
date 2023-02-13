@@ -1,12 +1,14 @@
 import 'package:maze/theme/coreimport.dart';
 import 'package:maze/view/utils/appscreenbackground.dart';
 import 'package:maze/view/utils/homeScreen/homescreenbackground.dart';
+import '../../../routes.dart';
 import '../../utils/homeScreen/darkthemedsectiontitle.dart';
-import '../../utils/staticuielements.dart';
+import '../../utils/staticUiThemes/staticuielements.dart';
 import '../../widgets/homeScreen/customappheader.dart';
 import '../../widgets/homeScreen/progressindicator.dart';
 import '../../widgets/homeScreen/upcomingfeaturescard.dart';
 import '../../widgets/homeScreen/mazeacademycard.dart';
+import 'package:maze/constants/constRouteNames.dart';
 
 
 
@@ -55,16 +57,21 @@ class HomeScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: List.generate(3, (index) => Expanded(
-                    child: Container(
-                      height: 42.0,
-                      width: 40.w,
-                      decoration: BoxDecoration(
-                        color: AppColors.colorGrey,
-                        borderRadius: BorderRadius.circular(10.0),
+                    child: GestureDetector(
+                      onTap: () {
+                          Navigator.pushNamed(context, digitalGoldScreen);
+                      },
+                      child: Container(
+                        height: 42.0,
+                        width: 40.w,
+                        decoration: BoxDecoration(
+                          color: AppColors.colorGrey,
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                        alignment: Alignment.center,
+                        child: homeScreenHeaderCategory[index],
                       ),
-                      margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                      alignment: Alignment.center,
-                      child: homeScreenHeaderCategory[index],
                     ),
                   )),
                 ),

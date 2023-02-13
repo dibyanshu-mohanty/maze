@@ -1,7 +1,3 @@
-// import 'package:flutter/src/widgets/container.dart';
-// import 'package:flutter/src/widgets/framework.dart';
-// import 'package:flutter/material.dart';
-// import 'package:maze/theme/app_images.dart';
 import 'package:maze/theme/coreimport.dart';
 
 class ProductCard extends StatelessWidget {
@@ -9,20 +5,18 @@ class ProductCard extends StatelessWidget {
   final titleText;
   final subtitleText;
   final description;
-
   const ProductCard(
       {super.key,
       this.image,
       this.titleText,
       this.subtitleText,
       this.description});
-
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          // margin: EdgeInsets.fromLTRB(16, 41, 16, 0),
+          margin: EdgeInsets.symmetric(horizontal: 4.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             border: Border.all(color: Color(0xff292c33)),
@@ -30,7 +24,8 @@ class ProductCard extends StatelessWidget {
           ),
           child: ListTile(
             //tileColor: Color(0xff292C33),
-            leading: Image.asset(image),
+            leading: Transform.translate(
+                offset: Offset(-8, 0), child: Image.asset(image)),
             title: Text(
               titleText,
               style: AppFont.mediumBoldColorWhite_12,
