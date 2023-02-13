@@ -1,4 +1,3 @@
-// ignore_for_file: constant_identifier_names
 
 class AppImages {
   static const String imageBaseURL = 'assets/images/';
@@ -12,6 +11,21 @@ class AppImages {
       "${imageBaseURL}onboardScreen/ic_onboardscreen_two.png";
   static const ic_onboardthree =
       "${imageBaseURL}onboardScreen/ic_onboardscreen_three.png";
+
+  static const airtel = "${imageBaseURL}rewardScreen/airtel.png";
+  static const kfc = "${imageBaseURL}rewardScreen/kfc.png";
+  static const mamaearth = "${imageBaseURL}rewardScreen/mamaearth.png";
+  static const gift_one = "${imageBaseURL}rewardScreen/gift_one.png";
+  static const gift_two = "${imageBaseURL}rewardScreen/gift_two.png";
+  static const gift_three = "${imageBaseURL}rewardScreen/gift_three.png";
+  static const present = "${imageBaseURL}rewardScreen/present.png";
+  static const avatar = "${imageBaseURL}rewardScreen/avatar.png";
+  static const group = "${imageBaseURL}rewardScreen/Group.png";
+  static const cursor = "${imageBaseURL}rewardScreen/fi-rr-cursor-finger.png";
+  static const frame = "${imageBaseURL}rewardScreen/Frame.png";
+  static const banner = "${imageBaseURL}rewardScreen/banner.png";
+  static const gift = "${imageBaseURL}rewardScreen/gift.png";
+
   static const ic_learningModule1 =
       "${imageBaseURL}learningScreen/modules/ic_Module1.png";
   static const ic_learningModule2 =
@@ -26,7 +40,6 @@ class AppImages {
       "${imageBaseURL}learningScreen/modules/ic_Module6.png";
   static const ic_learningModule7 =
       "${imageBaseURL}learningScreen/modules/ic_Module7.png";
-
   static const ic_vsScreenModule1 =
       "${imageBaseURL}virtualSimulator/ic_vsScreenModule1.png";
   static const ic_vsScreenModule2 =
@@ -41,6 +54,9 @@ class AppImages {
   static const GreenUp = "${imageBaseURL}virtualSimulator/GreenUp.png";
   static const bars = "${imageBaseURL}virtualSimulator/bars.png";
   static const bus = "${imageBaseURL}virtualSimulator/bus.png";
+  static const ic_digitalcoins = "${imageBaseURL}goldScreen/ic_digitalcoins.png";
+  static const ic_goldpot = "${imageBaseURL}goldScreen/ic_goldpot.png";
+  static const ic_coinStack = "${imageBaseURL}goldScreen/ic_coinstacks.png";
 
   /// For Icons, V2 URL
   static const ic_completedCheckIcon =

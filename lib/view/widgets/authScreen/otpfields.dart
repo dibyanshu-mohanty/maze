@@ -14,9 +14,9 @@ import '../../screens/homeScreen/homescreen.dart';
 import '../../screens/mainframe.dart';
 
 class OTPField extends StatelessWidget {
-  OTPField({Key? key}) : super(key: key);
+  final otpController;
+  OTPField({Key? key,required this.otpController}) : super(key: key);
 
-  final TextEditingController _otpController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return PinCodeTextField(
@@ -45,48 +45,13 @@ class OTPField extends StatelessWidget {
       animationDuration: const Duration(milliseconds: 300),
       textStyle: AppFont.regularColorWhite_18,
       enableActiveFill: true,
-      controller: _otpController,
+      controller: otpController,
       keyboardType: TextInputType.number,
       onCompleted: (v) async {
-        //......................................................Shubham Edited Code............................................//
-        // showDialog(
-        //   context: context,
-        //   builder: (context) {
-        //     return const Center(
-        //         child: CircularProgressIndicator(
-        //       color: Colors.white,
-        //     ));
-        //   },
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(builder: (context) => MainFrame()),
         // );
-        // final prefs = await SharedPreferences.getInstance();
-        // // Try reading data from the 'action' key. If it doesn't exist, returns null.
-        // final String? type = prefs.getString('userType');
-        // final String? phoneNumber = prefs.getString('phoneNumber');
-        // final int? otp = prefs.getInt('otp');
-        // final String? hash = prefs.getString('hash');
-        // final http.Response otpResponse;
-        // otpResponse = await http.post(
-        //   Uri.parse(baseUrl + ApiRoutes.login), // api
-        //   headers: header,
-        //   body: jsonEncode(
-        //     <String, dynamic>{
-        //       "phone": phoneNumber,
-        //       "type": type,
-        //       "hash": hash,
-        //       "otp": otp
-        //     },
-        //   ),
-        // );
-        // var otpJson = jsonDecode(otpResponse.body);
-
-        // // ignore: use_build_context_synchronously
-        // Navigator.of(context).pop();
-        // if (otpResponse.statusCode == 200) {
-        // ignore: use_build_context_synchronously
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => MainFrame()),
-        );
       },
       // },
       onChanged: (value) {},

@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
+import 'package:maze/routes.dart';
 import 'package:maze/theme/app_images.dart';
 import 'package:maze/theme/coreimport.dart';
+
+import '../../../constants/constRouteNames.dart';
 
 
 
@@ -27,7 +30,11 @@ class CustomAppHeader extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              GestureDetector(child: const Icon(CupertinoIcons.person,size: 20,color: AppColors.colorWhite,)),
+              GestureDetector(
+                  onTap: (){
+                    Navigator.pushNamed(context, profileScreen);
+                  },
+                  child: const Icon(CupertinoIcons.person,size: 20,color: AppColors.colorWhite,)),
               const SizedBox(width: Dimens.margin10,),
               GestureDetector(child: const Icon(CupertinoIcons.bell,size: 20,color: AppColors.colorWhite,)),
             ],

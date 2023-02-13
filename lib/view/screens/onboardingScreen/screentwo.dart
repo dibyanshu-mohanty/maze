@@ -14,7 +14,7 @@ class OnboardScreenTwo extends StatelessWidget {
       width: 100.w,
       child: Stack(
         children: [
-          // const AppScreenBackground(),
+          const AppScreenBackground(),
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -39,7 +39,7 @@ class OnboardScreenTwo extends StatelessWidget {
                       )
                     ])),
               ),
-              const SizedBox(height: Dimens.margin50)
+              const SizedBox(height: Dimens.margin80)
             ],
           )
         ],

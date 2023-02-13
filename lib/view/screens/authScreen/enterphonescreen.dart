@@ -1,8 +1,12 @@
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:maze/view/utils/uithemes/snackbarmessages.dart';
 import 'package:provider/provider.dart';
 
 import 'package:maze/theme/coreimport.dart';
 
+import '../../../constants/constRouteNames.dart';
 import '../../../controller/providers/auth/authprovider.dart';
+import '../../../routes.dart';
 import '../../utils/appscreenbackground.dart';
 import '../../widgets/authScreen/otpfields.dart';
 
@@ -16,11 +20,61 @@ class EnterPhoneNumber extends StatefulWidget {
 class _EnterPhoneNumberState extends State<EnterPhoneNumber> {
   bool _isDone = false;
   bool _phoneEntered = false;
+  bool _isLoading = false;
   final fieldTextController = TextEditingController();
   final phoneTextController = TextEditingController();
+  final otpTextController = TextEditingController();
+
+
+  bool validateMobile(String number) {
+    String pattern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
+    RegExp regExp = RegExp(pattern);
+    if (number.isEmpty) {
+      return false;
+    }
+    else if (!regExp.hasMatch(number)) {
+      return false;
+    }
+    return true;
+  }
+
+  void requestForOTP (AuthProvider authProviderObj, CategorySelectProvider cspObj) async{
+    String numberEntered =
+        fieldTextController.text.toString() +
+            phoneTextController.text.toString();
+    final validNumber = validateMobile(numberEntered);
+    if(validNumber){
+      await authProviderObj.authRequest(
+          numberEntered, cspObj.type, context);
+      FocusScopeNode().unfocus();
+      final userResponse = authProviderObj.signupUser;
+      if(userResponse.otp != 0){
+        setState(() {
+          _phoneEntered = true;
+          _isLoading = false;
+        });
+      } else {
+        messageSnackBar(context, "Please Try Again");
+        setState((){
+          _phoneEntered = false;
+          _isLoading = false;
+        });
+      }
+    } else {
+      messageSnackBar(context, "Enter Valid Phone Number");
+      setState(() {
+        _phoneEntered = false;
+        _isLoading = false;
+      });
+      return ;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     fieldTextController.text = "+91";
+    final cspObj = Provider.of<CategorySelectProvider>(context);
+    final authProviderObj = Provider.of<AuthProvider>(context);
     return Scaffold(
       body: Stack(
         children: [
@@ -46,7 +100,9 @@ class _EnterPhoneNumberState extends State<EnterPhoneNumber> {
                   ),
                   const SizedBox(height: Dimens.margin40),
                   _phoneEntered
-                      ? OTPField()
+                      ? OTPField(
+                          otpController: otpTextController,
+                        )
                       : Container(
                           width: 100.w,
                           height: 5.h,
@@ -119,56 +175,55 @@ class _EnterPhoneNumberState extends State<EnterPhoneNumber> {
                               ),
                             ],
                           )),
-                  SizedBox(height: Dimens.margin60),
-                  Consumer<AuthProvider>(
-                    builder: (context, authProviderObj, _) {
-                      return Consumer<CategorySelectProvider>(
-                        builder: (context, cspObj, _) {
-                          return GestureDetector(
-                            onTap: () async {
-                              if (_isDone) {
-                                String numberEntered =
-                                    fieldTextController.text.toString() +
-                                        phoneTextController.text.toString();
-                                print(cspObj.type);
-                                print(numberEntered);
-                                //.....................................................Shubham changed code........................................//
-                                await authProviderObj.authRequest(
-                                    numberEntered, cspObj.type);
-                                print("Jacob 2");
-                                final testobj = authProviderObj.signupUser;
-                                print(testobj.phone);
-                                // setState(() {
-                                //   _phoneEntered = true;
-                                // });
-                              }
-                              // }
-                            },
-                            child: Center(
-                              child: Container(
-                                width: 18.w,
-                                height: 18.w,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: _isDone
-                                        ? AppColors.colorWhite
-                                        : Colors.transparent,
-                                    border: Border.all(
-                                        color: AppColors.colorWhite,
-                                        width: 1.0)),
-                                alignment: Alignment.center,
-                                child: Icon(
-                                  Icons.arrow_forward,
-                                  color: _isDone
-                                      ? AppColors.colorBlack
-                                      : AppColors.colorWhite,
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                      );
-                    },
+                  AppSizers.height60,
+                  _isLoading
+                  ? SpinKitFadingCircle(color: AppColors.colorWhite,size: 10.w,)
+                  : GestureDetector(
+                    onTap: _phoneEntered
+                        ? () async {
+                      setState((){
+                        _isLoading = true;
+                      });
+                            if (otpTextController.text !=
+                                authProviderObj.signupUser.otp.toString()) {
+                              messageSnackBar(context, "Wrong OTP");
+                              setState((){
+                                _isLoading = false;
+                              });
+                            } else {
+                              await authProviderObj.loginRequest(context);
+                              _isLoading = false;
+                              Navigator.pushNamed(context, createProfile);
+                            }
+                          }
+                        : () async {
+                            if (_isDone) {
+                              setState((){
+                                _isLoading = true;
+                              });
+                              requestForOTP(authProviderObj, cspObj);
+                            }
+                          },
+                    child: Center(
+                      child: Container(
+                        width: 18.w,
+                        height: 18.w,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: _isDone
+                                ? AppColors.colorWhite
+                                : Colors.transparent,
+                            border: Border.all(
+                                color: AppColors.colorWhite, width: 1.0)),
+                        alignment: Alignment.center,
+                        child: Icon(
+                          Icons.arrow_forward,
+                          color: _isDone
+                              ? AppColors.colorBlack
+                              : AppColors.colorWhite,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),

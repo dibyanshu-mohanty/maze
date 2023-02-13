@@ -8,10 +8,10 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   const BaseAppBar(
       {Key? key,
-        required this.title,
-        required this.appBar,
-        this.actions = const [],
-        required this.mLeftAction})
+      required this.title,
+      required this.appBar,
+      this.actions = const [],
+      required this.mLeftAction})
       : super(key: key);
 
   @override
@@ -24,7 +24,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
           color: AppColors.colorWhite,
         ),
         onTap: () {
-            mLeftAction();
+          mLeftAction();
         },
       ),
       centerTitle: true,

@@ -56,6 +56,10 @@ class MyRoutes {
             builder: (context) => VirtualSimulatorScreen());
       case vsMarketScreen:
         return MaterialPageRoute(builder: (context) => VsMarketScreen());
+      case digitalGoldScreen:
+         return const DigitalGoldScreen();
+      case profileScreen:
+         return const ProfileScreen();
       default:
     }
 
