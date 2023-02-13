@@ -184,17 +184,18 @@ class _EnterPhoneNumberState extends State<EnterPhoneNumber> {
                                   setState(() {
                                     _isLoading = true;
                                   });
-                                  // if (otpTextController.text !=
-                                  //     authProviderObj.signupUser.otp.toString()) {
-                                  //   messageSnackBar(context, "Wrong OTP");
-                                  //   setState((){
-                                  //     _isLoading = false;
-                                  //   });
-                                  // } else {
-                                  //   await authProviderObj.loginRequest(context);
-                                  _isLoading = false;
-                                  Navigator.pushNamed(context, createProfile);
-                                  // }
+                                  if (otpTextController.text !=
+                                      authProviderObj.signupUser.otp
+                                          .toString()) {
+                                    messageSnackBar(context, "Wrong OTP");
+                                    setState(() {
+                                      _isLoading = false;
+                                    });
+                                  } else {
+                                    await authProviderObj.loginRequest(context);
+                                    _isLoading = false;
+                                    Navigator.pushNamed(context, createProfile);
+                                  }
                                 }
                               : () async {
                                   if (_isDone) {

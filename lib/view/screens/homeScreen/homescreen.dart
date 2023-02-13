@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
               Container(
                 width: 100.w,
                 height: 17.h,
-                margin: EdgeInsets.fromLTRB(4.w,Dimens.margin10,4.w,Dimens.margin5),
+                margin: EdgeInsets.fromLTRB(Dimens.margin15,Dimens.margin10,Dimens.margin15,Dimens.margin5),
                 padding: const EdgeInsets.symmetric(horizontal: Dimens.margin15),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -52,7 +52,6 @@ class HomeScreen extends StatelessWidget {
               Container(
                 width: 100.w,
                 height: 10.h,
-                margin: EdgeInsets.symmetric(horizontal: 4.w),
                 padding: const EdgeInsets.symmetric(horizontal: Dimens.margin10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -78,8 +77,6 @@ class HomeScreen extends StatelessWidget {
               ),
               Container(
                 width: 100.w,
-                margin: EdgeInsets.symmetric(horizontal: 4.w),
-                padding: const EdgeInsets.symmetric(horizontal: Dimens.margin10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [

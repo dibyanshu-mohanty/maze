@@ -1,4 +1,3 @@
-
 class AppImages {
   static const String imageBaseURL = 'assets/images/';
   static const String imageBaseURLv2 = 'assets/icons/';
@@ -11,6 +10,7 @@ class AppImages {
       "${imageBaseURL}onboardScreen/ic_onboardscreen_two.png";
   static const ic_onboardthree =
       "${imageBaseURL}onboardScreen/ic_onboardscreen_three.png";
+
   static const airtel = "${imageBaseURL}rewardScreen/airtel.png";
   static const kfc = "${imageBaseURL}rewardScreen/kfc.png";
   static const mamaearth = "${imageBaseURL}rewardScreen/mamaearth.png";
@@ -38,7 +38,22 @@ class AppImages {
       "${imageBaseURL}learningScreen/modules/ic_Module6.png";
   static const ic_learningModule7 =
       "${imageBaseURL}learningScreen/modules/ic_Module7.png";
-  static const ic_digitalcoins = "${imageBaseURL}goldScreen/ic_digitalcoins.png";
+  static const ic_vsScreenModule1 =
+      "${imageBaseURL}virtualSimulator/ic_vsScreenModule1.png";
+  static const ic_vsScreenModule2 =
+      "${imageBaseURL}virtualSimulator/ic_vsScreenModule2.png";
+  static const ic_vsScreenModule3 =
+      "${imageBaseURL}virtualSimulator/ic_vsScreenModule3.png";
+  static const ic_Justdial = "${imageBaseURL}virtualSimulator/ic_Justdial.png";
+  static const ic_MazeLogo = "${imageBaseURL}virtualSimulator/MazeLogo.png";
+  static const rectangle1 = "${imageBaseURL}virtualSimulator/Rectangle 75.png";
+  static const rectangle2 = "${imageBaseURL}virtualSimulator/Rectangle 76.png";
+  static const rectangle3 = "${imageBaseURL}virtualSimulator/Rectangle 77.png";
+  static const GreenUp = "${imageBaseURL}virtualSimulator/GreenUp.png";
+  static const bars = "${imageBaseURL}virtualSimulator/bars.png";
+  static const bus = "${imageBaseURL}virtualSimulator/bus.png";
+  static const ic_digitalcoins =
+      "${imageBaseURL}goldScreen/ic_digitalcoins.png";
   static const ic_goldpot = "${imageBaseURL}goldScreen/ic_goldpot.png";
   static const ic_coinStack = "${imageBaseURL}goldScreen/ic_coinstacks.png";
 

@@ -31,10 +31,16 @@ dependencies:
   persistent_bottom_nav_bar: ^5.0.2
   iconify_flutter: ^0.0.5
   colorful_iconify_flutter: ^0.0.3
+  flutter_onboarding_slider: ^1.0.8
+  story_view: ^0.14.0
+  story: ^1.0.0+1
+  fl_chart: ^0.55.2
   fluttertoast: ^8.1.2
   intl: ^0.17.0
   flutter_spinkit: ^5.1.0
   connectivity_plus: ^3.0.2
+  pretty_qr_code: ^2.0.3
+  share_plus: ^6.3.1
 
 
 dev_dependencies:
@@ -57,6 +63,7 @@ flutter:
     - assets/animations/
     - assets/icons/homeScreen/
     - assets/icons/learningScreen/
+    - assets/images/virtualSimulator/
     - assets/images/goldScreen/
 
   fonts:

@@ -12,9 +12,15 @@ const String readingTask = '/readingTaskScreen';
 const String taskLevel = '/taskLevelScreen';
 const String videoPlayer = '/videoPlayer';
 const String mainFrame = '/mainFrame';
+const String historyScreen = '/historyScreen';
+const String virtualSimulatorScreen = '/virtualSimulatorScreen';
+const String vsMarketScreen = '/vsMarketScreen';
 const String rewardScreen = '/rewardScreen';
 const String referScreen = '/referScreen';
 const String errorScreen = '/errorScreen';
 const String digitalGoldScreen = "/digitalGoldScreen";
 const String profileScreen = "/profileScreen";
 
+const String buyDigitalGoldScreen = "/buyDigitalGoldScreen";
+// const String profileScreen = "/profileScreen";
+const String addParentScreen = "/addParentScreen";
