@@ -1,7 +1,6 @@
-
 import 'package:flutter/material.dart';
 
-class AppColors{
+class AppColors {
   static const colorBlack = Color(0xFF000000);
   static const colorBlack1 = Color(0xFF1E1E1E);
   static const colorBlue = Color(0xFF0A13EB);
@@ -19,14 +18,20 @@ class AppColors{
   static const colorGrey9 = Color(0xFF717171);
   static const colorGrey10 = Color(0xFF7E7E7E);
   static const colorGreen = Color(0xFF0EE017);
+  static const colorDarkGreen = Color(0xFF1ecb98);
   static const colorLightGreen = Color(0xFF3DBBAA);
   static const colorLightBlue = Color(0xFF4DFFF6);
   static const colorLightBlue1 = Color(0xFF71FFF6);
   static const colorLightBlue2 = Color(0xFF449BEA);
   static const colorOrange = Color(0xFFFF8271);
   static const colorRed = Color(0xFFE74136);
+  static const colorRed2 = Color(0xFFff5f6d);
+  static const colorDarkRed = Color(0xFFff2f2f);
   static const colorRed1 = Color(0xFF371616);
   static const colorTransparent = Colors.transparent;
   static const colorWhite = Color(0xFFFFFFFF);
-  
+  static const colorPurple = Color(0xFFAB29ff);
+  static const colorPink = Color(0xffEABFFF);
+  static const colorDarkBlue = Color(0xFF3f1992);
+  static const colorLightBlue3 = Color(0xFF98F9FF);
 }

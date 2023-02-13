@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:maze/theme/app_font.dart';
+import 'package:sizer/sizer.dart';
+
+class Component10 extends StatelessWidget {
+  const Component10({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.h),
+      child: ListTile(
+        trailing: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Text(
+              "10 week High",
+              style: AppFont.regularGoogleWhite_10,
+            ),
+            Text(
+              "1560.87",
+              style: AppFont.lightGoogleWhite_10,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
