@@ -37,7 +37,7 @@ class ProductCard extends StatelessWidget {
                   subtitleText,
                   style: AppFont.lightColorWhite_10,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 9,
                 ),
                 Text(

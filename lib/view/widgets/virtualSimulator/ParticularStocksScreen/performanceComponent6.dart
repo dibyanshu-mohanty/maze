@@ -14,7 +14,7 @@ class Component6 extends StatelessWidget {
           leading: Text(
             "Performance",
             textAlign: TextAlign.center,
-            style: AppFont.mediumGoogleWhite_15,
+            style: AppFont.regularColorWhite_15,
           ),
         ));
   }

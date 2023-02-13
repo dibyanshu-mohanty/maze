@@ -12,13 +12,6 @@ import 'package:maze/controller/providers/profile/profileprovider.dart';
 import 'package:maze/routes.dart';
 import 'package:provider/provider.dart';
 import 'controller/providers/auth/authprovider.dart';
-import 'view/screens/virtualSimulator/vsParticularStock.dart';
-import 'view/screens/virtualSimulator/vshistoryScreen.dart';
-import 'view/screens/virtualSimulator/vsScrollSplashScreens.dart';
-import 'view/screens/virtualSimulator/vsSplashScreenOne.dart';
-import 'view/screens/virtualSimulator/vsSplashScreenThree.dart';
-import 'view/screens/virtualSimulator/vsSplashScreenTwo.dart';
-import 'view/screens/virtualSimulator/virtualSimulatorScreen.dart';
 import 'package:maze/view/screens/errorScreen/errorscreen.dart';
 import 'package:maze/view/screens/goldScreen/digitalgoldscreen.dart';
 import 'package:maze/view/screens/profile/profilescreen.dart';
@@ -35,6 +28,7 @@ import 'view/screens/mainframe.dart';
 import 'view/screens/onboardingScreen/introductiondetailscreen.dart';
 import 'view/screens/onboardingScreen/onboardingscreen.dart';
 import 'view/screens/splashScreen/splashscreen.dart';
+import 'view/screens/virtualSimulator/vsScrollSplashScreens.dart';
 import 'view/widgets/authScreen/otpfields.dart';
 
 void main() async {
@@ -48,6 +42,7 @@ void main() async {
 
 class YaroApp extends StatelessWidget {
   const YaroApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -67,7 +62,8 @@ class YaroApp extends StatelessWidget {
             //canvasColor: AppColors.colorWhite,
           ),
           onGenerateRoute: MyRoutes.generateRoute,
-          initialRoute: splashScreen,
+          // initialRoute: splashScreen,
+          home: VsSplashScreens(),
         ),
       ),
     );

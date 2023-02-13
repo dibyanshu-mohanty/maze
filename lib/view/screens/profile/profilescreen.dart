@@ -36,7 +36,8 @@ class ProfileScreen extends StatelessWidget {
                       leading: const CircleAvatar(
                         backgroundColor: AppColors.colorWhite,
                       ),
-                      title: Text("Ayush Bachan", style: AppFont.boldColorWhite_15),
+                      title: Text("Ayush Bachan",
+                          style: AppFont.boldColorWhite_15),
                       subtitle: GestureDetector(
                         child: Text(
                           "Edit Account",
@@ -48,15 +49,17 @@ class ProfileScreen extends StatelessWidget {
                 Container(
                     margin: const EdgeInsets.symmetric(
                         horizontal: Dimens.margin20, vertical: Dimens.margin7),
-                    child: Text("Dashboard", style: AppFont.regularColorGrey6_15)),
+                    child:
+                        Text("Dashboard", style: AppFont.regularColorGrey6_15)),
                 Column(
                   children: List.generate(
-                      profileScreenData.length,
-                      (index) => ProfileDetailsTile(
-                          profileDetailsTitle: profileScreenData[index].profileTitle,
-                          profileDetailsIcon: profileScreenData[index].iconName,
-                          routeName: profileScreenData[index].route,
-                      ),
+                    profileScreenData.length,
+                    (index) => ProfileDetailsTile(
+                      profileDetailsTitle:
+                          profileScreenData[index].profileTitle,
+                      profileDetailsIcon: profileScreenData[index].iconName,
+                      routeName: profileScreenData[index].route,
+                    ),
                   ),
                 ),
                 Container(
@@ -75,15 +78,17 @@ class ProfileScreen extends StatelessWidget {
                       style: AppFont.regularColorGrey6_15,
                     )),
                 Container(
-                  margin: const EdgeInsets.symmetric(horizontal: Dimens.margin16, vertical: Dimens.margin8),
+                  margin: const EdgeInsets.symmetric(
+                      horizontal: Dimens.margin16, vertical: Dimens.margin8),
                   height: 6.h,
                   width: 100.w,
                   child: TextButton(
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
                             AppColors.colorLightBlue2.withOpacity(0.2)),
-                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15.0),
                         ))),
                     onPressed: () => {},

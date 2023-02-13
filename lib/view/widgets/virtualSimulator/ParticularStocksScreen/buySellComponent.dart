@@ -25,7 +25,7 @@ class BuySellComponent15 extends StatelessWidget {
                 child: Text(
                   "Sell",
                   textAlign: TextAlign.center,
-                  style: AppFont.mediumGoogleWhite_16,
+                  style: AppFont.mediumColorWhite_16,
                 ),
               ),
             ),
@@ -42,7 +42,7 @@ class BuySellComponent15 extends StatelessWidget {
                 child: Text(
                   "Buy",
                   textAlign: TextAlign.center,
-                  style: AppFont.mediumGoogleWhite_16,
+                  style: AppFont.mediumColorWhite_16,
                 ),
               ),
             ),

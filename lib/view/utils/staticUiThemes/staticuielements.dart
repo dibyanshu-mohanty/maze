@@ -8,24 +8,49 @@ final List<Widget> homeScreenHeaderCategory = [
   Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
-        Image.asset(AppImages.ic_portfolioIcon,width: 5.w,height: 5.w,),
-        AutoSizeText("Portfolio", style: AppFont.mediumBoldColorWhite_15,overflow: TextOverflow.ellipsis,maxLines: 1,),
+      Image.asset(
+        AppImages.ic_portfolioIcon,
+        width: 5.w,
+        height: 5.w,
+      ),
+      AutoSizeText(
+        "Portfolio",
+        style: AppFont.mediumBoldColorWhite_15,
+        overflow: TextOverflow.ellipsis,
+        maxLines: 1,
+      ),
     ],
   ),
-
   Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
-      Image.asset(AppImages.ic_goldIcon,width: 5.w,height: 5.w,),
-      AutoSizeText("Gold", style: AppFont.mediumBoldColorWhite_15,overflow: TextOverflow.ellipsis,maxLines: 1,),
+      Image.asset(
+        AppImages.ic_goldIcon,
+        width: 5.w,
+        height: 5.w,
+      ),
+      AutoSizeText(
+        "Gold",
+        style: AppFont.mediumBoldColorWhite_15,
+        overflow: TextOverflow.ellipsis,
+        maxLines: 1,
+      ),
     ],
   ),
-
   Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
-      Image.asset(AppImages.ic_playIcon,width: 5.w,height: 5.w,),
-      AutoSizeText("Play", style: AppFont.mediumBoldColorWhite_15,overflow: TextOverflow.ellipsis,maxLines: 1,),
+      Image.asset(
+        AppImages.ic_playIcon,
+        width: 5.w,
+        height: 5.w,
+      ),
+      AutoSizeText(
+        "Play",
+        style: AppFont.mediumBoldColorWhite_15,
+        overflow: TextOverflow.ellipsis,
+        maxLines: 1,
+      ),
     ],
   ),
 ];
@@ -46,10 +71,28 @@ final List<Tab> tabs = <Tab>[
 ];
 
 final List<ProfileTileModel> profileScreenData = [
-  ProfileTileModel(profileTitle: "Add Parent", iconName: Icons.person_add_alt_outlined,route: addParentScreen),
-  ProfileTileModel(profileTitle: "Transaction History", iconName: Icons.history,route: addParentScreen),
-  ProfileTileModel(profileTitle: "Help & Support", iconName: Icons.language_outlined,route: addParentScreen),
-  ProfileTileModel(profileTitle: "Terms and Conditions", iconName: CupertinoIcons.doc_text,route: addParentScreen),
-  ProfileTileModel(profileTitle: "FAQ's", iconName: Icons.lightbulb_outline_rounded,route: addParentScreen),
-  ProfileTileModel(profileTitle: "Join Us", iconName: CupertinoIcons.paperplane,route: addParentScreen),
+  ProfileTileModel(
+      profileTitle: "Add Parent",
+      iconName: Icons.person_add_alt_outlined,
+      route: addParentScreen),
+  ProfileTileModel(
+      profileTitle: "Transaction History",
+      iconName: Icons.history,
+      route: addParentScreen),
+  ProfileTileModel(
+      profileTitle: "Help & Support",
+      iconName: Icons.language_outlined,
+      route: addParentScreen),
+  ProfileTileModel(
+      profileTitle: "Terms and Conditions",
+      iconName: CupertinoIcons.doc_text,
+      route: addParentScreen),
+  ProfileTileModel(
+      profileTitle: "FAQ's",
+      iconName: Icons.lightbulb_outline_rounded,
+      route: addParentScreen),
+  ProfileTileModel(
+      profileTitle: "Join Us",
+      iconName: CupertinoIcons.paperplane,
+      route: addParentScreen),
 ];

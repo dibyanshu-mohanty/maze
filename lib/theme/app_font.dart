@@ -29,31 +29,31 @@ class AppFont {
   // light google white
   static final lightColorWhite = light.copyWith(color: AppColors.colorWhite);
   static final lightColorWhite_12 =
-  lightColorWhite.copyWith(fontSize: Dimens.textSize12);
+      lightColorWhite.copyWith(fontSize: Dimens.textSize12);
   static final lightColorWhite_10 =
-  lightColorWhite.copyWith(fontSize: Dimens.textSize10);
+      lightColorWhite.copyWith(fontSize: Dimens.textSize10);
   static final lightColorWhite_14 =
-  lightColorWhite.copyWith(fontSize: Dimens.textSize14);
-  static final lightColorWhite_8 = lightColorWhite.copyWith(fontSize: Dimens.textSize8);
-  static final lightColorWhite_22 = lightColorWhite.copyWith(fontSize: Dimens.textSize22);
-  static final lightColorWhite_15 = lightColorWhite.copyWith(fontSize: Dimens.textSize15);
+      lightColorWhite.copyWith(fontSize: Dimens.textSize14);
+  static final lightColorWhite_8 =
+      lightColorWhite.copyWith(fontSize: Dimens.textSize8);
+  static final lightColorWhite_22 =
+      lightColorWhite.copyWith(fontSize: Dimens.textSize22);
+  static final lightColorWhite_15 =
+      lightColorWhite.copyWith(fontSize: Dimens.textSize15);
 
   //medium google
 
-
   //regular google white
   static final regularColorWhite_9 =
-  regular.copyWith(fontSize: Dimens.textSize9);
+      regular.copyWith(fontSize: Dimens.textSize9);
   static final regularColorWhite_10 =
-  regular.copyWith(fontSize: Dimens.textSize10);
+      regular.copyWith(fontSize: Dimens.textSize10);
   static final regularColorWhite_14 =
-  regular.copyWith(fontSize: Dimens.textSize14);
+      regular.copyWith(fontSize: Dimens.textSize14);
 
   /// Color White Light
   static final lightColorgrey_10 =
       light.copyWith(fontSize: Dimens.textSize10, color: Color(0xffffffff));
-
-
 
   /// Color White Regular
   static final regularColorWhite_20 =
@@ -97,9 +97,9 @@ class AppFont {
     color: Color(0xff62EB56),
   );
   static final mediumColorWhite_15 =
-  mediumBold.copyWith(fontSize: Dimens.textSize15);
+      mediumBold.copyWith(fontSize: Dimens.textSize15);
   static final mediumColorWhite_16 =
-  mediumBold.copyWith(fontSize: Dimens.textSize16);
+      mediumBold.copyWith(fontSize: Dimens.textSize16);
 
   ///Color White Bold
   static final boldColorWhite_15 = bold.copyWith(fontSize: Dimens.textSize15);
@@ -121,7 +121,6 @@ class AppFont {
       regular.copyWith(color: AppColors.colorBlack);
   static final regularColorBlack_18 =
       regularColorBlack.copyWith(fontSize: Dimens.textSize18);
-
   static final regularColorBlack_12 =
       regularColorBlack.copyWith(fontSize: Dimens.textSize12);
 
@@ -135,12 +134,14 @@ class AppFont {
       mediumBold.copyWith(color: AppColors.colorBlack);
   static final mediumBoldColorBlack_16 =
       mediumBoldColorBlack.copyWith(fontSize: Dimens.textSize16);
-
-  /// Color Golden Medium
   static final mediumBoldColorBlack_14 =
       mediumBoldColorBlack.copyWith(fontSize: Dimens.textSize14);
+  // static final mediumBoldColorBlack  = mediumBold.copyWith(color: AppColors.colorBlack);
+  // static final mediumBoldColorBlack_16 = mediumBoldColorBlack.copyWith(fontSize: Dimens.textSize16);
   static final mediumBoldColorBlack_20 =
       mediumBoldColorBlack.copyWith(fontSize: Dimens.textSize20);
+
+  /// Color Golden Medium
 
   /// Color Golden Medium
 
@@ -248,6 +249,6 @@ class AppFont {
       mediumBoldColorRed.copyWith(fontSize: Dimens.textSize18);
 
   /// Color White SemiBold
-  static final semiBoldColorWhite_15 =
-      semiBold.copyWith(fontSize: Dimens.textSize15);
+  // static final semiBoldColorWhite_15 =
+  //     semiBold.copyWith(fontSize: Dimens.textSize15);
 }

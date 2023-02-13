@@ -25,7 +25,7 @@ class ProductStockComponent extends StatelessWidget {
       ),
       title: Text(
         "Adtiya Birla Cap",
-        style: AppFont.regularGoogleWhite,
+        style: AppFont.regularColorWhite_10,
       ),
       subtitle: Row(
         children: [
@@ -41,7 +41,7 @@ class ProductStockComponent extends StatelessWidget {
           Text(
             "1200.0",
             textAlign: TextAlign.center,
-            style: AppFont.mediumGoogleWhite,
+            style: AppFont.mediumBoldColorWhite_10,
           ),
           Container(
             width: 4.w,
@@ -57,7 +57,7 @@ class ProductStockComponent extends StatelessWidget {
           Text(
             "5.98%",
             textAlign: TextAlign.center,
-            style: AppFont.regularGoogleGreen,
+            style: AppFont.regularColorWhite_10,
           ),
         ],
       ),

@@ -24,53 +24,58 @@ import 'view/widgets/authScreen/otpfields.dart';
 import 'package:maze/view/screens/splashScreen/splashscreen.dart';
 
 class MyRoutes {
-
   static Route<dynamic> generateRoute(RouteSettings settings) {
-      return CupertinoPageRoute<dynamic>(
-          settings: settings,
-          builder: (BuildContext context) {
-        switch (settings.name) {
-          case splashScreen:
-            return const SplashScreen();
-          case errorScreen:
-            return const ErrorScreen();
-          case onboardingScreen:
-            return const OnboardingScreen();
-          case introductionDetailsScreen:
-            return IntroductionDetailsScreen();
-          case categorySelect:
-            return const CategorySelectScreen();
-          case enterPhonenumber:
-            return const EnterPhoneNumber();
-          case otp:
-            return OTPField(otpController: TextEditingController(),);
-          case createProfile:
-            return CreateProfileScreen();
-          case homePage:
-            return const HomeScreen();
-          case learningLevelScreen:
-            return const LearningLevelScreen();
-          case learningContentScreen:
-            return const LearningContentScreen();
-          case readingTask:
-            return const ReadingTaskScreen();
-          case taskLevel:
-            return const TaskLevelScreen();
-          case videoPlayer:
-            return const VideoPlayerScreen();
-          case mainFrame:
-            return MainFrame();
-          case digitalGoldScreen:
-            return const DigitalGoldScreen();
-          case buyDigitalGoldScreen:
-            return const BuyGoldScreen();
-          case profileScreen:
-            return const ProfileScreen();
-          case addParentScreen:
-            return const AddParentScreen();
-          default:
-            return SplashScreen();
-        }
-      });
+    return CupertinoPageRoute<dynamic>(
+        settings: settings,
+        builder: (BuildContext context) {
+          switch (settings.name) {
+            case splashScreen:
+              return const SplashScreen();
+            case errorScreen:
+              return const ErrorScreen();
+            case onboardingScreen:
+              return const OnboardingScreen();
+            case introductionDetailsScreen:
+              return IntroductionDetailsScreen();
+            case categorySelect:
+              return const CategorySelectScreen();
+            case enterPhonenumber:
+              return const EnterPhoneNumber();
+            case otp:
+              return OTPField(
+                otpController: TextEditingController(),
+              );
+            case createProfile:
+              return CreateProfileScreen();
+            case homePage:
+              return const HomeScreen();
+            case learningLevelScreen:
+              return const LearningLevelScreen();
+            case learningContentScreen:
+              return const LearningContentScreen();
+            case readingTask:
+              return const ReadingTaskScreen();
+            case taskLevel:
+              return const TaskLevelScreen();
+            case videoPlayer:
+              return const VideoPlayerScreen();
+            case mainFrame:
+              return MainFrame();
+            case digitalGoldScreen:
+              return const DigitalGoldScreen();
+            case buyDigitalGoldScreen:
+              return const BuyGoldScreen();
+            case profileScreen:
+              return const ProfileScreen();
+            case addParentScreen:
+              return const AddParentScreen();
+            case historyScreen:
+              return const HistoryScreen();
+            case virtualSimulatorScreen:
+              return const VirtualSimulatorScreen();
+            default:
+              return SplashScreen();
+          }
+        });
   }
 }

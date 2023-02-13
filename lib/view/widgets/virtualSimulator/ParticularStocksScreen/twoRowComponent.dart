@@ -3,11 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:maze/theme/app_font.dart';
 import 'package:sizer/sizer.dart';
 
-class Component7 extends StatelessWidget {
+class TwoRowComponent extends StatelessWidget {
   final firstVal;
   final secondVal;
   final weight;
-  const Component7({super.key, this.firstVal, this.secondVal, this.weight});
+  const TwoRowComponent(
+      {super.key, this.firstVal, this.secondVal, this.weight});
 
   @override
   Widget build(BuildContext context) {

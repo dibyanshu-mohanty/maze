@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:maze/theme/app_font.dart';
 import 'package:sizer/sizer.dart';
 
-class Component10 extends StatelessWidget {
-  const Component10({super.key});
+class HighestValueStock extends StatelessWidget {
+  const HighestValueStock({super.key});
 
   @override
   Widget build(BuildContext context) {

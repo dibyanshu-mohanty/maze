@@ -68,7 +68,7 @@ class PortfolioScreen extends StatelessWidget {
                     // leading: SizedBox(width: 0.5.w),
                     title: Text(
                       "History",
-                      style: AppFont.regularGoogleWhite,
+                      style: AppFont.regularColorWhite_13,
                       textAlign: TextAlign.center,
                     ),
                     trailing: const Icon(

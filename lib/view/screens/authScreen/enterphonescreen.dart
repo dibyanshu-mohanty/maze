@@ -25,37 +25,34 @@ class _EnterPhoneNumberState extends State<EnterPhoneNumber> {
   final phoneTextController = TextEditingController();
   final otpTextController = TextEditingController();
 
-
   bool validateMobile(String number) {
     String pattern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
     RegExp regExp = RegExp(pattern);
     if (number.isEmpty) {
       return false;
-    }
-    else if (!regExp.hasMatch(number)) {
+    } else if (!regExp.hasMatch(number)) {
       return false;
     }
     return true;
   }
 
-  void requestForOTP (AuthProvider authProviderObj, CategorySelectProvider cspObj) async{
-    String numberEntered =
-        fieldTextController.text.toString() +
-            phoneTextController.text.toString();
+  void requestForOTP(
+      AuthProvider authProviderObj, CategorySelectProvider cspObj) async {
+    String numberEntered = fieldTextController.text.toString() +
+        phoneTextController.text.toString();
     final validNumber = validateMobile(numberEntered);
-    if(validNumber){
-      await authProviderObj.authRequest(
-          numberEntered, cspObj.type, context);
+    if (validNumber) {
+      await authProviderObj.authRequest(numberEntered, cspObj.type, context);
       FocusScopeNode().unfocus();
       final userResponse = authProviderObj.signupUser;
-      if(userResponse.otp != 0){
+      if (userResponse.otp != 0) {
         setState(() {
           _phoneEntered = true;
           _isLoading = false;
         });
       } else {
         messageSnackBar(context, "Please Try Again");
-        setState((){
+        setState(() {
           _phoneEntered = false;
           _isLoading = false;
         });
@@ -66,7 +63,7 @@ class _EnterPhoneNumberState extends State<EnterPhoneNumber> {
         _phoneEntered = false;
         _isLoading = false;
       });
-      return ;
+      return;
     }
   }
 
@@ -177,54 +174,58 @@ class _EnterPhoneNumberState extends State<EnterPhoneNumber> {
                           )),
                   AppSizers.height60,
                   _isLoading
-                  ? SpinKitFadingCircle(color: AppColors.colorWhite,size: 10.w,)
-                  : GestureDetector(
-                    onTap: _phoneEntered
-                        ? () async {
-                      setState((){
-                        _isLoading = true;
-                      });
-                            if (otpTextController.text !=
-                                authProviderObj.signupUser.otp.toString()) {
-                              messageSnackBar(context, "Wrong OTP");
-                              setState((){
-                                _isLoading = false;
-                              });
-                            } else {
-                              await authProviderObj.loginRequest(context);
-                              _isLoading = false;
-                              Navigator.pushNamed(context, createProfile);
-                            }
-                          }
-                        : () async {
-                            if (_isDone) {
-                              setState((){
-                                _isLoading = true;
-                              });
-                              requestForOTP(authProviderObj, cspObj);
-                            }
-                          },
-                    child: Center(
-                      child: Container(
-                        width: 18.w,
-                        height: 18.w,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: _isDone
-                                ? AppColors.colorWhite
-                                : Colors.transparent,
-                            border: Border.all(
-                                color: AppColors.colorWhite, width: 1.0)),
-                        alignment: Alignment.center,
-                        child: Icon(
-                          Icons.arrow_forward,
-                          color: _isDone
-                              ? AppColors.colorBlack
-                              : AppColors.colorWhite,
+                      ? SpinKitFadingCircle(
+                          color: AppColors.colorWhite,
+                          size: 10.w,
+                        )
+                      : GestureDetector(
+                          onTap: _phoneEntered
+                              ? () async {
+                                  setState(() {
+                                    _isLoading = true;
+                                  });
+                                  if (otpTextController.text !=
+                                      authProviderObj.signupUser.otp
+                                          .toString()) {
+                                    messageSnackBar(context, "Wrong OTP");
+                                    setState(() {
+                                      _isLoading = false;
+                                    });
+                                  } else {
+                                    await authProviderObj.loginRequest(context);
+                                    _isLoading = false;
+                                    Navigator.pushNamed(context, createProfile);
+                                  }
+                                }
+                              : () async {
+                                  if (_isDone) {
+                                    setState(() {
+                                      _isLoading = true;
+                                    });
+                                    requestForOTP(authProviderObj, cspObj);
+                                  }
+                                },
+                          child: Center(
+                            child: Container(
+                              width: 18.w,
+                              height: 18.w,
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: _isDone
+                                      ? AppColors.colorWhite
+                                      : Colors.transparent,
+                                  border: Border.all(
+                                      color: AppColors.colorWhite, width: 1.0)),
+                              alignment: Alignment.center,
+                              child: Icon(
+                                Icons.arrow_forward,
+                                color: _isDone
+                                    ? AppColors.colorBlack
+                                    : AppColors.colorWhite,
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),

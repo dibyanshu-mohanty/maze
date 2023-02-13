@@ -74,7 +74,7 @@ class HistoryStock extends StatelessWidget {
                       ),
                       Text(
                         "5.98%",
-                        style: AppFont.regularColorGre,
+                        style: AppFont.regularColorWhite_12,
                       ),
                     ],
                   ),

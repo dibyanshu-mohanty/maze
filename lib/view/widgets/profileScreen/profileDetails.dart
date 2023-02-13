@@ -5,16 +5,21 @@ class ProfileDetailsTile extends StatelessWidget {
   final String profileDetailsTitle;
   final IconData profileDetailsIcon;
   final String routeName;
-  const ProfileDetailsTile({super.key, required this.profileDetailsTitle, required this.profileDetailsIcon,required this.routeName});
+  const ProfileDetailsTile(
+      {super.key,
+      required this.profileDetailsTitle,
+      required this.profileDetailsIcon,
+      required this.routeName});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         Navigator.pushNamed(context, routeName);
       },
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: Dimens.margin8,vertical: Dimens.margin9),
+        margin: const EdgeInsets.symmetric(
+            horizontal: Dimens.margin8, vertical: Dimens.margin9),
         child: ListTile(
           leading: Container(
             width: 12.w,

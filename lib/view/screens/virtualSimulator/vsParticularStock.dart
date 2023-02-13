@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:maze/theme/app_colors.dart';
+import 'package:maze/theme/app_font.dart';
 import 'package:maze/view/screens/virtualSimulator/vsAppScreenBackground.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../utils/baseappbar.dart';
 import '../../widgets/virtualSimulator/ParticularStocksScreen/buySellComponent.dart';
-import '../../widgets/virtualSimulator/ParticularStocksScreen/component10.dart';
+import '../../widgets/virtualSimulator/ParticularStocksScreen/hightestValueStock.dart';
 
-import '../../widgets/virtualSimulator/ParticularStocksScreen/component14.dart';
-import '../../widgets/virtualSimulator/ParticularStocksScreen/component7.dart';
+// import '../../widgets/virtualSimulator/ParticularStocksScreen/component14.dart';
+import '../../widgets/virtualSimulator/ParticularStocksScreen/twoRowComponent.dart';
 import '../../widgets/virtualSimulator/ParticularStocksScreen/graphBottomRowComponent5.dart';
 import '../../widgets/virtualSimulator/ParticularStocksScreen/graphComponent4.dart';
 import '../../widgets/virtualSimulator/ParticularStocksScreen/graphUpperRowComponent.dart';
@@ -61,7 +62,7 @@ class _VsParticularStockState extends State<VsParticularStock> {
               const Component6(),
 
               //....................................Component 8 ---------------->  Varient of Component 7....................//
-              const Component7(
+              const TwoRowComponent(
                 firstVal: "480.00",
                 secondVal: "1490.87",
               ),
@@ -86,7 +87,7 @@ class _VsParticularStockState extends State<VsParticularStock> {
               ),
 
               //..............................................Component 10...........................................//
-              const Component10(),
+              const HighestValueStock(),
 
               //............................................Component  12............................................//
               Container(
@@ -109,7 +110,13 @@ class _VsParticularStockState extends State<VsParticularStock> {
               //............................................StockDetail Component  13............................................//
               const StockDetailComponent13(),
               //...........................................Component  14...............................................//
-              const Component14(),
+              Container(
+                margin: EdgeInsets.only(left: 20, top: 45),
+                child: Text(
+                  "Fudamental",
+                  style: AppFont.regularColorWhite_15,
+                ),
+              ),
             ],
           ),
           //..............................................BuySell Component 15..............................................//

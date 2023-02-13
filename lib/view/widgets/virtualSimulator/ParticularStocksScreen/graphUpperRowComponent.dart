@@ -16,7 +16,7 @@ class GraphUpperRowComponent3 extends StatelessWidget {
         children: [
           Text(
             "NSE",
-            style: AppFont.mediumGoogleWhite,
+            style: AppFont.mediumBoldColorWhite_12,
           ),
           Container(
             width: 10.w,
@@ -39,24 +39,24 @@ class GraphUpperRowComponent3 extends StatelessWidget {
             child: Text(
               "1D",
               textAlign: TextAlign.center,
-              style: AppFont.mediumGoogleWhite,
+              style: AppFont.mediumBoldColorWhite_12,
             ),
           ),
           Text(
             "1W",
-            style: AppFont.mediumGoogleWhite,
+            style: AppFont.mediumBoldColorWhite_12,
           ),
           Text(
             "1M",
-            style: AppFont.mediumGoogleWhite,
+            style: AppFont.mediumBoldColorWhite_12,
           ),
           Text(
             "1Y",
-            style: AppFont.mediumGoogleWhite,
+            style: AppFont.mediumBoldColorWhite_12,
           ),
           Text(
             "3Y",
-            style: AppFont.mediumGoogleWhite,
+            style: AppFont.mediumBoldColorWhite_12,
           ),
         ],
       ),
