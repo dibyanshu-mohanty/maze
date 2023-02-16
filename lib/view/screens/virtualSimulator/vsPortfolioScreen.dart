@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:maze/constants/constRouteNames.dart';
 import 'package:maze/theme/app_colors.dart';
+// import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
+// import '../../../controller/providers/virtualSimulator/userAllTournmentsProvider.dart';
 import '../../../theme/app_font.dart';
 import '../../../theme/app_images.dart';
 import '../../widgets/virtualSimulator/ShareStockComponentPortFolioScreen.dart';

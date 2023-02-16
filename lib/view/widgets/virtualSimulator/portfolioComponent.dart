@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:maze/theme/app_colors.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../controller/providers/virtualSimulator/userAllTournmentsProvider.dart';
 import '../../../theme/app_font.dart';
 import '../../../theme/app_images.dart';
 import 'demoCryptoComponent.dart';
@@ -12,6 +14,8 @@ class VSSComponent1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final portfolioObj = Provider.of<TournamentProvider>(context);
+    final res = portfolioObj.portFolio;
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.h),
       width: 82.w,
@@ -57,7 +61,7 @@ class VSSComponent1 extends StatelessWidget {
                               fit: BoxFit.cover),
                         ),
                         Text(
-                          "₹ 1,00,000",
+                          "₹ ${res.total_returns}",
                           style: AppFont.mediumBoldColorGreen_15,
                         )
                       ],
@@ -73,17 +77,17 @@ class VSSComponent1 extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                const DemoCryptoComponent1(
+                DemoCryptoComponent1(
                   title: "Current Value",
-                  amount: "1,00,000",
+                  amount: "${res.current_value}",
                   amountColor: 0xffffffff,
                 ),
                 SizedBox(
                   width: 5.w,
                 ),
-                const DemoCryptoComponent1(
+                DemoCryptoComponent1(
                   title: "Invested Amount",
-                  amount: "0",
+                  amount: "${res.invested_amount}",
                   amountColor: 0xffFF2F2F,
                 ),
                 // Spacer(),

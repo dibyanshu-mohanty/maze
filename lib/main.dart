@@ -15,6 +15,7 @@ import 'controller/providers/auth/authprovider.dart';
 import 'package:maze/view/screens/errorScreen/errorscreen.dart';
 import 'package:maze/view/screens/goldScreen/digitalgoldscreen.dart';
 import 'package:maze/view/screens/profile/profilescreen.dart';
+import 'controller/providers/virtualSimulator/userAllTournmentsProvider.dart';
 import 'view/screens/authScreen/categoryselectscreen.dart';
 import 'view/screens/authScreen/createprofilescreen.dart';
 import 'view/screens/authScreen/enterphonescreen.dart';
@@ -52,6 +53,7 @@ class YaroApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => CategorySelectProvider()),
         ChangeNotifierProvider(create: (context) => AuthProvider()),
         ChangeNotifierProvider(create: (context) => ProfileProvider()),
+        ChangeNotifierProvider(create: (context) => TournamentProvider()),
       ],
       child: Sizer(
         builder: (context, orientation, deviceType) => MaterialApp(
@@ -62,8 +64,8 @@ class YaroApp extends StatelessWidget {
             //canvasColor: AppColors.colorWhite,
           ),
           onGenerateRoute: MyRoutes.generateRoute,
-          // initialRoute: splashScreen,
-          home: VsSplashScreens(),
+          initialRoute: splashScreen,
+          // home: VsSplashScreens(),
         ),
       ),
     );
