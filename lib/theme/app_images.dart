@@ -1,6 +1,7 @@
 class AppImages {
   static const String imageBaseURL = 'assets/images/';
   static const String imageBaseURLv2 = 'assets/icons/';
+  static const String imageBaseURLv3 = 'assets/animations/';
 
   static const ic_logomain = "${imageBaseURL}yarologo.png";
   static const ic_onboard = "${imageBaseURL}onboardScreen/ic_onboardVector.png";
@@ -74,4 +75,11 @@ class AppImages {
       "${imageBaseURLv2}homeScreen/ic_portfolioIcon.png";
   static const ic_goldIcon = "${imageBaseURLv2}homeScreen/ic_goldIcon.png";
   static const ic_playIcon = "${imageBaseURLv2}homeScreen/ic_playIcon.png";
+
+
+
+  /// Animations
+  static const ic_GoldPlatesAnimation = "${imageBaseURLv3}digitalGoldScreen/goldplates.json";
+  static const ic_GoldCoinAnimation = "${imageBaseURLv3}digitalGoldScreen/goldcoin.json";
+  static const ic_EmptyModuleAnimation = "${imageBaseURLv3}learningScreen/emptymodules.json";
 }

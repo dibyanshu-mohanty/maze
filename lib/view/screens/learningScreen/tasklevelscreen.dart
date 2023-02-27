@@ -1,8 +1,14 @@
+import 'package:card_swiper/card_swiper.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:maze/theme/app_images.dart';
 import 'package:maze/theme/coreimport.dart';
 import 'package:maze/view/utils/appscreenbackground.dart';
+import 'package:maze/view/utils/staticUiThemes/staticuielements.dart';
 import 'package:maze/view/widgets/learningScreen/moduleholder.dart';
 import 'package:maze/view/widgets/learningScreen/taskholder.dart';
+import 'package:maze/view/widgets/learningScreen/tasklearningprogressindicator.dart';
+
+import '../../utils/baseappbar.dart';
 
 class TaskLevelScreen extends StatefulWidget {
   const TaskLevelScreen({Key? key}) : super(key: key);
@@ -13,86 +19,93 @@ class TaskLevelScreen extends StatefulWidget {
 
 class _TaskLevelScreenState extends State<TaskLevelScreen> {
   bool isLocked = true;
+  var moduleData;
+
+  @override
+  void didChangeDependencies() {
+    moduleData = ModalRoute.of(context)!.settings.arguments;
+    super.didChangeDependencies();
+
+  }
 
   @override
   Widget build(BuildContext context) {
-    bool isSmall = MediaQuery.of(context).size.width < 320;
+    bool isSmall = MediaQuery.of(context).size.height < 750;
     return Scaffold(
       body: Stack(
         children: [
           const AppScreenBackground(),
-          Container(
-              margin: EdgeInsets.symmetric(vertical: 10.h),
-              alignment: Alignment.center,
-              child:
-              Image.asset("assets/images/learningScreen/mapVertical.png")),
-          Positioned(
-            bottom: isSmall ? 5.h : 4.h,
-            left: isSmall ? 35.w : 38.w,
-            child: TaskThumbnail(
-                taskType: 'read',
-                isLocked: false,
-                taskName: "Task 1"),
-          ),
-          Positioned(
-            bottom: isSmall ? 19.h : 20.h,
-            right: isSmall ? 15.w : 12.w,
-            child: TaskThumbnail(
-                taskType: 'read',
-                isLocked: true,
-                taskName: "Task 2"),
-          ),
-          Positioned(
-            bottom: 30.h,
-            left: isSmall ? 7.w : 4.w,
-            child: TaskThumbnail(
-                taskType: 'read',
-                isLocked: true,
-                taskName: "Task 3"),
-          ),
-          Positioned(
-            bottom: 45.h,
-            right: isSmall
-                ? isLocked
-                ? 14.w
-                : 10.w
-                : isLocked
-                ? 10.w
-                : 6.w,
-            child: TaskThumbnail(
-                taskType: 'video',
-                isLocked: true,
-                taskName: "Task 4"),
-          ),
-          Positioned(
-            bottom: isSmall ? 55.h : 57.h,
-            left: 35.w,
-            child: TaskThumbnail(
-                taskType: 'video',
-                isLocked: true,
-                taskName: "Task 5"),
-          ),
-          Positioned(
-            bottom: isSmall
-                ? isLocked
-                ? 77.h
-                : 75.h
-                : isLocked
-                ? 78.h
-                : 76.h,
-            right: 50.w,
-            child: TaskThumbnail(
-                taskType: 'games',
-                isLocked: true,
-                taskName: "Task 6"),
-          ),
-          Positioned(
-            top: 5.h,
-            left: 5.w,
-            child: Container(
-              alignment: Alignment.topLeft,
-              child: Icon(Icons.arrow_back_ios,color: AppColors.colorWhite,),
-            ),
+          ListView(
+            children: [
+              BaseAppBar(
+                  title: moduleData["moduleName"],
+                  appBar: AppBar(),
+                  mLeftAction: () {
+                    Navigator.pop(context);
+                  }),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: Dimens.margin16,vertical: Dimens.margin25),
+                padding: const EdgeInsets.symmetric(horizontal: Dimens.margin20,vertical: Dimens.margin25),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.0),
+                  color: AppColors.colorGrey2,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      moduleData["moduleDescription"],
+                      style: AppFont.regularColorWhite_16,
+                    ),
+                    AppSizers.height20,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Total Task",
+                          style: AppFont.mediumBoldColorGolden_14,
+                        ),
+                        AppSizers.height5,
+                        Text(
+                          "5 (2 Reading, 2 Video and 1 Game",
+                          style: AppFont.lightColorWhite_12,
+                        ),
+                        AppSizers.height20,
+                        Text(
+                          "Rewards",
+                          style: AppFont.mediumBoldColorGolden_14,
+                        ),
+                        AppSizers.height5,
+                        Text(
+                          "50 Coins",
+                          style: AppFont.lightColorWhite_12,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              AppSizers.height10,
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: Dimens.margin16),
+                child: const TaskLearningProgressIndicator(
+                  tasksCompleted: 2,
+                  totalTasks: 5,
+                ),
+              ),
+              AppSizers.height30,
+                CarouselSlider(
+                  options: CarouselOptions(
+                    autoPlay: false,
+                    enlargeCenterPage: true,
+                    aspectRatio: 16/9,
+                    viewportFraction: 0.5,
+                  ),
+                  items: tasks.map((e) => TaskThumbnail(isLocked: false, taskType: e.taskType)).toList(),
+                ),
+
+            ],
           ),
         ],
       ),

@@ -1,6 +1,7 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:dio/dio.dart';
 
-const String mainServer = "https://api.yaropay.in/v1";
+const String mainServer = "https://stage-api.yaropay.in/v1";
 const String testServer = "";
 
 Map<String,String> authorisedHeaders (String bearerToken) {
@@ -8,11 +9,6 @@ Map<String,String> authorisedHeaders (String bearerToken) {
       'Authorization' : "Bearer " + bearerToken
     };
 }
-
-const Map<String,String> unauthorisedHeaders = {
-  'Content-type' : "application/json",
-};
-
 
 class NetworkOptions{
   Future<bool> checkConnection() async{
@@ -30,3 +26,9 @@ class NetworkOptions{
     }
   }
 }
+
+Dio dio = Dio(BaseOptions(
+  connectTimeout: const Duration(seconds: 60),
+  baseUrl: "https://stage-api.yaropay.in/v1/",
+  responseType: ResponseType.json,
+));

@@ -48,7 +48,7 @@ class OnboardScreenThree extends StatelessWidget {
               ),
               const SizedBox(height: Dimens.margin20),
               GestureDetector(
-                onTap: () { Navigator.pushNamed(context, categorySelect); },
+                onTap: () { Navigator.pushNamed(context, enterPhonenumber); },
                 child: Container(
                     margin: const EdgeInsets.symmetric(
                         horizontal: Dimens.margin50, vertical: Dimens.margin20),

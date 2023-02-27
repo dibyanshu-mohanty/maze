@@ -1,8 +1,14 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:maze/constants/constRouteNames.dart';
+import 'package:maze/model/learning/model/taskmodel.dart';
 import 'package:maze/model/uiModels/profiletilemodel.dart';
 import 'package:maze/theme/coreimport.dart';
+
+import '../../../model/learning/model/learningmodulemodel.dart';
+
+
+// HomeScreen
 
 final List<Widget> homeScreenHeaderCategory = [
   Row(
@@ -55,6 +61,8 @@ final List<Widget> homeScreenHeaderCategory = [
   ),
 ];
 
+// LearningScreen
+
 final List<Tab> tabs = <Tab>[
   Tab(
     child: Text(
@@ -69,6 +77,34 @@ final List<Tab> tabs = <Tab>[
     ),
   ),
 ];
+
+
+List<Map<String,dynamic>> moduleImages = [
+  {"1" : AppImages.ic_learningModule2,},
+  {"2" : AppImages.ic_learningModule3,},
+  {"3" : AppImages.ic_learningModule4,},
+  {"4" : AppImages.ic_learningModule5,},
+  {"5" : AppImages.ic_learningModule6,},
+  {"6" : AppImages.ic_learningModule7,},
+];
+
+Map<String,String> taskImages = {
+  'video' : AppImages.ic_videoIcon,
+  'games' : AppImages.ic_gamesIcon,
+  'read' : AppImages.ic_readingIcon,
+};
+
+// Task Screen
+
+List<TaskModel> tasks = [
+  TaskModel(taskName: "Task 1", taskType: "video"),
+  TaskModel(taskName: "Task 2", taskType: "read"),
+  TaskModel(taskName: "Task 3", taskType: "video"),
+  TaskModel(taskName: "Task 4", taskType: "games"),
+  TaskModel(taskName: "Task 5", taskType: "read"),
+];
+
+// Profile Screen
 
 final List<ProfileTileModel> profileScreenData = [
   ProfileTileModel(
@@ -95,4 +131,20 @@ final List<ProfileTileModel> profileScreenData = [
       profileTitle: "Join Us",
       iconName: CupertinoIcons.paperplane,
       route: addParentScreen),
+];
+
+
+// Digital Gold Screen
+List<String> amountDefault = [
+  "50",
+  "100",
+  "200",
+  "500",
+];
+
+List<String> goldAmountDefault = [
+  "0.25",
+  "0.5",
+  "0.75",
+  "1",
 ];
