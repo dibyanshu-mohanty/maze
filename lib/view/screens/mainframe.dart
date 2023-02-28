@@ -19,6 +19,7 @@ import 'learningScreen/videoscreen.dart';
 import 'onboardingScreen/introductiondetailscreen.dart';
 import 'onboardingScreen/onboardingscreen.dart';
 import 'splashScreen/splashscreen.dart';
+import 'virtualSimulator/vsScrollSplashScreens.dart';
 
 class MainFrame extends StatefulWidget {
   MainFrame({Key? key}) : super(key: key);
@@ -31,9 +32,10 @@ class _MainFrameState extends State<MainFrame> {
   final List<Widget> _mainScreens = [
     const HomeScreen(),
     LearningLevelScreen(),
-    const HomeScreen(),
-    const RewardPage(),
-    const DigitalGoldScreen(),
+    HomeScreen(),
+    RewardPage(),
+    // DigitalGoldScreen(),
+    VsSplashScreens(),
   ];
 
   int selectedIndex = 0;
