@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
         } else {
           await loginObj.checkRequest(context);
           if(loginObj.jwt.isEmpty){
-            Navigator.pushReplacementNamed(context, categorySelect);
+            Navigator.pushReplacementNamed(context, enterPhonenumber);
           } else {
             Navigator.pushReplacementNamed(context, mainFrame);
           }

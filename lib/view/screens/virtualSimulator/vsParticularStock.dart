@@ -50,24 +50,12 @@ class _VsParticularStockState extends State<VsParticularStock> {
               SizedBox(
                 height: 1.h,
               ),
-              //............................................GraphUpperRow Component 3rd...........................//
               const GraphUpperRowComponent3(),
-
-              //.................................................Graph Component 4..............................//
-              const GraphComponent4(),
-              //.........................................GraphBottomRow Component 5...................................//
-              const GraphBottomRowComponent5(),
-
-              //.........................................Component 6....................................//
               const Component6(),
-
-              //....................................Component 8 ---------------->  Varient of Component 7....................//
               const TwoRowComponent(
                 firstVal: "480.00",
                 secondVal: "1490.87",
               ),
-
-              //..............................................Component 9...........................................//
               Container(
                 height: 1.h,
                 margin: EdgeInsets.symmetric(vertical: 1.h),
@@ -85,11 +73,7 @@ class _VsParticularStockState extends State<VsParticularStock> {
                   inactiveColor: AppColors.colorDarkGreen,
                 ),
               ),
-
-              //..............................................Component 10...........................................//
               const HighestValueStock(),
-
-              //............................................Component  12............................................//
               Container(
                 height: 1.h,
                 margin: EdgeInsets.symmetric(vertical: 1.h),
@@ -107,9 +91,7 @@ class _VsParticularStockState extends State<VsParticularStock> {
                   inactiveColor: AppColors.colorDarkGreen,
                 ),
               ),
-              //............................................StockDetail Component  13............................................//
               const StockDetailComponent13(),
-              //...........................................Component  14...............................................//
               Container(
                 margin: EdgeInsets.only(left: 20, top: 45),
                 child: Text(
@@ -119,7 +101,6 @@ class _VsParticularStockState extends State<VsParticularStock> {
               ),
             ],
           ),
-          //..............................................BuySell Component 15..............................................//
           const BuySellComponent15(),
         ],
       ),

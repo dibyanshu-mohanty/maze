@@ -5,3 +5,7 @@ class NullAuthException implements Exception{
 class ApiStatusException implements Exception{
   String apiStatusMessage()=> 'Network Error';
 }
+
+class LocalDBException implements Exception{
+    String ldbStatusMessage()=> 'Please Try Again';
+}

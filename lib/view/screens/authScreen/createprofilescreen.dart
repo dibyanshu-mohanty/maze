@@ -156,7 +156,7 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                         GestureDetector(
                             onTap: (){
                               setState(() {
-                                gender = "Male";
+                                gender = "MALE";
                               });
                             },
                             child: AnimatedContainer(
@@ -168,16 +168,16 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.0),
                                     border: Border.all(color: AppColors.colorWhite, width: 1.0),
-                                  color: gender == "Male" ? AppColors.colorWhite : AppColors.colorTransparent,
+                                  color: gender == "MALE" ? AppColors.colorWhite : AppColors.colorTransparent,
                                 ),
                                 duration: Duration(milliseconds: 700),
                                 curve: Curves.decelerate,
-                                child: Text("Male",style:gender == "Male" ? AppFont.regularColorBlack : AppFont.regularColorWhite_12,)
+                                child: Text("Male",style:gender == "MALE" ? AppFont.regularColorBlack : AppFont.regularColorWhite_12,)
                             ),),
                         GestureDetector(
                             onTap: (){
                               setState(() {
-                                gender = "Female";
+                                gender = "FEMALE";
                               });
                             },
                             child: AnimatedContainer(
@@ -189,11 +189,11 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.0),
                                   border: Border.all(color: AppColors.colorWhite, width: 1.0),
-                                  color: gender == "Female" ? AppColors.colorWhite : AppColors.colorTransparent,
+                                  color: gender == "FEMALE" ? AppColors.colorWhite : AppColors.colorTransparent,
                                 ),
                                 duration: Duration(milliseconds: 700),
                                 curve: Curves.decelerate,
-                                child: Text("Female",style:gender == "Female" ? AppFont.regularColorBlack : AppFont.regularColorWhite_12,)
+                                child: Text("Female",style:gender == "FEMALE" ? AppFont.regularColorBlack : AppFont.regularColorWhite_12,)
                             ),),
                       ],
                     ),

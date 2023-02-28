@@ -54,10 +54,9 @@ class AuthProvider with ChangeNotifier {
         _jwt = refreshAuthDetails["token"];
         final refs = await SharedPreferences.getInstance();
         await refs.setString('jwt', refreshAuthDetails["token"]);
-        await refs.setString('refreshJwt', refreshAuthDetails["refreshToken"]);
         notifyListeners();
       } else {
-      throw NullAuthException();
+      throw LocalDBException();
       }
       } else {
         throw NullAuthException();
@@ -66,6 +65,9 @@ class AuthProvider with ChangeNotifier {
     } on NullAuthException {
       NullAuthException naException = NullAuthException();
       messageSnackBar(context, naException.nullAuthMessage());
+    } on LocalDBException {
+      LocalDBException ldbException = LocalDBException();
+      messageSnackBar(context, ldbException.ldbStatusMessage());
     }
   }
 

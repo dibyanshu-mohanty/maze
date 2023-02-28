@@ -1,7 +1,7 @@
 import 'constants/constRouteNames.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:maze/view/screens/errorScreen/errorscreen.dart';
-import 'package:maze/view/screens/goldScreen/buygoldscreen.dart';
+import 'package:maze/view/screens/goldScreen/txngoldscreen.dart';
 import 'package:maze/view/screens/goldScreen/digitalgoldscreen.dart';
 import 'package:maze/view/screens/profile/addparentscreen.dart';
 import 'package:maze/view/screens/profile/profilescreen.dart';
@@ -50,7 +50,7 @@ class MyRoutes {
             case homePage:
               return const HomeScreen();
             case learningLevelScreen:
-              return const LearningLevelScreen();
+              return LearningLevelScreen();
             case learningContentScreen:
               return const LearningContentScreen();
             case readingTask:
@@ -63,8 +63,8 @@ class MyRoutes {
               return MainFrame();
             case digitalGoldScreen:
               return const DigitalGoldScreen();
-            case buyDigitalGoldScreen:
-              return const BuyGoldScreen();
+            case transactDigitalGoldScreen:
+              return const GoldScreenTransaction();
             case profileScreen:
               return const ProfileScreen();
             case addParentScreen:

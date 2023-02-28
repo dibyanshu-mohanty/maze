@@ -29,8 +29,8 @@ class MainFrame extends StatefulWidget {
 }
 
 class _MainFrameState extends State<MainFrame> {
-  final List<Widget> _mainScreens = const [
-    HomeScreen(),
+  final List<Widget> _mainScreens = [
+    const HomeScreen(),
     LearningLevelScreen(),
     HomeScreen(),
     RewardPage(),

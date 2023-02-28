@@ -41,6 +41,12 @@ dependencies:
   connectivity_plus: ^3.0.2
   pretty_qr_code: ^2.0.3
   share_plus: ^6.3.1
+  lottie:
+  font_awesome_flutter:
+  swipeable_button_view: ^0.0.2
+  dotted_line: ^3.1.0
+  carousel_slider: ^4.2.1
+  dio: ^5.0.1
 
 
 dev_dependencies:
@@ -61,6 +67,8 @@ flutter:
     - assets/images/rewardScreen/
     - assets/images/learningScreen/modules/
     - assets/animations/
+    - assets/animations/digitalGoldScreen/
+    - assets/animations/learningScreen/
     - assets/icons/homeScreen/
     - assets/icons/learningScreen/
     - assets/images/virtualSimulator/

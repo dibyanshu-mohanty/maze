@@ -1,5 +1,8 @@
-// ignore_for_file: non_constant_identifier_names
+import 'package:json_annotation/json_annotation.dart';
 
+part 'tournamentModel.g.dart';
+
+@JsonSerializable()
 class NewTournament {
   final String id,
       name,
@@ -23,4 +26,9 @@ class NewTournament {
       this.first_prize = 0.0,
       this.second_prize = 0.0,
       this.third_prize = 0.0});
+
+  factory NewTournament.fromJson(Map<String, dynamic> data) =>
+      _$NewTournamentFromJson(data);
+
+  Map<String, dynamic> toJson() => _$NewTournamentToJson(this);
 }

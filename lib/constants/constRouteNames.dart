@@ -21,6 +21,6 @@ const String errorScreen = '/errorScreen';
 const String digitalGoldScreen = "/digitalGoldScreen";
 const String profileScreen = "/profileScreen";
 
-const String buyDigitalGoldScreen = "/buyDigitalGoldScreen";
+const String transactDigitalGoldScreen = "/transactDigitalGoldScreen";
 // const String profileScreen = "/profileScreen";
 const String addParentScreen = "/addParentScreen";

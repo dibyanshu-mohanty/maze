@@ -39,31 +39,11 @@ class TournamentProvider with ChangeNotifier {
       Map<String, dynamic>? tournamentRequestDetails =
           await TournamentApiCalls().getId(context);
       if (tournamentRequestDetails != null) {
-        for (int i = 0;
-            i < tournamentRequestDetails["tournaments"].length;
-            i++) {
-          _tournament.add(
-            NewTournament(
-                id: tournamentRequestDetails["tournaments"][i]["id"],
-                name: tournamentRequestDetails["tournaments"][i]["name"],
-                registration_start_date: tournamentRequestDetails["tournaments"]
-                    [i]["registration_start_date"],
-                registration_end_date: tournamentRequestDetails["tournaments"]
-                    [i]["registration_end_date"],
-                start_date: tournamentRequestDetails["tournaments"][i]
-                    ["start_date"],
-                end_date: tournamentRequestDetails["tournaments"][i]
-                    ["end_date"],
-                status: tournamentRequestDetails["tournaments"][i]["status"],
-                first_prize: tournamentRequestDetails["tournaments"][i]
-                    ["first_prize"],
-                second_prize: tournamentRequestDetails["tournaments"][i]
-                    ["second_prize"],
-                third_prize: tournamentRequestDetails["tournaments"][i]
-                    ["third_prize"],
-                image: tournamentRequestDetails["tournaments"][i]["image"]),
-          );
-        }
+        List<dynamic> tournamentResult =
+            tournamentRequestDetails["tournaments"];
+        _tournament =
+            tournamentResult.map((e) => NewTournament.fromJson(e)).toList();
+        print(_tournament);
 
         notifyListeners();
       } else {

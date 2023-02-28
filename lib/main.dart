@@ -1,12 +1,10 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:maze/controller/providers/learning/moduleprovider.dart';
 import 'package:maze/controller/providers/learning/quizprovider.dart';
 import 'package:maze/controller/providers/learning/readingprovider.dart';
 import 'package:maze/theme/coreimport.dart';
-import 'package:maze/view/screens/rewards/refer.dart';
-import 'package:maze/view/screens/rewards/reward_detail.dart';
-import 'package:maze/view/screens/rewards/reward_page.dart';
 import 'package:maze/constants/constRouteNames.dart';
 import 'package:maze/controller/providers/profile/profileprovider.dart';
 import 'package:maze/routes.dart';
@@ -54,6 +52,7 @@ class YaroApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => AuthProvider()),
         ChangeNotifierProvider(create: (context) => ProfileProvider()),
         ChangeNotifierProvider(create: (context) => TournamentProvider()),
+        ChangeNotifierProvider(create: (context) => ModuleProvider()),
       ],
       child: Sizer(
         builder: (context, orientation, deviceType) => MaterialApp(

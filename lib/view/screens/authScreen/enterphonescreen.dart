@@ -37,12 +37,12 @@ class _EnterPhoneNumberState extends State<EnterPhoneNumber> {
   }
 
   void requestForOTP(
-      AuthProvider authProviderObj, CategorySelectProvider cspObj) async {
+      AuthProvider authProviderObj) async {
     String numberEntered = fieldTextController.text.toString() +
         phoneTextController.text.toString();
     final validNumber = validateMobile(numberEntered);
     if (validNumber) {
-      await authProviderObj.authRequest(numberEntered, cspObj.type, context);
+      await authProviderObj.authRequest(numberEntered, "TEEN", context);
       FocusScopeNode().unfocus();
       final userResponse = authProviderObj.signupUser;
       if (userResponse.otp != 0) {
@@ -70,7 +70,7 @@ class _EnterPhoneNumberState extends State<EnterPhoneNumber> {
   @override
   Widget build(BuildContext context) {
     fieldTextController.text = "+91";
-    final cspObj = Provider.of<CategorySelectProvider>(context);
+    //final cspObj = Provider.of<CategorySelectProvider>(context);
     final authProviderObj = Provider.of<AuthProvider>(context);
     return Scaffold(
       body: Stack(
@@ -184,25 +184,28 @@ class _EnterPhoneNumberState extends State<EnterPhoneNumber> {
                                   setState(() {
                                     _isLoading = true;
                                   });
-                                  if (otpTextController.text !=
-                                      authProviderObj.signupUser.otp
-                                          .toString()) {
-                                    messageSnackBar(context, "Wrong OTP");
-                                    setState(() {
-                                      _isLoading = false;
-                                    });
-                                  } else {
-                                    await authProviderObj.loginRequest(context);
-                                    _isLoading = false;
-                                    Navigator.pushNamed(context, createProfile);
-                                  }
+                                  await authProviderObj.loginRequest(context);
+                                  _isLoading = false;
+                                  Navigator.pushNamed(context, createProfile);
+                                  // if (otpTextController.text !=
+                                  //     authProviderObj.signupUser.otp
+                                  //         .toString()) {
+                                  //   messageSnackBar(context, "Wrong OTP");
+                                  //   setState(() {
+                                  //     _isLoading = false;
+                                  //   });
+                                  // } else {
+                                  //   await authProviderObj.loginRequest(context);
+                                  //   _isLoading = false;
+                                  //   Navigator.pushNamed(context, createProfile);
+                                  // }
                                 }
                               : () async {
                                   if (_isDone) {
                                     setState(() {
                                       _isLoading = true;
                                     });
-                                    requestForOTP(authProviderObj, cspObj);
+                                    requestForOTP(authProviderObj);
                                   }
                                 },
                           child: Center(

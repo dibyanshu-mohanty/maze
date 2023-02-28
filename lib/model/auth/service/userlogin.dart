@@ -47,6 +47,7 @@ class UserLogin {
         throw ApiStatusException();
       }
     } on ApiStatusException {
+
        ApiStatusException apiException = ApiStatusException();
        messageSnackBar(context, apiException.apiStatusMessage());
     } catch(e) {
@@ -70,6 +71,7 @@ class UserLogin {
       if (response.statusCode == 200) {
         return jsonDecode(response.body);
       } else {
+        print(response.statusCode);
         throw ApiStatusException();
       }
     } on ApiStatusException {

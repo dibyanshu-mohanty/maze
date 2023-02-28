@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:maze/theme/app_colors.dart';
 import 'package:maze/theme/app_sizers.dart';
+import 'package:maze/view/utils/homeScreen/homescreenbackgroundshape.dart';
 
 import '../appscreenbackgroundshape.dart';
 
@@ -19,7 +20,7 @@ class HomeScreenBackground extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 AppSizers.height40,
-                BackgroundShape(
+                HomeScreenBackgroundShape(
                   color: AppColors.colorGolden,
                 ),
               ]),
