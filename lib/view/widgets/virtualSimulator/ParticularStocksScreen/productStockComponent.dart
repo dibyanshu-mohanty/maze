@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 import 'package:maze/theme/app_colors.dart';
@@ -5,8 +6,12 @@ import 'package:maze/theme/app_font.dart';
 import 'package:maze/theme/app_images.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../../theme/app_sizers.dart';
+
 class ProductStockComponent extends StatelessWidget {
-  const ProductStockComponent({super.key});
+  final String stockName;
+  final double currentPrice;
+  const ProductStockComponent({super.key,this.stockName ="", this.currentPrice = 0.0});
 
   @override
   Widget build(BuildContext context) {
@@ -24,44 +29,28 @@ class ProductStockComponent extends StatelessWidget {
         ),
       ),
       title: Text(
-        "Adtiya Birla Cap",
-        style: AppFont.regularColorWhite_10,
+        stockName,
+        style: AppFont.regularColorWhite_16,
       ),
       subtitle: Row(
         children: [
-          Container(
-            width: 2.5.w,
-            height: 1.h,
-            margin: EdgeInsets.symmetric(horizontal: 1.w),
-            child: Image.asset(
-              AppImages.bars,
-              fit: BoxFit.fill,
-            ),
-          ),
+          Icon(CupertinoIcons.chart_bar_fill,color: AppColors.colorGolden,size: 3.w,),
+          AppSizers.width5,
           Text(
-            "1200.0",
+            currentPrice.toStringAsFixed(1),
             textAlign: TextAlign.center,
-            style: AppFont.mediumBoldColorWhite_10,
+            style: AppFont.mediumBoldColorWhite_15,
           ),
-          Container(
-            width: 4.w,
-            height: 1.h,
-            child: Image.asset(
-              AppImages.GreenUp,
-              fit: BoxFit.fill,
-            ),
-          ),
-          SizedBox(
-            width: 1.w,
-          ),
+          AppSizers.width10,
+          Icon(Icons.arrow_drop_up_sharp,color: AppColors.colorLightGreen,size: 5.w,),
           Text(
             "5.98%",
             textAlign: TextAlign.center,
-            style: AppFont.regularColorWhite_10,
+            style: AppFont.mediumBoldColorWhite_15,
           ),
         ],
       ),
-      trailing: Container(
+      trailing: SizedBox(
         width: 16.w,
         child: Row(
           children: [

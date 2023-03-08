@@ -3,12 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:maze/theme/app_font.dart';
 import 'package:sizer/sizer.dart';
 
-class TwoRowComponent extends StatelessWidget {
-  final firstVal;
-  final secondVal;
-  final weight;
-  const TwoRowComponent(
-      {super.key, this.firstVal, this.secondVal, this.weight});
+class HighLowComponent extends StatelessWidget {
+  final double high;
+  final double low;
+  const HighLowComponent(
+      {super.key, required this.high, required this.low});
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +19,11 @@ class TwoRowComponent extends StatelessWidget {
           children: [
             Text(
               "Today's Low",
-              style: AppFont.regularColorWhite_10,
+              style: AppFont.lightColorWhite_12,
             ),
             Text(
-              firstVal,
-              style: AppFont.lightColorWhite_10,
+              high.toStringAsFixed(1),
+              style: AppFont.regularColorWhite_14,
             ),
           ],
         ),
@@ -33,11 +32,11 @@ class TwoRowComponent extends StatelessWidget {
           children: [
             Text(
               "Today's High",
-              style: AppFont.regularColorWhite_10,
+              style: AppFont.lightColorWhite_12,
             ),
             Text(
-              secondVal,
-              style: AppFont.lightColorWhite_10,
+              low.toStringAsFixed(1),
+              style: AppFont.regularColorWhite_14,
             ),
           ],
         ),

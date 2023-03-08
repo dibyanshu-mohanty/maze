@@ -10,6 +10,7 @@ import 'package:maze/view/screens/learningScreen/learninglevelscreen.dart';
 import 'package:maze/view/screens/profile/profilescreen.dart';
 import 'package:iconify_flutter/icons/fluent_emoji_high_contrast.dart';
 import 'package:maze/view/screens/rewards/reward_page.dart';
+import 'package:maze/view/screens/virtualSimulator/vsTournamentscreen.dart';
 import '../../routes.dart';
 import 'homeScreen/homescreen.dart';
 import 'learningScreen/learningContent/learningcontentscreen.dart';
@@ -29,13 +30,14 @@ class MainFrame extends StatefulWidget {
 }
 
 class _MainFrameState extends State<MainFrame> {
+
   final List<Widget> _mainScreens = [
     const HomeScreen(),
     LearningLevelScreen(),
-    HomeScreen(),
+    TournamentScreen(),
     RewardPage(),
     // DigitalGoldScreen(),
-    VsSplashScreens(),
+    RewardPage(),
   ];
 
   int selectedIndex = 0;

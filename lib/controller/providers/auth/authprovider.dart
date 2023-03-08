@@ -54,6 +54,7 @@ class AuthProvider with ChangeNotifier {
         _jwt = refreshAuthDetails["token"];
         final refs = await SharedPreferences.getInstance();
         await refs.setString('jwt', refreshAuthDetails["token"]);
+        print(_jwt);
         notifyListeners();
       } else {
       throw LocalDBException();

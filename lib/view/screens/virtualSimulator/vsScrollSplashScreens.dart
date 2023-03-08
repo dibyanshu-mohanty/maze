@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:maze/controller/providers/virtualSimulator/portfoliodataprovider.dart';
 import 'package:maze/theme/app_font.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
 
 import 'package:story/story_page_view.dart';
@@ -28,8 +30,7 @@ class _VsSplashScreensState extends State<VsSplashScreens> {
     SplashScreenTwo(),
     SplashScreenThree(),
   ];
-  var _isInit = true;
-  var _isLoading = false;
+
   @override
   void initState() {
     super.initState();
@@ -38,41 +39,15 @@ class _VsSplashScreensState extends State<VsSplashScreens> {
   }
 
   @override
-  void didChangeDependencies() {
-    if (_isInit) {
-      Provider.of<TournamentProvider>(context).tournamentId(context);
-    }
-    _isInit = false;
-    // TODO: implement didChangeDependencies
-    super.didChangeDependencies();
-  }
-
-  @override
   void dispose() {
     indicatorAnimationController.dispose();
     super.dispose();
   }
 
-  void requestForUserPortfolio(TournamentProvider tournamentDetailObj) async {
-    await tournamentDetailObj.portfolioData(context);
-
-    final userPortfolioResponse = tournamentDetailObj.portFolio;
-    if (userPortfolioResponse.current_value != null) {
-      setState(() {
-        _isLoading = false;
-      });
-      Navigator.pushReplacementNamed(context, virtualSimulatorScreen);
-    } else {
-      messageSnackBar(context, "Please Try Again");
-      setState(() {
-        _isLoading = false;
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    final tournamentDetailObj = Provider.of<TournamentProvider>(context);
+    final tournamentDetailObj = Provider.of<TournamentProvider>(context,listen:false);
+    final portfolioObj = Provider.of<PortfolioProvider>(context,listen:false);
     return Scaffold(
       body: StoryPageView(
         itemBuilder: (context, pageIndex, storyIndex) {
@@ -88,12 +63,7 @@ class _VsSplashScreensState extends State<VsSplashScreens> {
         gestureItemBuilder: (context, pageIndex, storyIndex) {
           return Stack(children: [
             if (storyIndex == 2)
-              _isLoading
-                  ? SpinKitFadingCircle(
-                      color: AppColors.colorWhite,
-                      size: 10.w,
-                    )
-                  : Align(
+             Align(
                       alignment: Alignment.bottomCenter,
                       child: GestureDetector(
                         child: Container(
@@ -128,19 +98,15 @@ class _VsSplashScreensState extends State<VsSplashScreens> {
                             ),
                           ),
                         ),
-                        onTap: () async {
-                          setState(() {
-                            _isLoading = true;
-                          });
-                          requestForUserPortfolio(tournamentDetailObj);
+                        onTap: () async{
+                          final refs = await SharedPreferences.getInstance();
+                          await refs.setBool("hasVisitedSplashScreen", true);
+                          Navigator.pushReplacementNamed(context, vsTournamentScreen);
                         },
                       ),
                     ),
           ]);
         },
-        // onPageLimitReached: () {
-        //   Navigator.pop(context);
-        // },
       ),
     );
   }

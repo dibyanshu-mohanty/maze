@@ -4,16 +4,14 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../theme/app_font.dart';
 
 class DemoCryptoComponent1 extends StatelessWidget {
-  final title;
-  final amount;
-  final titleColor;
-  final amountColor;
+  final String title;
+  final double amount;
+  final TextStyle amountStyle;
   const DemoCryptoComponent1(
       {super.key,
       this.title = "Portfolio Value",
-      this.amount = "1,00,000",
-      this.titleColor,
-      this.amountColor = 0xffffffff});
+      this.amount = 10.00,
+      required this.amountStyle});
 
   @override
   Widget build(BuildContext context) {
@@ -22,15 +20,11 @@ class DemoCryptoComponent1 extends StatelessWidget {
       children: [
         Text(
           title,
-          style: AppFont.lightColorgrey_10,
+          style: AppFont.lightColorWhite_12,
         ),
         Text(
-          "₹ $amount",
-          style: GoogleFonts.roboto(
-            fontWeight: FontWeight.w500,
-            fontSize: 15,
-            color: Color(amountColor),
-          ),
+          "\u{20B9} ${amount.toStringAsFixed(2)}",
+          style: amountStyle,
         ),
       ],
     );

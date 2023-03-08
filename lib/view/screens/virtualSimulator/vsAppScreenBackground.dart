@@ -12,7 +12,7 @@ class VsAppScreenBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColors.colorBlack,
+      color: AppColors.colorPurple.withOpacity(0.4),
       child: Stack(
         children: [
           Column(
@@ -35,21 +35,6 @@ class VsAppScreenBackground extends StatelessWidget {
                   ),
                 ),
               ),
-
-              // Align(
-              //     alignment: Alignment.centerRight,
-              //     child: BackgroundShape(
-              //       color: AppColors.colorDarkBlue,
-              //       isSecond: true,
-              //     )),
-              // Align(
-              //   alignment: Alignment.bottomRight,
-              //   child: BackgroundShape(
-              //     color: AppColors.colorPurple,
-              //     diameter: 250,
-              //     isSecond: true,
-              //   ),
-              // ),
               Align(
                 alignment: Alignment.bottomRight,
                 child: Container(

@@ -1,3 +1,6 @@
+import 'package:maze/view/screens/virtualSimulator/vsParticularStock.dart';
+import 'package:maze/view/screens/virtualSimulator/vsTournamentDetailScreen.dart';
+import 'package:maze/view/screens/virtualSimulator/vsTournamentscreen.dart';
 import 'constants/constRouteNames.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:maze/view/screens/errorScreen/errorscreen.dart';
@@ -73,6 +76,12 @@ class MyRoutes {
               return const HistoryScreen();
             case virtualSimulatorScreen:
               return const VirtualSimulatorScreen();
+            case vsStockDetailScreen:
+              return VsParticularStock();
+            case vsTournamentScreen:
+              return const TournamentScreen();
+            case vsTournamentDetailScreen:
+              return TournamentDetailScreen();
             default:
               return SplashScreen();
           }

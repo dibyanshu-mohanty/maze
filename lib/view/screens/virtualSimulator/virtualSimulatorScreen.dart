@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:maze/theme/app_font.dart';
 
 import 'package:maze/view/screens/virtualSimulator/vsMarketScreen.dart';
+import 'package:maze/view/utils/staticUiThemes/staticuielements.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../theme/app_colors.dart';
+import 'leaderboardscreen.dart';
 import 'vsPortfolioScreen.dart';
 import 'vshistoryScreen.dart';
 
@@ -15,60 +17,27 @@ class VirtualSimulatorScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tourneyId = ModalRoute.of(context)!.settings.arguments as String ?? "";
     return DefaultTabController(
       length: 3,
       child: Scaffold(
         extendBody: true,
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-          toolbarHeight: 10.h,
-          leading: Container(
-            margin: EdgeInsets.only(top: 5.h, left: 5.w),
-            child: const Icon(
-              Icons.arrow_back,
-              color: AppColors.colorWhite,
-              size: 24,
-            ),
-          ),
-          title: Container(
-            margin: EdgeInsets.only(top: 5.h),
-            child: Text(
-              "Virtual Simulator",
-              style: AppFont.regularColorWhite_15,
-              textAlign: TextAlign.center,
-            ),
-          ),
-          backgroundColor: AppColors.colorBlack,
+          leading: const Icon(Icons.arrow_back_ios),
+          backgroundColor: AppColors.colorTransparent,
+          elevation: 0,
           centerTitle: true,
           bottom: TabBar(
             indicatorColor: AppColors.colorWhite,
-            tabs: [
-              Tab(
-                child: Text(
-                  "Portfolio",
-                  style: AppFont.mediumBoldColorWhite_13,
-                ),
-              ),
-              Tab(
-                child: Text(
-                  "Market",
-                  style: AppFont.mediumBoldColorWhite_13,
-                ),
-              ),
-              Tab(
-                child: Text(
-                  "Leaderboard",
-                  style: AppFont.mediumBoldColorWhite_13,
-                ),
-              ),
-            ],
+            tabs: vsTabs
           ),
         ),
-        body: const TabBarView(
+        body: TabBarView(
           children: [
-            PortfolioScreen(),
-            VsMarketScreen(),
-            HistoryScreen(),
+            PortfolioScreen(tourneyId: tourneyId,),
+            VsMarketScreen(tourneyId: tourneyId,),
+            LeaderBoardScreen(),
           ],
         ),
       ),

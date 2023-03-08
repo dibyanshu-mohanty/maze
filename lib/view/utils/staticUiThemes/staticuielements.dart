@@ -78,7 +78,6 @@ final List<Tab> tabs = <Tab>[
   ),
 ];
 
-
 List<Map<String,dynamic>> moduleImages = [
   {"1" : AppImages.ic_learningModule2,},
   {"2" : AppImages.ic_learningModule3,},
@@ -148,3 +147,62 @@ List<String> goldAmountDefault = [
   "0.75",
   "1",
 ];
+
+// Virtual Simulator Screen
+
+final List<Tab> vsTabs = [
+  Tab(
+    child: Text(
+      "Portfolio",
+      style: AppFont.mediumBoldColorWhite_13,
+    ),
+  ),
+  Tab(
+    child: Text(
+      "Market",
+      style: AppFont.mediumBoldColorWhite_13,
+    ),
+  ),
+  Tab(
+    child: Text(
+      "Leaderboard",
+      style: AppFont.mediumBoldColorWhite_13,
+    ),
+  ),
+];
+
+final List<Tab> tourneyTabs = [
+  Tab(
+    child: Text(
+      "All",
+      style: AppFont.mediumBoldColorWhite_13,
+    ),
+  ),
+  Tab(
+    child: Text(
+      "Running",
+      style: AppFont.mediumBoldColorWhite_13,
+    ),
+  ),
+];
+
+final inputDecorationBottomSheet = InputDecoration(
+  hintStyle: AppFont.regularColorGrey8_15,
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(9),
+    borderSide: const BorderSide(color: AppColors.colorWhite),
+  ),
+  focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(9),
+    borderSide: const BorderSide(color: AppColors.colorWhite),
+  ),
+  enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(9),
+    borderSide: const BorderSide(color: AppColors.colorWhite),
+  ),
+  errorBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(9),
+    borderSide: const BorderSide(color: AppColors.colorWhite),
+  ),
+  contentPadding: const EdgeInsets.symmetric(vertical: 0.0,horizontal: 10.0),
+);

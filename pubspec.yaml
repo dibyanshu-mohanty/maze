@@ -47,6 +47,8 @@ dependencies:
   dotted_line: ^3.1.0
   carousel_slider: ^4.2.1
   dio: ^5.0.1
+  syncfusion_flutter_charts: ^20.4.52
+  multi_value_listenable_builder: ^0.0.2
 
 
 dev_dependencies:
@@ -69,6 +71,7 @@ flutter:
     - assets/animations/
     - assets/animations/digitalGoldScreen/
     - assets/animations/learningScreen/
+    - assets/animations/virtualSimulatorScreen/
     - assets/icons/homeScreen/
     - assets/icons/learningScreen/
     - assets/images/virtualSimulator/

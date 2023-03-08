@@ -1,34 +1,19 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:maze/controller/providers/appwide/loaderprovider.dart';
 import 'package:maze/controller/providers/learning/moduleprovider.dart';
 import 'package:maze/controller/providers/learning/quizprovider.dart';
 import 'package:maze/controller/providers/learning/readingprovider.dart';
+import 'package:maze/controller/providers/virtualSimulator/portfoliodataprovider.dart';
+import 'package:maze/controller/providers/virtualSimulator/tickerdataprovider.dart';
 import 'package:maze/theme/coreimport.dart';
 import 'package:maze/constants/constRouteNames.dart';
 import 'package:maze/controller/providers/profile/profileprovider.dart';
 import 'package:maze/routes.dart';
 import 'package:provider/provider.dart';
 import 'controller/providers/auth/authprovider.dart';
-import 'package:maze/view/screens/errorScreen/errorscreen.dart';
-import 'package:maze/view/screens/goldScreen/digitalgoldscreen.dart';
-import 'package:maze/view/screens/profile/profilescreen.dart';
 import 'controller/providers/virtualSimulator/userAllTournmentsProvider.dart';
-import 'view/screens/authScreen/categoryselectscreen.dart';
-import 'view/screens/authScreen/createprofilescreen.dart';
-import 'view/screens/authScreen/enterphonescreen.dart';
-import 'view/screens/homeScreen/homescreen.dart';
-import 'view/screens/learningScreen/learningContent/learningcontentscreen.dart';
-import 'view/screens/learningScreen/learninglevelscreen.dart';
-import 'view/screens/learningScreen/readingtaskscreen.dart';
-import 'view/screens/learningScreen/tasklevelscreen.dart';
-import 'view/screens/learningScreen/videoscreen.dart';
-import 'view/screens/mainframe.dart';
-import 'view/screens/onboardingScreen/introductiondetailscreen.dart';
-import 'view/screens/onboardingScreen/onboardingscreen.dart';
-import 'view/screens/splashScreen/splashscreen.dart';
-import 'view/screens/virtualSimulator/vsScrollSplashScreens.dart';
-import 'view/widgets/authScreen/otpfields.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -53,6 +38,9 @@ class YaroApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => ProfileProvider()),
         ChangeNotifierProvider(create: (context) => TournamentProvider()),
         ChangeNotifierProvider(create: (context) => ModuleProvider()),
+        ChangeNotifierProvider(create: (context) => PortfolioProvider()),
+        ChangeNotifierProvider(create: (context) => TickerDataProvider()),
+        ChangeNotifierProvider(create: (context) => LoaderProvider()),
       ],
       child: Sizer(
         builder: (context, orientation, deviceType) => MaterialApp(

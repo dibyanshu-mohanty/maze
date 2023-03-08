@@ -3,8 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:maze/theme/app_font.dart';
 import 'package:sizer/sizer.dart';
 
-class StockDetailComponent13 extends StatelessWidget {
-  const StockDetailComponent13({super.key});
+class OpenCloseVolumeComponent extends StatelessWidget {
+  final double open;
+  final double close;
+  final int volume;
+  const OpenCloseVolumeComponent({super.key,
+  required this.open,
+  required this.close,
+  required this.volume});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +30,7 @@ class StockDetailComponent13 extends StatelessWidget {
                 style: AppFont.regularColorWhite_14,
               ),
               Text(
-                "480.00",
+                open.toStringAsFixed(2),
                 textAlign: TextAlign.center,
                 style: AppFont.lightColorWhite_14,
               ),
@@ -38,12 +44,12 @@ class StockDetailComponent13 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "prev.close",
+                "Close",
                 textAlign: TextAlign.center,
                 style: AppFont.regularColorWhite_14,
               ),
               Text(
-                "1660.00",
+                close.toStringAsFixed(2),
                 textAlign: TextAlign.center,
                 style: AppFont.lightColorWhite_14,
               ),
@@ -57,12 +63,12 @@ class StockDetailComponent13 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "volume",
+                "Volume",
                 textAlign: TextAlign.center,
                 style: AppFont.regularColorWhite_14,
               ),
               Text(
-                "18,56,700",
+                "$volume",
                 textAlign: TextAlign.center,
                 style: AppFont.lightColorWhite_14,
               ),

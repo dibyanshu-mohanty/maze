@@ -26,7 +26,7 @@ class UpcomingFeatureCard extends StatelessWidget {
                 ),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, digitalGoldScreen);
+                    //Navigator.pushNamed(context, vsTournamentScreen);
                   },
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(Dimens.margin10),

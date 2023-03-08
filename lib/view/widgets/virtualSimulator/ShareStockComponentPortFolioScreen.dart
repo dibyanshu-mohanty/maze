@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:maze/theme/app_font.dart';
 import 'package:sizer/sizer.dart';
@@ -6,12 +7,17 @@ import '../../../theme/app_colors.dart';
 import '../../../theme/app_images.dart';
 
 class ShareStockComponentPortfolioScreen extends StatelessWidget {
-  const ShareStockComponentPortfolioScreen({super.key});
+  final String imageName;
+  final String stockName;
+  final String tickerName;
+  final double currentPrice;
+  final double percentageLossGain;
+  const ShareStockComponentPortfolioScreen({super.key,this.imageName="",this.stockName="",this.currentPrice=0.0,this.percentageLossGain=0.0, this.tickerName = ""});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 2.w),
+      margin: EdgeInsets.symmetric(horizontal: 2.w,vertical: 0.5.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: AppColors.colorPink.withOpacity(0.6)),
@@ -25,15 +31,17 @@ class ShareStockComponentPortfolioScreen extends StatelessWidget {
         ),
       ),
       child: ListTile(
-        leading: Image.asset(
+        leading: imageName.isEmpty
+        ? Image.asset(
           AppImages.ic_MazeLogo,
           fit: BoxFit.fill,
           width: 9.w,
           height: 4.h,
-        ),
-        title: Text("Applo Pharmacy", style: AppFont.regularColorWhite_13),
+        )
+        : Image.network(imageName),
+        title: Text(stockName, style: AppFont.regularColorWhite_13),
         subtitle: Text(
-          "Applo Group",
+          tickerName,
           style: AppFont.regularColorWhite_10,
         ),
         trailing: Transform.translate(
@@ -47,29 +55,19 @@ class ShareStockComponentPortfolioScreen extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Image.asset(
-                      AppImages.bars,
-                      fit: BoxFit.cover,
-                      width: 10,
-                      height: 10,
-                    ),
+                    Icon(CupertinoIcons.chart_bar_fill,color: AppColors.colorGolden,size: 3.w,),
                     SizedBox(
                       width: 2.w,
                     ),
                     Text(
-                      "2,346",
+                      currentPrice.toStringAsFixed(2),
                       style: AppFont.mediumBoldColorWhite_13,
                     ),
                   ],
                 ),
                 Row(
                   children: [
-                    Image.asset(
-                      AppImages.GreenUp,
-                      fit: BoxFit.fill,
-                      width: 11,
-                      height: 11,
-                    ),
+                    Icon(Icons.arrow_drop_up_sharp,color: AppColors.colorLightGreen,size: 5.w,),
                     SizedBox(
                       width: 2.w,
                     ),

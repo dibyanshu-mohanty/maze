@@ -10,7 +10,7 @@ class HistoryStock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 1.h),
+      margin: EdgeInsets.symmetric(vertical: 1.h,horizontal: 3.w),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(
           Radius.circular(20),

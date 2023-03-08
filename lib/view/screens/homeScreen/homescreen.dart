@@ -57,8 +57,14 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: List.generate(3, (index) => Expanded(
                     child: GestureDetector(
-                      onTap: () {
+                      onTap: index == 0
+                      ? (){}
+                        : index == 1
+                        ? () {
                           Navigator.pushNamed(context, digitalGoldScreen);
+                      }
+                      : (){
+                        Navigator.pushNamed(context, vsTournamentScreen);
                       },
                       child: Container(
                         height: 42.0,

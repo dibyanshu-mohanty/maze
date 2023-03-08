@@ -57,6 +57,7 @@ class AppImages {
       "${imageBaseURL}goldScreen/ic_digitalcoins.png";
   static const ic_goldpot = "${imageBaseURL}goldScreen/ic_goldpot.png";
   static const ic_coinStack = "${imageBaseURL}goldScreen/ic_coinstacks.png";
+  static const ic_tourney = "${imageBaseURL}virtualSimulator/ic_stockwars.png";
 
   /// For Icons, V2 URL
   static const ic_completedCheckIcon =
@@ -82,4 +83,5 @@ class AppImages {
   static const ic_GoldPlatesAnimation = "${imageBaseURLv3}digitalGoldScreen/goldplates.json";
   static const ic_GoldCoinAnimation = "${imageBaseURLv3}digitalGoldScreen/goldcoin.json";
   static const ic_EmptyModuleAnimation = "${imageBaseURLv3}learningScreen/emptymodules.json";
+  static const ic_successAnimation = "${imageBaseURLv3}virtualSimulatorScreen/ic_success.json";
 }

@@ -186,7 +186,7 @@ class _EnterPhoneNumberState extends State<EnterPhoneNumber> {
                                   });
                                   await authProviderObj.loginRequest(context);
                                   _isLoading = false;
-                                  Navigator.pushNamed(context, createProfile);
+                                  Navigator.pushReplacementNamed(context, createProfile);
                                   // if (otpTextController.text !=
                                   //     authProviderObj.signupUser.otp
                                   //         .toString()) {

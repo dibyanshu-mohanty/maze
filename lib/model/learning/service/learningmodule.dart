@@ -31,27 +31,25 @@ class LearningModule {
             'Bearer $token';
             requestHandler.next(requestOptions);
           } else if (token == null || token!.isEmpty) {
-            await Future.delayed(const Duration(milliseconds: 10),(){
-              Provider.of<AuthProvider>(context, listen: false)
-                  .checkRequest(context);
-            });
+            await refreshToken(context);
             await getToken().then((value){
               token = value;
             });
             requestOptions.headers[HttpHeaders.authorizationHeader] =
             'Bearer $token';
+            requestHandler.next(requestOptions);
           }
         }, onError: (error, ErrorInterceptorHandler handler) async{
             if(error.response?.statusCode != 200){
-              await Future.delayed(const Duration(milliseconds: 10),(){
-                Provider.of<AuthProvider>(context, listen: false)
-                    .checkRequest(context);
-              });
+              await refreshToken(context);
               await getToken().then((value){
                 token = value;
               });
-              allModuleResponse = await dio.get("learn/module");
-              handler.resolve(error.response!);
+              if(token !=null) {
+                return handler.resolve(await retryRequest(error.requestOptions));
+              } else {
+                return handler.next(error);
+              }
             }
         }
         ),
@@ -86,34 +84,32 @@ class LearningModule {
             'Bearer $token';
             requestHandler.next(requestOptions);
           } else if (token == null || token!.isEmpty) {
-            await Future.delayed(const Duration(milliseconds: 10),(){
-              Provider.of<AuthProvider>(context, listen: false)
-                  .checkRequest(context);
-            });
+            await refreshToken(context);
             await getToken().then((value){
               token = value;
             });
             requestOptions.headers[HttpHeaders.authorizationHeader] =
             'Bearer $token';
+            requestHandler.next(requestOptions);
           }
         }, onError: (error, ErrorInterceptorHandler handler) async{
           if(error.response?.statusCode != 200){
-            await Future.delayed(const Duration(milliseconds: 10),(){
-              Provider.of<AuthProvider>(context, listen: false)
-                  .checkRequest(context);
-            });
+            await refreshToken(context);
             await getToken().then((value){
               token = value;
             });
-            singleModuleResponse = await dio.get("/learn/module/$moduleId");
-            handler.resolve(error.response!);
+            if(token !=null) {
+              return handler.resolve(await retryRequest(error.requestOptions));
+            } else {
+              return handler.next(error);
+            }
           }
         }
         ),
       ],
     );
     try {
-      singleModuleResponse = await dio.get("learn/module");
+      singleModuleResponse = await dio.get("learn/module/$moduleId");
       return singleModuleResponse.data;
     } on NullAuthException {
       NullAuthException naException = NullAuthException();

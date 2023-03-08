@@ -1,30 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:maze/theme/app_colors.dart';
+import 'package:maze/theme/app_sizers.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
-
-import '../../../controller/providers/virtualSimulator/userAllTournmentsProvider.dart';
 import '../../../theme/app_font.dart';
 import '../../../theme/app_images.dart';
 import 'demoCryptoComponent.dart';
 
 class VSSComponent1 extends StatelessWidget {
-  const VSSComponent1({super.key});
+  final double totalReturns;
+  final double investedAmount;
+  final double currentValue;
+  final double balance;
+  const VSSComponent1({super.key,required this.investedAmount, required this.currentValue, required this.totalReturns,required this.balance});
 
   @override
   Widget build(BuildContext context) {
-    final portfolioObj = Provider.of<TournamentProvider>(context);
-    final res = portfolioObj.portFolio;
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.h),
       width: 82.w,
-      height: 16.8.h,
+      height: 22.h,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            AppColors.colorLightBlue3.withOpacity(0.1),
-            AppColors.colorWhite.withOpacity(0.0),
+            AppColors.colorLightBlue3.withOpacity(0.3),
+            AppColors.colorWhite.withOpacity(0.0)
           ],
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
@@ -40,7 +41,7 @@ class VSSComponent1 extends StatelessWidget {
               children: [
                 Text(
                   "Portfolio",
-                  style: AppFont.mediumBoldColorWhite_15,
+                  style: AppFont.mediumBoldColorWhite_20,
                 ),
                 Spacer(),
                 Column(
@@ -48,7 +49,7 @@ class VSSComponent1 extends StatelessWidget {
                   children: [
                     Text(
                       "Total Returns",
-                      style: AppFont.lightColorgrey_10,
+                      style: AppFont.lightColorWhite_12,
                     ),
                     Row(
                       children: [
@@ -61,8 +62,8 @@ class VSSComponent1 extends StatelessWidget {
                               fit: BoxFit.cover),
                         ),
                         Text(
-                          "₹ ${res.total_returns}",
-                          style: AppFont.mediumBoldColorGreen_15,
+                          "₹ ${totalReturns.toStringAsFixed(2)}",
+                          style: AppFont.mediumBoldColorGreen2_20,
                         )
                       ],
                     ),
@@ -73,34 +74,40 @@ class VSSComponent1 extends StatelessWidget {
           ),
           const Spacer(),
           Container(
+            alignment: Alignment.centerLeft,
+            margin: EdgeInsets.symmetric(horizontal: 6.w),
+            child: DemoCryptoComponent1(
+              title: "Available",
+              amount: balance,
+              amountStyle: AppFont.mediumBoldColorWhite_20,
+            ),
+          ),
+          AppSizers.height10,
+          Container(
             margin: EdgeInsets.only(bottom: 2.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 DemoCryptoComponent1(
                   title: "Current Value",
-                  amount: "${res.current_value}",
-                  amountColor: 0xffffffff,
+                  amount: currentValue,
+                  amountStyle: AppFont.mediumBoldColorWhite_20,
                 ),
                 SizedBox(
                   width: 5.w,
                 ),
                 DemoCryptoComponent1(
                   title: "Invested Amount",
-                  amount: "${res.invested_amount}",
-                  amountColor: 0xffFF2F2F,
+                  amount: investedAmount,
+                  amountStyle: AppFont.mediumBoldColorDarkRed_20,
                 ),
                 // Spacer(),
                 SizedBox(
                   width: 10.w,
                 ),
                 Text(
-                  "0.0%",
-                  style: GoogleFonts.roboto(
-                      fontSize: 17.25,
-                      fontWeight: FontWeight.w500,
-                      color: const Color(0xffFF2F2F)),
-                ),
+                  "${investedAmount == 0.0 ? 0.0 : ((currentValue-investedAmount)/investedAmount)*100}%",
+                  style: AppFont.mediumBoldColorDarkRed_20,),
               ],
             ),
           ),
